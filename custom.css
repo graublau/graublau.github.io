@@ -23,3 +23,12 @@ h1 {
     position: relative;
     margin-top: 13%;
 }
+
+.code {
+
+}
+
+.primary {
+    background-color: #2199e8 !important;
+    border-color: #116ca8 !important;
+}
