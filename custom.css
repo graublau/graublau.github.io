@@ -1,0 +1,25 @@
+body {
+    background-color: rgba(61,61,61, 0.9);
+    font-family: 'Pontano Sans', sans-serif; font-size:16px; line-height:150%; color:#333;
+
+}
+
+#box {
+    height: 100%;
+}
+
+h1 {
+    font-family: 'Pontano Sans', sans-serif;
+}
+
+.modal {
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-shadow: #333333;
+    background-color: #fff;
+}
+
+.topmiddle {
+    position: relative;
+    margin-top: 13%;
+}
