@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="772020d5-66a8-483e-a7a4-084c4e7f5131" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/custom.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dwnld/vCard.vcf" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/foundation-6/css/app.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/foundation-6/css/foundation-flex.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/foundation-6/css/foundation-rtl.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/foundation-6/css/foundation.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/foundation-6/css/foundation.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/foundation-6/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/foundation-6/js/app.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/foundation-6/js/foundation.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/foundation-6/js/foundation.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/foundation-6/js/vendor/jquery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/foundation-6/js/vendor/what-input.min.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yeti/index.html" afterPath="$PROJECT_DIR$/yeti/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yeti/project.json" afterPath="$PROJECT_DIR$/yeti/project.json" />
     </list>
     <ignored path="grisei.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,8 +28,18 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5913978">
-              <caret line="22" column="84" selection-start-line="22" selection-start-column="84" selection-end-line="22" selection-end-column="84" />
+            <state vertical-scroll-proportion="0.6505376">
+              <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/yeti/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.25">
+              <caret line="10" column="103" selection-start-line="10" selection-start-column="103" selection-end-line="10" selection-end-column="103" />
               <folding />
             </state>
           </provider>
@@ -74,6 +72,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/custom.css" />
+        <option value="$PROJECT_DIR$/yeti/index.html" />
         <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
@@ -214,10 +213,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/yeti/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.25">
+          <caret line="10" column="103" selection-start-line="10" selection-start-column="103" selection-end-line="10" selection-end-column="103" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5913978">
-          <caret line="22" column="84" selection-start-line="22" selection-start-column="84" selection-end-line="22" selection-end-column="84" />
+        <state vertical-scroll-proportion="0.6505376">
+          <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
           <folding />
         </state>
       </provider>
