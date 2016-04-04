@@ -1,23 +1,33 @@
 body {
-    background-color: rgba(61,61,61, 0.1);
-    font-family: 'Pontano Sans', sans-serif; font-size:16px; line-height:150%; color:#333;
+    height: 100%;
+    background: #E1F5C4 !important;
+    /*background: -webkit-linear-gradient(#3B2B42, #3B2B6A) !important; /!* For Safari 5.1 to 6.0 *!/*/
+    /*background: -o-linear-gradient(#3B2B42, #3B2B6A) !important; /!* For Opera 11.1 to 12.0 *!/*/
+    /*background: -moz-linear-gradient(#3B2B42, #3B2B6A) !important; /!* For Firefox 3.6 to 15 *!/*/
+    /*background: linear-gradient(red, blue) !important; /!* Standard syntax *!/*/
+    font-family: 'Pontano Sans', sans-serif; font-size:16px; line-height:150%; color:#D0E7C8 !important;
     text-align: center;
-
 }
 
 #box {
-    height: 100%;
+
+}
+
+.main {
+    top: 45%;
+    position: absolute;
 }
 
 .row {
     text-align: center;
     font-family: 'Pontano Sans', sans-serif;
-    margin-top: 4em;
+    /*margin-top: 4em;*/
+    /*opacity: 0.2;*/
 }
 
 .title {
     font-size: 2em;
-    color: rgba(61,61,61, 0.4);
+    /*color: rgba(61,61,61, 0.4);*/
     font-weight: 900;
 }
 
