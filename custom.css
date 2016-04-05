@@ -25,6 +25,17 @@ body {
     color: #F3CA4B;
 }
 
+.copy {
+    color: #3B2937;
+    text-align: left;
+    padding: 0.5em 0.7em;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    /*font-family: 'Pontano Sans', sans-serif;*/
+    font-size: 18px;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
 .modal {
     border: 1px solid #ccc;
     border-radius: 2px;
