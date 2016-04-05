@@ -8,19 +8,21 @@ body {
     font-family: 'Pontano Sans', sans-serif;
     font-size:16px;
     /*line-height:150%; */
-    color:#D0E7C8 !important;
+    color:#D0E7C8;
     text-align: center !important;
 }
 
 #main {
-    margin-top: 50%;
+    margin-top: 40%;
     /*position: relative;*/
 
 }
 
 .title {
-    font-family: 'Pontano Sans', sans-serif;
-    font-size: 2em;
+    /*font-family: 'Pontano Sans', sans-serif;*/
+    font-family: 'Abril Fatface', cursive;
+    font-size: 4em;
+    color: #F3CA4B;
 }
 
 .modal {
