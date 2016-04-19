@@ -49,7 +49,7 @@ a:hover {
     font-size: 6em;
     line-height: 6em;
     /*color: #F3CA4B;*/
-    color: #D0E7C8;
+    color: #000;
     opacity: 0.5;
 }
 
@@ -64,7 +64,7 @@ a:hover {
     opacity: 0.8;
     max-width: 620px;
     text-align: justify;
-    display: inline-block;
+    /*display: inline-block;*/
     /*position: absolute;*/
 }
 
