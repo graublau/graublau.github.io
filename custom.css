@@ -91,17 +91,24 @@ a:hover {
     opacity: 1;
     font-size: 2.5em;
     position: relative;
-    bottom: 0.15em;
+    bottom: 0.1em;
+    left: 1px;
 }
 
 .cq {
     font-family: 'Fredoka One', cursive;
-    opacity: 0.2 !important;
+    /*opacity: 0.2 !important;*/
+    font-size: 2.7em;
+    bottom: 0.12em;
+}
+
+.cq a:hover {
+    text-decoration: none;
 }
 
 .kj {
     font-family: 'HelveticaCondensed';
-    opacity: 0.2 !important;
+    /*opacity: 0.2 !important;*/
 }
 
 .fd {
