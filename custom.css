@@ -1,5 +1,8 @@
 
-
+@font-face {
+    font-family: HelveticaCondensed;
+    src: url(fonts/helvetica%20condensed%20bold.ttf);
+}
 
 body {
     /*height: 100%;*/
@@ -13,6 +16,30 @@ body {
     /*line-height:150%; */
     color:#D0E7C8;
 }
+
+.footer {
+    position: absolute;
+    bottom: 0px;
+    margin: 0 auto;
+    padding: 25px;
+    text-align: right;
+    width: 100%;  }
+
+.oneup {
+    position: absolute;
+    bottom: 6.75em;
+  }
+
+.twoup {
+    position: absolute;
+    bottom: 9em;
+}
+
+.threeup {
+    position: absolute;
+    bottom: 13.5em;
+}
+
 
 p {
 
@@ -46,11 +73,53 @@ a:hover {
 .title {
     /*font-family: 'Pontano Sans', sans-serif;*/
     font-family: 'Abril Fatface', Helvetica, cursive;
-    font-size: 6em;
-    line-height: 6em;
+    font-size: 3em;
+    position: relative;
+    top: -18px;
+    /*line-height: 3em;*/
     /*color: #F3CA4B;*/
     color: #000;
-    opacity: 0.5;
+    opacity: 0.2;
+}
+
+.icon {
+    opacity: 1;
+    font-size: 2.5em;
+    position: relative;
+    bottom: 0.15em;
+}
+
+.cq {
+    font-family: 'Fredoka One', cursive;
+    opacity: 0.2 !important;
+}
+
+.kj {
+    font-family: 'HelveticaCondensed';
+    opacity: 0.2 !important;
+}
+
+.fd {
+    font-family: 'Grand Hotel', cursive;
+    opacity: 0.2 !important;
+    font-size: 2.3em;
+    bottom: 1px;
+    position: relative;
+    font-weight: 900;
+}
+
+.btn-rnd {
+    border: 1px solid rgba(61,61,61, 0.2);
+    /*opacity: 0.5;*/
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+    background-color: transparent;
+    box-shadow: 2px 2px 2px rgba(61,61,61, 0.5);
+    z-index: 1000 !important;
+    padding: 5px;
+    text-align: center;
+    margin-left: 1em;
 }
 
 .copy {
