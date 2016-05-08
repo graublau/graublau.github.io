@@ -32,6 +32,11 @@ body {
 
 .twoup {
     position: absolute;
+    bottom: 4.5em;
+}
+
+.twouptwo {
+    position: absolute;
     bottom: 9em;
 }
 
@@ -109,7 +114,7 @@ a:hover {
 }
 
 .btn-rnd {
-    border: 1px solid rgba(61,61,61, 0.2);
+    /*border: 1px solid rgba(61,61,61, 0.2);*/
     /*opacity: 0.5;*/
     border-radius: 50px;
     height: 50px;
