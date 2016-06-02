@@ -7,7 +7,8 @@
 body {
     /*height: 100%;*/
      /*background-image: linear-gradient(90deg, #E1F5C4, #E1F5C4);*/
-     background-color: #f5f5f5;
+     /*background-color: #f5f5f5;*/
+    border-color: #fff;
     /*background: -webkit-linear-gradient(#3B2B42, #3B2B6A) !important; /!* For Safari 5.1 to 6.0 *!/*/
     /*background: -o-linear-gradient(#3B2B42, #3B2B6A) !important; /!* For Opera 11.1 to 12.0 *!/*/
     /*background: -moz-linear-gradient(#3B2B42, #3B2B6A) !important; /!* For Firefox 3.6 to 15 *!/*/
@@ -78,14 +79,15 @@ a:hover {
 
 .title {
     /*font-family: 'Pontano Sans', sans-serif;*/
-    font-family: 'Abril Fatface', Helvetica, cursive;
+    font-family: "Helvetica Neue", Arial, sans-serif;
     font-size: 3em;
     position: relative;
     top: -18px;
     /*line-height: 3em;*/
     /*color: #F3CA4B;*/
     color: #000;
-    opacity: 0.2;
+    opacity: 0.8;
+    font-weight: 800;
 }
 
 .icon {
