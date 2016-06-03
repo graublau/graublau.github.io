@@ -54,13 +54,30 @@ p {
 
 a {
 color: #5D93DF;
-text-decoration: none;
+text-decoration: none !important;
 }
 
 a:hover {
    color: #5D93DF !important;
     text-decoration: none !important;
 }
+
+a:active {
+    text-decoration: none !important;
+}
+
+a:visited {
+    text-decoration: none !important;
+}
+
+.arrow {
+    color: #333 !important;
+}
+
+.arrow:hover {
+    color: #333 !important;
+}
+
 
 .block {
     position: absolute;
@@ -88,6 +105,21 @@ a:hover {
     color: #000;
     opacity: 0.8;
     font-weight: 800;
+}
+
+.copy {
+    color: #333;
+    font-size: 22px;
+    margin: 2em auto;
+    padding: 1em;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    /*font-family: 'Pontano Sans', sans-serif;*/
+    font-weight: 200;
+    opacity: 0.8;
+    max-width: 620px;
+    text-align: justify;
+    /*display: inline-block;*/
+    /*position: absolute;*/
 }
 
 .icon {
@@ -144,20 +176,6 @@ a:hover {
     margin-left: 1em;
 }
 
-.copy {
-    color: #3A3A3A;
-    font-size: 22px;
-    margin: 2em auto;
-    padding: 1em;
-    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-    /*font-family: 'Pontano Sans', sans-serif;*/
-    font-weight: 200;
-    opacity: 0.8;
-    max-width: 620px;
-    text-align: justify;
-    /*display: inline-block;*/
-    /*position: absolute;*/
-}
 
 .modal {
     border: 1px solid #ccc;
