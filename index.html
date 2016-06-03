@@ -14,17 +14,32 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <title>grisei.com</title>
   </head>
-  <body ng-app>
+  <body ng-app ng-class="{bg: apps}">
 
 
       <div class="block">
         <div class="centered" ng-class="{blur: menuup}">
-            <div class="copy" ng-init="one = true">
-               <p ng-show="one" ng-swipe="two = true; one = false">Heute&#127771; habe ich geträumt. Von einem &#127909;, der in einem leeren Kinosaal läuft. Und von zwei weißen &#128047; &#128047; und einem &#128102;, das die Zukunft sieht. Es sagt, nachdem es der &#128105; die &#128273; gestohlen hat: "Papa. Sie soll nicht auf das &#9973; gehen." An die erste &#9888; von ihm kann ich mich nicht mehr erinnern. So ist das mit dem &#127909; im Kopf. Er &#127939; schneller, als man denkt.
-               </p>
-               <p ng-show="two" ng-swipe="two = false; one = true">Es ist veröffentlicht, was interessiert. In &#128509; nicht.</p>
-                <a href ng-click="two = true; one = false" class="pull-right arrow">&#x21e2;</a>
-                <a href ng-click="two = false; one = true" class="pull-left arrow">&#x21e0;</a>
+            <div class="copy" ng-init="one = true" style="text-align: center;" ng-show="!apps">
+               <!--<p ng-show="one" ng-swipe="two = true; one = false">Heute&#127771; habe ich geträumt. Von einem &#127909;, der in einem leeren Kinosaal läuft. Und von zwei weißen &#128047; &#128047; und einem &#128102;, das die Zukunft sieht. Es sagt, nachdem es der &#128105; die &#128273; gestohlen hat: "Papa. Sie soll nicht auf das &#9973; gehen." An die erste &#9888; von ihm kann ich mich nicht mehr erinnern. So ist das mit dem &#127909; im Kopf. Er &#127939; schneller, als man denkt.-->
+               <!--</p>-->
+               <!--<p ng-show="two" ng-swipe="two = false; one = true">Es ist veröffentlicht, was interessiert. In &#128509; nicht.</p>-->
+                <!--<a href ng-click="two = true; one = false" class="pull-right arrow">&#x21e2;</a>-->
+                <!--<a href ng-click="two = false; one = true" class="pull-left arrow">&#x21e0;</a>-->
+
+                <a href class="h1" ng-click="apps=true">grisei</a>
+
+            </div>
+
+            <div class="copy" ng-init="one = true" style="text-align: center;" ng-show="apps">
+                <a href="http://kreativjob.net" target="_blank">
+                    <img class="img-circle btn btn-default" src="img/kj_logo_icon_blog.png" style="padding: 0px;">
+                </a>
+                <a href="http://cashq.at" target="_blank">
+                    <img class="img-circle btn btn-default" src="img/cashQ-icon-180x180.png" style="padding: 0px;">
+                </a>
+                <a href="http://grisei.tumblr.com" target="_blank">
+                    <img class="img-circle btn btn-default" src="img/me_blog.jpg" style="padding: 0px;">
+                </a>
 
             </div>
 
@@ -32,31 +47,31 @@
       </div>
 
 
-  <div class="footer twoup" ng-show="menuup">
+  <!--<div class="footer twoup" ng-show="menuup">-->
 
-            <span href class="btn-rnd pull-right">
-                  <a class="icon cq" href="http://cashq.at" target="_blank">Q</a>
-              </span>
-
-
-  </div>
-
-  <div class="footer twouptwo" ng-show="menuup">
-       <span href class="btn-rnd pull-right">
-
-               <a class="icon kj" href="http://kreativjob.net" target="_blank">Kj</a>
-          </span>
-  </div>
+            <!--<span href class="btn-rnd pull-right">-->
+                  <!--<a class="icon cq" href="http://cashq.at" target="_blank">Q</a>-->
+              <!--</span>-->
 
 
-      <div class="footer">
-          <a class="pull-right" href ng-click="menuup = !menuup">
-              <!--<span class="title">g</span>-->
-              <img class="img-circle btn-rnd" src="img/me_blog.jpg" style="padding: 0px;">
-          </a>
+  <!--</div>-->
+
+  <!--<div class="footer twouptwo" ng-show="menuup">-->
+       <!--<span href class="btn-rnd pull-right">-->
+
+               <!--<a class="icon kj" href="http://kreativjob.net" target="_blank">Kj</a>-->
+          <!--</span>-->
+  <!--</div>-->
 
 
-      </div>
+      <!--<div class="footer">-->
+          <!--<a class="pull-right" href ng-click="menuup = !menuup">-->
+              <!--&lt;!&ndash;<span class="title">g</span>&ndash;&gt;-->
+              <!--<img class="img-circle btn-rnd" src="img/me_blog.jpg" style="padding: 0px;">-->
+          <!--</a>-->
+
+
+      <!--</div>-->
 
     <script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>

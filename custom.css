@@ -18,6 +18,11 @@ body {
     color:#D0E7C8;
 }
 
+.bg {
+    background-image: url("http://wallpapercave.com/wp/iJ0NLj6.jpg");
+    background-repeat: no-repeat;
+}
+
 .footer {
     position: absolute;
     bottom: 0px;
@@ -105,6 +110,7 @@ a:visited {
     color: #000;
     opacity: 0.8;
     font-weight: 800;
+
 }
 
 .copy {
@@ -161,6 +167,11 @@ a:visited {
     -o-filter: blur(5px);
     -ms-filter: blur(5px);
     filter: blur(5px);
+}
+
+.btn {
+    width: 48px;
+    margin: 5px;
 }
 
 .btn-rnd {
