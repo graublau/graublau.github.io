@@ -20,9 +20,9 @@
       <div class="block">
         <div class="centered" ng-class="{blur: menuup}">
             <div class="copy" ng-init="one = true">
-               <p ng-show="one" ng-swipe="two = true && one = false">Heute&#127771; habe ich geträumt. Von einem &#127909;, der in einem leeren Kinosaal läuft. Und von zwei weißen &#128047; &#128047; und einem &#128102;, das die Zukunft sieht. Es sagt, nachdem es der &#128105; die &#128273; gestohlen hat: "Papa. Sie soll nicht auf das &#9973; gehen." An die erste &#9888; von ihm kann ich mich nicht mehr erinnern. So ist das mit dem &#127909; im Kopf. Er &#127939; schneller, als man denkt.
+               <p ng-show="one" ng-swipe="two = true; one = false">Heute&#127771; habe ich geträumt. Von einem &#127909;, der in einem leeren Kinosaal läuft. Und von zwei weißen &#128047; &#128047; und einem &#128102;, das die Zukunft sieht. Es sagt, nachdem es der &#128105; die &#128273; gestohlen hat: "Papa. Sie soll nicht auf das &#9973; gehen." An die erste &#9888; von ihm kann ich mich nicht mehr erinnern. So ist das mit dem &#127909; im Kopf. Er &#127939; schneller, als man denkt.
                </p>
-               <p ng-show="two" ng-swipe="two = false && one = true">Es ist veröffentlicht, was interessiert. In &#128509; nicht.</p>
+               <p ng-show="two" ng-swipe="two = false; one = true">Es ist veröffentlicht, was interessiert. In &#128509; nicht.</p>
                 <a href ng-click="two = true; one = false" class="pull-right arrow">&#x21e2;</a>
                 <a href ng-click="two = false; one = true" class="pull-left arrow">&#x21e0;</a>
 
