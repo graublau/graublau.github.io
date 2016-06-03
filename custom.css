@@ -19,8 +19,7 @@ body {
 }
 
 .bg {
-    background-image: url("http://wallpapercave.com/wp/iJ0NLj6.jpg");
-    background-repeat: no-repeat;
+    background: url("http://wallpapercave.com/wp/iJ0NLj6.jpg") no-repeat center center;
 }
 
 .footer {
