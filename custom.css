@@ -71,8 +71,9 @@ a:visited {
     font-size: 18px;
     margin: 2em auto;
     padding: 1em;
-    font-family: 'Raleway';
+    /*font-family: 'Raleway';*/
     /*font-family: 'Pontano Sans', sans-serif;*/
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
     font-weight: 400;
     /*opacity: 0.8;*/
     max-width: 620px;
