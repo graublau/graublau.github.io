@@ -4,6 +4,12 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!-- fullscreen -->
+      <meta name="mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+
+      
     <link href='https://fonts.googleapis.com/css?family=Pontano+Sans' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Fredoka+One|Vidaloka|Kreon:400,300,700' rel='stylesheet' type='text/css'>
@@ -42,6 +48,8 @@
                     <img class="img-circle btn btn-default" src="img/me_blog.jpg" style="padding: 0px;">
                 </a>
 
+
+
             </div>
 
         </div>
@@ -65,14 +73,18 @@
   <!--</div>-->
 
 
-      <!--<div class="footer">-->
+      <div class="footer" ng-show="apps">
           <!--<a class="pull-right" href ng-click="menuup = !menuup">-->
               <!--&lt;!&ndash;<span class="title">g</span>&ndash;&gt;-->
               <!--<img class="img-circle btn-rnd" src="img/me_blog.jpg" style="padding: 0px;">-->
           <!--</a>-->
 
+          <a href ng-click="apps = !apps" class="btn-btn-default">
+              <img class="img-circle btn btn-default" src="https://admill.co/assets/img/landing/home54.png" style="padding: 0px; background: rgba(245,245,245, 0.8);">
+          </a>
 
-      <!--</div>-->
+
+      </div>
 
     <script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>

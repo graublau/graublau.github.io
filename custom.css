@@ -18,8 +18,14 @@ body {
     color:#D0E7C8;
 }
 
+.h1 {
+    font-weight: 900;
+}
+
 .bg {
-    background: url("http://wallpapercave.com/wp/iJ0NLj6.jpg") no-repeat center center;
+    background: url("http://img3.goipadwallpapers.com/2014/03/05/a17d70f0b142b234_2048x2048.jpg") no-repeat;
+    height: 100%;
+    width: 100%;
 }
 
 .footer {
@@ -27,7 +33,7 @@ body {
     bottom: 0px;
     margin: 0 auto;
     padding: 25px;
-    text-align: right;
+    text-align: center;
     width: 100%;
 }
 
@@ -107,7 +113,7 @@ a:visited {
     /*line-height: 3em;*/
     /*color: #F3CA4B;*/
     color: #000;
-    opacity: 0.8;
+    /*opacity: 0.8;*/
     font-weight: 800;
 
 }
@@ -120,7 +126,7 @@ a:visited {
     font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
     /*font-family: 'Pontano Sans', sans-serif;*/
     font-weight: 200;
-    opacity: 0.8;
+    /*opacity: 0.8;*/
     max-width: 620px;
     text-align: justify;
     /*display: inline-block;*/
