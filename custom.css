@@ -89,7 +89,7 @@ a:visited {
     margin: 5px;
 }
 
-.btn-default {
+.btn-default-no-border {
     border: none !important;
 }
 
