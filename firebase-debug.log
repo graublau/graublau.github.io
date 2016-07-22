@@ -50,3 +50,16 @@
 [warn] ⚠  No Firebase project directory detected. Serving static content from /Users/grisei/Sites/grisei.github.io
 [info] 
 [info] Server listening at: http://localhost:5000
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] CLI Version:  3.0.4
+[debug] Platform:     darwin
+[debug] Node Version: v6.2.0
+[debug] Time:         Fri Jul 22 2016 08:20:39 GMT+0200 (CEST)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[info] Starting Firebase development server...
+[info] 
+[warn] ⚠  No Firebase project directory detected. Serving static content from /Users/grisei/Sites/grisei.github.io
+[info] 
+[info] Server listening at: http://localhost:5000
