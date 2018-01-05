@@ -36,10 +36,14 @@ h1 > a:hover {
     width: 100%;
 }
 
+p {
+    font-size: 18px;
+}
 
 a {
 color: #5D93DF;
 text-decoration: none !important;
+font-size: 18px;
 }
 
 a:hover {
