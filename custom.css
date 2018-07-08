@@ -1,6 +1,7 @@
 body {
     background-color: #fff;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 600;
 }
 
 h1 {
