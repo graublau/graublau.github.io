@@ -17,6 +17,10 @@ h1 {
         font-size: 6.5em;
 }
 
+.large {
+    font-size: 2em !important;
+}
+
 h1 > a {
     color: #333;
 }
@@ -25,8 +29,12 @@ h1 > a:hover {
     color: #333 !important;
 }
 
+.lead {
+    font-family: 'Raleway', sans-serif !important;
+}
+
 .slim {
-    font-weight: 200 !important;
+    font-weight: 100 !important;
 }
 
 .fat {
