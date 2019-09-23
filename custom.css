@@ -1,16 +1,18 @@
 body {
     background-color: #fff;
-    font-family: 'Roboto', sans-serif !important;
-    font-weight: 600;
+    /* font-family: 'Roboto', sans-serif !important; */
+    font-family: acumin-pro, sans-serif !important;
+    font-weight: 200 !important;
 }
 
 h1 {
-    font-family: 'Roboto', sans-serif !important;
+    /* font-family: 'Roboto', sans-serif !important; */
     /*font-weight: 700 !important;*/
+    font-family: hydrophilia-iced, sans-serif !important;
 }
 
 .dotted {
-    font-family: 'Raleway Dots', cursive !important;
+    /* font-family: 'Raleway Dots', cursive !important; */
 }
 
 .oversize {
@@ -19,6 +21,10 @@ h1 {
 
 .large {
     font-size: 2em !important;
+}
+
+.semi {
+    font-size: 1.3em !important;
 }
 
 h1 > a {
@@ -30,15 +36,17 @@ h1 > a:hover {
 }
 
 .lead {
-    font-family: 'Raleway', sans-serif !important;
+    /* font-family: 'Raleway', sans-serif !important; */
+    font-family: acumin-pro, sans-serif !important;
+    font-weight: 200;
 }
 
 .slim {
-    font-weight: 100 !important;
+    font-weight: 200 !important;
 }
 
 .fat {
-    font-weight: 600 !important;
+    font-weight: 400 !important;
 }
 
 .bg {
@@ -53,7 +61,7 @@ h1 > a:hover {
     position: absolute;
     bottom: 0px;
     margin: 0 auto;
-    padding: 25px;
+    padding: 75px;
     text-align: center;
     width: 100%;
 }
