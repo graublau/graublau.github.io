@@ -27,18 +27,18 @@
           position:absolute;
           left:0; right:0;
           top:0; bottom:0;
-          margin:auto;
+          margin: 2em auto;
 
           width: 360px;
-          height: 720px;
+          /* height: 540px; */
 
           text-align: center;
           font-size: 1.5em;
           line-height: 2em;
         }
 
-        a {
-          font-size: 2em;
+        .box a {
+          font-size: 48px;
           line-height: 2em;
           color: black;
           text-decoration: none;
@@ -49,12 +49,57 @@
           width: 120px;
         }
 
-        .lead {
+        .text {
           font-family: ibm-plex-mono, sans-serif;
           font-weight: 200;
           font-style: normal;
-          font-size: 0.5em;
+          color: gray;   
+          font-size: 16px;       
+        }
+
+        .footer {
+          position: absolute;
+          margin: auto;
+          left:0; right:0;
+          bottom:0;
+          color: gray; 
+
+          width: 360px;
+
+          text-align: center;
+        }
+
+        .footer a {
+          text-decoration: underline;
           color: gray;
+        }
+
+        .modal {
+          position: fixed;
+          background-color: #fff;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          padding: 0 25px;
+          z-index: 999;
+          transition: all 0.3s;       
+        }
+
+        .close {
+          text-align: right;          
+        }
+
+        .close a {
+          text-decoration: none;
+        }
+
+        #offenlegung {
+          display: none;
+        }
+
+        #offenlegung:target {
+          display: block;
         }
 
       </style>
@@ -65,19 +110,31 @@
 
 
       <div class="box">
-
                 <img src="Untitledbatman_whiteeyes.png">
-                <p class="lead">I love texts and pixels.</p>
-      
+                <p class="text">I love texts and pixels.</p>
                 <p>
-                                <a href="http://grisei.tumblr.com" target="_blank" class="h1">Blog</a>
+                  <a href="http://grisei.tumblr.com" target="_blank" class="h1">Blog</a>
                 </p>
-             
                 <p>
-                                <a href="https://about.me/christophmandl" target="_blank" class="h1">Hire</a>
+                  <a href="https://about.me/christophmandl" target="_blank" class="h1">Hire</a>
                 </p>
-
-          
+      </div>
+      <div class="footer">
+        <p class="text">           
+           <a href="#offenlegung">Medieninhaber</a>
+           <div id="offenlegung" class="modal text">
+            <p class="close">
+              <a href="#">X</a>
+            </p>
+           <p>
+              Medieninhaber:
+           </p>
+           <p>
+              Christoph Mandl<br>Vally-Weigl-Gasse 5/4/454<br>A-1100 Wien
+           </p>
+          </div>
+        </p>
+        
       </div>
 
   </body>
