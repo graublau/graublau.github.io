@@ -69,7 +69,7 @@
           text-align: center;
         }
 
-        .footer a {
+        a {
           text-decoration: underline;
           color: gray;
         }
@@ -83,7 +83,8 @@
           left: 0;
           padding: 0 25px;
           z-index: 999;
-          transition: all 0.3s;       
+          transition: all 0.3s;     
+          overflow: auto;  
         }
 
         .modal > div {
@@ -107,6 +108,14 @@
           display: block;
         }
 
+        #bio {
+          display: none;
+        }
+
+        #bio:target {
+          display: block;
+        }
+
       </style>
 
 
@@ -116,17 +125,66 @@
 
       <div class="box">
                 <img src="Untitledbatman_whiteeyes.png">
-                <p class="text">I love texts and pixels.</p>
+                <p class="text">Ich mag Texte und Pixel.</p>
                 <p>
                   <a href="http://grisei.tumblr.com" target="_blank" class="h1">Blog</a>
                 </p>
                 <p>
-                  <a href="https://about.me/christophmandl" target="_blank" class="h1">Hire</a>
+                  <a href="#bio" class="h1">Bio</a>
                 </p>
       </div>
+
+      <!-- modal start -->
+      <div id="bio" class="modal text">
+        <div>
+           <p class="close">
+             <a href="#">X</a>
+           </p>
+         <p>
+             Bio
+         </p>
+         <table> 
+            <tr><td>seit September 2016</td></tr>   
+            <tr><td>Vorstand Kommunikation und Dokumentation Österreichisches Patentamt</td></tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td>Dezember 2015 - Dezember 2018</td></tr>
+            <tr><td>Gründer cashQ [Nebenbeschäftigung eingestellt]</td></tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td>Februar 2012 - August 2016</td></tr>
+            <tr><td>Intranet Specialist Erste Group</td></tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td>Mai - Dezember 2011</td></tr>
+            <tr><td>Consultant Media Consult</td></tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td>März 2009 - Mai 2011</td>
+            <tr><td>Vorstandsassistent ÖBB Personenverkehr AG</td></tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td>Dezember 2008 - Dezember 2019</td></tr>          
+            <tr><td>Gründer Kreativjob [Nebenbeschäftigung eingestellt] </td></tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td>Novemer 2007 - März 2009</td></tr>
+            <tr><td>Pressereferent ÖBB Holding AG</td></tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td>Nobember 2006 - Oktober 2007</td></tr>
+            <tr><td>Trainee Marketing ÖBB</td></tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td>Jänner - September 2006</td></tr>
+            <tr><td>Public Relations Join In (EU Equal)</td></tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td>2005</td></tr>
+            <tr><td>Mag. rer. soc. oec. Betriebswirtschaft Leopold-Franzens Universität Innsbruck</td></tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td>2005</td></tr>
+            <tr><td>Zivildienst Zemit Innsbruck</td></tr>
+         </table>
+       </div>
+     </div>
+     <!-- modal end -->
+
       <div class="footer">
         <p class="text">           
            <a href="#offenlegung">Medieninhaber</a>
+           <!-- modal start -->
            <div id="offenlegung" class="modal text">
              <div>
                 <p class="close">
@@ -140,6 +198,7 @@
               </p>
             </div>
           </div>
+          <!-- modal end -->
         </p>
         
       </div>
