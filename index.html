@@ -33,21 +33,20 @@
           /* height: 540px; */
 
           text-align: center;
-          font-size: 1.5em;
-          line-height: 2em;
+          /* font-size: 1.5em;
+          line-height: 2em; */
         }
 
         .box a {
-          font-size: 48px;
+          font-size: 36px;
           line-height: 2em;
           color: black;
           text-decoration: none;
         }
 
-        img {
-          /* widows: 100%; */
+        /* img {
           width: 120px;
-        }
+        } */      
 
         .text {
           font-family: ibm-plex-mono, sans-serif;
@@ -100,6 +99,18 @@
           text-decoration: none;
         }
 
+        .logo {
+          width: 100px;
+        }
+
+        .portrait {
+          max-width: 360px;
+        }
+
+        .mediabox {
+          margin-bottom: 48px;
+        }
+
         #offenlegung {
           display: none;
         }
@@ -108,11 +119,35 @@
           display: block;
         }
 
-        #bio {
+        #bio{
+          display: none;
+        }
+
+        #fotos {
+          display: none;
+        }
+
+        #videos {
+          display: none;
+        }
+
+        #socialmedia {
           display: none;
         }
 
         #bio:target {
+          display: block;
+        }
+
+        #fotos:target {
+          display: block;
+        }
+
+        #videos:target {
+          display: block;
+        }
+
+        #socialmedia:target {
           display: block;
         }
 
@@ -124,17 +159,32 @@
 
 
       <div class="box">
-                <img src="Untitledbatman_whiteeyes.png">
-                <p class="text">Ich mag Texte und Pixel.</p>
-                <p>
-                  <a href="http://grisei.tumblr.com" target="_blank" class="h1">Blog</a>
-                </p>
+                <img src="Untitledbatman_whiteeyes.png" class="logo">
+                <p class="text">Dinge, die ich mag: <br>Texte, Pixel, Grautöne;</p>                
                 <p>
                   <a href="#bio" class="h1">Bio</a>
                 </p>
+                <p>
+                  <a href="#fotos" class="h1">Fotos</a>
+                </p>
+                <p>
+                  <a href="#videos" class="h1">Videos</a>
+                </p>
+                <p>
+                  <a href="http://grisei.tumblr.com" target="_blank" class="h1">Blog</a>
+                </p>
+                <!-- <p>
+                  <a href="https://twitter.com/grisei" target="_blank" class="h1">Twitter</a>
+                </p>
+                <p>
+                  <a href="https://instagram.com/grisei" target="_blank" class="h1">Instagram</a>
+                </p>
+                <p>
+                  <a href="https://www.linkedin.com/in/christoph-mandl-70764912/" target="_blank" class="h1">LinkedIn</a>
+                </p> -->
       </div>
 
-      <!-- modal start -->
+      <!-- modal bio start -->
       <div id="bio" class="modal text">
         <div>
            <p class="close">
@@ -162,10 +212,10 @@
             <tr><td>Dezember 2008 - Dezember 2019</td></tr>          
             <tr><td>Gründer Kreativjob [Nebenbeschäftigung eingestellt] </td></tr>
             <tr><td>&nbsp;</td></tr>
-            <tr><td>Novemer 2007 - März 2009</td></tr>
+            <tr><td>November 2007 - März 2009</td></tr>
             <tr><td>Pressereferent ÖBB Holding AG</td></tr>
             <tr><td>&nbsp;</td></tr>
-            <tr><td>Nobember 2006 - Oktober 2007</td></tr>
+            <tr><td>November 2006 - Oktober 2007</td></tr>
             <tr><td>Trainee Marketing ÖBB</td></tr>
             <tr><td>&nbsp;</td></tr>
             <tr><td>Jänner - September 2006</td></tr>
@@ -176,10 +226,55 @@
             <tr><td>&nbsp;</td></tr>
             <tr><td>2005</td></tr>
             <tr><td>Zivildienst Zemit Innsbruck</td></tr>
+            <tr><td>&nbsp;</td></tr>
          </table>
        </div>
      </div>
-     <!-- modal end -->
+     <!-- modal bio end -->
+
+           <!-- modal fotos start -->
+           <div id="fotos" class="modal text">
+            <div>
+               <p class="close">
+                 <a href="#">X</a>
+               </p>
+             <p>
+                 Fotos
+             </p>
+             <div class="mediabox">
+              <img src="AW1805-Reportage-_MG_0262-CMichaelMazohl_web-990x557 (1).jpg" class="portrait">
+              <p>Fotocredit: Michael Mazohl</p>
+            </div>
+            <div class="mediabox">
+              <img src="AW1805-Reportage-_MG_0267-CMichaelMazohl_web-1320x743.jpg" class="portrait">
+              <p>Fotocredit: Michael Mazohl</p>
+            </div>
+             <div class="mediabox">
+                <img src="christoph mandl 3.jpg" class="portrait">
+                <p>Fotocredit: Sebastian Reich</p>
+             </div>           
+           </div>
+         </div>
+         <!-- modal fotos end -->
+
+         <!-- modal videos start -->
+          <div id="videos" class="modal text">
+            <div>
+              <p class="close">
+                <a href="#">X</a>
+              </p>
+            <p>
+                Videos
+            </p>
+              <div class="mediabox">
+                <video src="Pioneers18 - ACADEMY D2 Check your Brand! Patents patents  patents.mp4" controls width="360px" poster="Pioneers18-Screenshot.png">
+                  Ihr Browser unterstützt diese Darstellung leider nicht. Hier können Sie die Datei herunterladen: <a href="Pioneers18 - ACADEMY D2 Check your Brand! Patents patents  patents.mp4">Pioneers18.mp4</a>
+                </video>
+                <p>Pioneers Festival 2018</p>
+              </div>        
+            </div>
+          </div>
+       <!-- modal fotos end -->
 
       <div class="footer">
         <p class="text">           
