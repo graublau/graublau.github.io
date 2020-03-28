@@ -25,7 +25,8 @@
 
         .box {
           margin: 2em auto;
-          width: 360px;
+          width: 100%;
+          max-width: 360px;
           text-align: center;
         }
 
@@ -33,6 +34,7 @@
           font-size: 36px;
           line-height: 2em;
           color: black;
+          font-weight:200;
           text-decoration: none;
           border-bottom: none;
         } 
@@ -42,7 +44,8 @@
           font-weight: 200;
           font-style: normal;
           /* color: gray;    */
-          font-size: 20px;       
+          font-size: 16px;  
+          line-height: 150%;     
         }
 
         .gray {
@@ -53,19 +56,22 @@
           margin: 0 auto;
           left:0; right:0;
           bottom:0;
-          color: gray; 
+          color: #000; 
           width: 360px;
           text-align: center;
         }
 
         a {
-          /* text-decoration: underline;
-          color: gray;        */
+          color: #0051ff;
+          text-decoration: underline;
+          /* border-bottom: 1px solid #000; */
+        }
 
-          color: #00ABEF;
+        .breadcrumb {
+          color: #000;
+          border-bottom: none;
           text-decoration: none;
-          border-bottom: 1px solid #ccc;
-          padding: 1px 2px;
+          font-size: 16px !important;          
         }
 
         .modal {
@@ -162,10 +168,7 @@
 
 
       <div class="box">
-                <!-- <img src="Untitledbatman_whiteeyes.png" class="logo"> -->
-                <!-- <p class="logotype">grisei</p> -->
-                <p class="text">grisei</p>
-                <!-- <p class="text gray">Dinge, die ich mag: <br>Texte, Pixel, Weissraum, Grautöne; </p> -->
+        <p class="text">Christoph Mandl</p>
                 <p>
                   <a href="#bio" class="h1">Bio</a>
                 </p>
@@ -176,7 +179,7 @@
                   <a href="#videos" class="h1">Videos</a>
                 </p>
                 <p>
-                  <a href="http://grisei.tumblr.com" target="_blank" class="h1">Blog</a>
+                  <a href="http://grisei.tumblr.com" class="h1">Blog</a>
                 </p>
       </div>
 
@@ -187,11 +190,15 @@
              <a href="#">X</a>
            </p>
          <p>
+             <!-- <a href="#" class="breadcrumb">grisei</a> >  -->
              Bio
          </p>
          <table> 
+           <!-- <p> Christoph Mandl ist</p> -->
             <tr><td>seit September 2016</td></tr>   
             <tr><td>Vorstand Kommunikation und Dokumentation Österreichisches Patentamt</td></tr>
+            <!-- <tr><td>&nbsp;</td></tr>
+            <tr><td>und war davor:</td></tr> -->
             <tr><td>&nbsp;</td></tr>
             <tr><td>Dezember 2015 - Dezember 2018</td></tr>
             <tr><td>Gründer cashQ [Nebenbeschäftigung eingestellt]</td></tr>
@@ -225,8 +232,8 @@
             <tr><td>&nbsp;</td></tr>
          </table>
        </div>
-     </div>
-     <!-- modal bio end -->
+      </div>
+      <!-- modal bio end -->
 
            <!-- modal fotos start -->
            <div id="fotos" class="modal text">
@@ -235,7 +242,8 @@
                  <a href="#">X</a>
                </p>
              <p>
-                 Fotos
+              <!-- <a href="#" class="breadcrumb">grisei</a> >  -->
+              Fotos
              </p>
              <div class="mediabox">
                <img src="Bezirksblatt_12950286_XXL.jpg" class="portrait">
@@ -254,8 +262,8 @@
                 <p>Fotocredit: Sebastian Reich</p>
              </div>            -->
            </div>
-         </div>
-         <!-- modal fotos end -->
+           </div>
+          <!-- modal fotos end -->
 
          <!-- modal videos start -->
           <div id="videos" class="modal text">
@@ -264,7 +272,8 @@
                 <a href="#">X</a>
               </p>
             <p>
-                Videos
+              <!-- <a href="#" class="breadcrumb">grisei</a> >  -->
+              Videos
             </p>
               <div class="mediabox">
                 <video src="Pioneers18 - ACADEMY D2 Check your Brand! Patents patents  patents.mp4" controls width="360px" poster="Pioneers18-Screenshot.png">
@@ -278,24 +287,31 @@
 
       <div class="footer">
         <p class="text">                               
-           <a href="#offenlegung">Medieninhaber</a>
-           <!-- modal start -->
-           <div id="offenlegung" class="modal text">
-             <div>
-                <p class="close">
-                  <a href="#">X</a>
-                </p>
-              <p>
-                  Medieninhaber:
-              </p>
-              <p>
-                  Christoph Mandl<br>Vally-Weigl-Gasse 5/4/454<br>A-1100 Wien
-              </p>
-            </div>
-          </div>
-          <!-- modal end -->
+           <a href="#offenlegung" class="breadcrumb">Offenlegung</a>           
         </p>        
       </div>
+
+      <!-- modal start -->
+      <div id="offenlegung" class="modal text">
+        <div>
+           <p class="close">
+             <a href="#">X</a>
+           </p>
+         <p>
+           <!-- <a href="#" class="breadcrumb">grisei</a> >  -->
+           Offenlegung
+         </p>
+         <p>
+             Christoph Mandl<br>Vally-Weigl-Gasse 5/4/454<br>A-1100 Wien
+         </p>
+         <p>
+           <a href="https://twitter.com/grisei" target="_blank">Twitter</a>
+           <a href="https://instagram.com/grisei" target="_blank">Instagram</a>
+           <a href="https://www.linkedin.com/in/christoph-mandl-70764912/" target="_blank">LindedIn</a>
+        </p>
+       </div>
+     </div>
+     <!-- modal end -->
 
   </body>
 </html>
