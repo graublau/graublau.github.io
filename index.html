@@ -96,6 +96,12 @@
         .mediabox {
           margin-bottom: 18px;
         }
+        
+        .centermessage {
+          position: absolute;
+          margin: 0 auto;
+          font-size: 4em;
+        }
 
         #impressum {
           display: none;
@@ -124,6 +130,10 @@
         #nft {
           display: none;
         }
+        
+        #relax {
+          display: none;
+        }
        
         #bio:target {
           display: block;
@@ -143,12 +153,16 @@
         
         #nft:target {
           display: block;
-          background-color: #fff;
-          color: #000;
+          background-color: #000;
+          color: #fff;
         }
 
         #nft:target a {
-          color: #000;
+          color: #fff;
+        }
+        
+        #relax:target {
+          display: block;
         }
 
       </style>
@@ -438,11 +452,19 @@
               Scanned 35mm<br/>
               Original Size: 2567x1920px </p>
             </div>
-             
-              
+
           </div>
           </div>
      <!-- modal end -->
+     
+    <!-- modal relax -->     
+            <div id="relax" class="modal text">
+              <div>
+                <img src="clouds.png" class="fullscreen">
+                <span class="centermessage">Relax</span>
+              </div>  
+            </div>
+    <!-- modal end -->          
 
   </body>
 </html>
