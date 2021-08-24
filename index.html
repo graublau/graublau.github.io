@@ -96,12 +96,6 @@
         .mediabox {
           margin-bottom: 18px;
         }
-        
-        .centermessage {
-          position: absolute;
-          margin: 0 auto;
-          font-size: 4em;
-        }
 
         #impressum {
           display: none;
@@ -162,7 +156,10 @@
         }
         
         #relax:target {
-          display: block;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
         }
 
       </style>
@@ -461,7 +458,7 @@
             <div id="relax" class="modal text">
               <div>
                 <img src="clouds.png" class="fullscreen">
-                <span class="centermessage">Relax</span>
+                <p>Relax</p>
               </div>  
             </div>
     <!-- modal end -->          
