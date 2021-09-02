@@ -29,6 +29,11 @@
           color: #444;
           font-weight:900;
         }
+        
+        h2 {
+          font-size: 1em;
+          font-weight: 400;
+        }
 
         .menu {
           font-size: 54px;
@@ -108,8 +113,12 @@
         #bio{
           display: none;
         }
+        
+        #likes {
+          display: none;
+        }
 
-        #clippings {
+        #publicity {
           display: none;
         }
 
@@ -132,8 +141,12 @@
         #bio:target {
           display: block;
         }
+        
+        #likes:target {
+          display: block;
+        }
 
-        #clippings:target {
+        #publicity:target {
           display: block;
         }
 
@@ -159,8 +172,44 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          height: 100vh;
+          /*height: 100vh;*/
+          background-image: url('https://raw.githubusercontent.com/graublau/graublau.github.io/master/Adobe_Post_20210823_2125570.2603882365842882.png');
+          background-repeat: no-repeat;
+          background-size: cover;
+          font-size: 4em;
         }
+        
+        #relax p {
+          opacity: 0%;
+          height: 0px;
+          animation: fadein 4s;
+        }
+        
+        #relax p:nth-child(1) {
+          animation-delay: 0s;
+          }
+
+        #relax p:nth-child(2) {
+            animation-delay: 4s;
+        }
+        
+        #relax p:nth-child(3) {
+            animation-delay: 8s;
+        }
+        
+        @keyframes fadein {
+          from {
+            opacity: 0;
+               }
+               
+          50% {
+            opacity: 100%;
+          }
+
+          to {
+            opacity: 0%;
+        }
+
 
       </style>
 
@@ -241,15 +290,37 @@
           </div>
           </div>
       <!-- modal bio end -->
+      
+      <!-- love start -->
+          <div id="likes" class="modal text">
+            <div>
+            <p class="close">
+              <a href="#">X</a>
+            </p>
+            <h1>Likes</h1>
+            <h2>Musik</h2>
+              <p>
+                Brian Eno, Four Tet, Disclosure, Flume, Digitalism; Mein Soundtrack für das Digitalzeitalter ist <strong>OK Computer von Radiohead</strong>.
+              </p>
+              <h2>Podcasts</h2>
+              <p>
+                Trailblazers by Walter Isaacson, Babbage from The Economist, Motherhacker, People fixing the World, How to Save a Planet, The Secret History of the Future;   
+              </p>
+              <h2>Miniserien</h2>
+              <p>
+                Chernobyl, Top of the Lake, Little Fires Everywhere, Very Sharp Things;
+              </p>
+            </div>
+          </div>
 
       <!-- modal clippings start -->
-          <div id="clippings" class="modal text">
+          <div id="publicity" class="modal text">
             <div>
                <p class="close">
                  <a href="#">X</a>
                </p>
              <h1>
-              Clippings
+              Publicity
              </h1>
              <div class="mediabox">
               <video src="4gamechanger.mp4" controls class="portrait" poster="4gamechanger-Screenshot.png">
@@ -457,8 +528,9 @@
     <!-- modal relax -->     
             <div id="relax" class="modal text">
               <div>
-                <img src="clouds.png" class="fullscreen">
-                <p>Relax</p>
+                <p class="relaxx">Relax</p>
+                <p class="exhale">Exhale</p>
+                <p class="inhale">Inhale</p>
               </div>  
             </div>
     <!-- modal end -->          
