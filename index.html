@@ -119,7 +119,7 @@
           display: none;
         }
 
-        #publicity {
+        #publicly {
           display: none;
         }
 
@@ -166,12 +166,16 @@
           animation: fadein 0.5s;
         }
 
-        #publicity:target {
+        #publicly:target {
           display: block;
         }
 
         #skills:target {
           display: block;
+          background-image: url('buskers.jpg');
+          background-repeat: no-repeat;
+          background-size: cover;
+          animation: fadein 0.5s;
         }
 
         #textarbeit:target {
@@ -258,6 +262,8 @@
         <p class="head">Christoph Mandl</p>
         <br>       
         <a href="#bio">Bio</a>
+        <br>
+        <a href="#skills">Kann ich</a>
         <br>
         <a href="#likes">Gefällt mir</a>
         <br>
@@ -352,7 +358,7 @@
           </div>
 
       <!-- modal clippings start -->
-          <div id="publicity" class="modal text">
+          <div id="publicly" class="modal text">
             <div>
                <p class="close">
                  <a href="#">X</a>
@@ -395,10 +401,18 @@
                 <a href="#">X</a>
               </p>
             <h1>
-              Skills
+              Kann ich
             </h1>
-            Strategische Kommunikation, <a href="#textarbeit">Textarbeit</a>, Projektmanagement Prince 2,
-            Frontend Development
+            <h2>Kommunikation</h2>
+            <p>Strategische Kommunikation, Kampagnen, Presse- und Medienarbeit, Krisenkommunikation;</p>
+            <h2>Texten</h2>
+            <p>Mama hat immer gesagt: "Erst Denken, dann Sprechen." Ich finde das gilt auch für das Schreiben. Ohne einen interessanten Gedanken, kann man sich jede Formulierungskunst sparen.</p>
+            <h2>Projektmanagement</h2>
+            <p>Prince 2 Foundation, PROUD, PMA (Projektmanagement Austria), Scrum;</p>
+            <h2>Frontend Development</h2>
+            <p>HTML 5, CSS 3;</p>
+            <h2>Software</h2>
+            <p>MS Office, Adobe CC (Ps, Il, Id, Sp, Lr, Au, Pr), diverse IDE;</p>
             </div>
           </div> 
        <!-- modal skills end -->
