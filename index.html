@@ -18,6 +18,7 @@
         body {      
           font-family: acumin-pro, sans-serif;
           text-align: left;
+          text-shadow: 1px 1px 1px #555;
           margin: 0;
           padding: 0;
           background-color: #000;
@@ -26,28 +27,35 @@
         h1 {
           font-size: 54px;
           font-style: normal;
-          color: #444;
-          font-weight:900;
+          color: #666;
+          font-weight:400;
+          text-shadow: none;
         }
         
         h2 {
-          font-size: 1em;
+          font-size: 36px;
           font-weight: 400;
+          text-shadow: none;
         }
 
         .menu {
           font-size: 54px;
           font-style: normal;
-          color: #444;
-          font-weight:900;
-          overflow: auto;
+          color: #666;
+          animation: fadein 0.5s;
+          background-image: url('sky.png');
+          background-size: cover;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          text-shadow: none;
         }
 
         .menu a {
           text-decoration: none;
           border-bottom: none;
           font-style: normal;
-          font-weight: 900;
         } 
 
         .text {
@@ -63,7 +71,6 @@
         a {
           color: white;
           text-decoration: underline;
-          /* border-bottom: 1px solid #000; */
         }
 
         .modal {
@@ -106,10 +113,6 @@
           display: none;
         }
 
-        #impressum:target {
-          display: block;
-        }
-
         #bio{
           display: none;
         }
@@ -137,13 +140,31 @@
         #relax {
           display: none;
         }
+
+        #impressum:target {
+          display: block;
+          background-image: url('rescue.jpg');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          animation: fadein 0.5s;
+        }
        
         #bio:target {
           display: block;
+          background-image: url('me_now.jpg');
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          animation: fadein 0.5s;
         }
         
         #likes:target {
           display: block;
+          background-image: url('nebelwald.jpg');
+          background-repeat: no-repeat;
+          background-size: cover;
+          animation: fadein 0.5s;
         }
 
         #publicity:target {
@@ -173,7 +194,7 @@
           justify-content: center;
           align-items: center;
           /*height: 100vh;*/
-          background-image: url('https://raw.githubusercontent.com/graublau/graublau.github.io/master/Adobe_Post_20210823_2125570.2603882365842882.png');
+          background-image: url('https://raw.githubusercontent.com/graublau/graublau.github.io/master/sky.png');
           background-repeat: no-repeat;
           background-size: cover;
           font-size: 4em;
@@ -182,7 +203,7 @@
         #relax p {
           opacity: 0%;
           height: 0px;
-          animation: fadein 4s;
+          animation: fadeinandout 4s;
         }
         
         #relax p:nth-child(1) {
@@ -197,7 +218,7 @@
             animation-delay: 8s;
         }
         
-        @keyframes fadein {
+        @keyframes fadeinandout {
           from {
             opacity: 0;
                }
@@ -208,8 +229,19 @@
 
           to {
             opacity: 0%;
+          }
         }
 
+        @keyframes fadein {
+          from {
+            opacity: 0;
+               }
+               
+          to {
+            opacity: 100%;
+          }
+
+        }
 
       </style>
 
@@ -218,19 +250,19 @@
 
 
       <div class="modal menu">
-        <div style="margin-top: 1.3em">
+        <div class="start">
         Christoph Mandl
-                
+        <br>       
         <a href="#bio">Bio</a>
-        
-        <!--<a href="#skills">Skills</a>-->
-        
+        <br>
+        <a href="#likes">Gefällt mir</a>
+        <br>
         <a href="https://christophmandl.tumblr.com">Blog</a>
-            
+        <br>    
         <a href="https://www.twitter.com/chr_mandl" target="_blank">Twitter</a> 
-      
+        <br>
         <a href="https://www.linkedin.com/in/christoph-mandl-70764912/" target="_blank">LinkedIn</a>
-                                     
+        <br>
         <a href="#impressum">Impressum</a>    
         
         </div>
@@ -291,25 +323,27 @@
           </div>
       <!-- modal bio end -->
       
-      <!-- love start -->
+      <!-- likes start -->
           <div id="likes" class="modal text">
             <div>
             <p class="close">
               <a href="#">X</a>
             </p>
-            <h1>Likes</h1>
+            <h1>Gefällt mir</h1>
             <h2>Musik</h2>
               <p>
-                Brian Eno, Four Tet, Disclosure, Flume, Digitalism; Mein Soundtrack für das Digitalzeitalter ist <strong>OK Computer von Radiohead</strong>.
+                Mein Soundtrack für das Digitalzeitalter ist OK Computer von Radiohead. Immer am Handy, für den Offline-Zugriff, habe ich: Chet Faker, Brian Eno, Four Tet, Disclosure, Flume, Angus & Julia Stone, Mano Chao und Lee Scratch Perry. 
               </p>
               <h2>Podcasts</h2>
               <p>
-                Trailblazers by Walter Isaacson, Babbage from The Economist, Motherhacker, People fixing the World, How to Save a Planet, The Secret History of the Future;   
+                Ich bin ein Info-Junkie und deshalb auch Hörer dieser Podcasts: Trailblazers by Walter Isaacson, Babbage from The Economist, People fixing the World, How to Save a Planet, The Secret History of the Future;   
               </p>
               <h2>Miniserien</h2>
               <p>
-                Chernobyl, Top of the Lake, Little Fires Everywhere, Very Sharp Things;
+                Binge-Watching. Ja. Ab liebsten Minisierien, wie diese: Tschernobyl, Top of the Lake, Little Fires Everywhere, Very Sharp Things, Motherhacker (Hörspiel);
               </p>
+              <h2>Bücher</h2>
+              <p>Derzeit: "Der Trost runder Dinge" von Clemens J. Setz und "Homo Deus" von Yuval Noah Harari. Zuletzt gelesen und unbedingt weiteremfpehlen kann ich "Anleitung zum Unglücklichsein" von Paul Watzlawick und "Das Palais muss brennen" von Mercedes Spannagel.</p>
             </div>
           </div>
 
