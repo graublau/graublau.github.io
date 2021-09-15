@@ -111,6 +111,10 @@
           display: none;
         }
 
+        #settings {
+          display: none;
+        }
+
         #bio{
           display: none;
         }
@@ -142,6 +146,16 @@
         #impressum:target {
           display: block;
           background-image: url('rescue.jpg');
+          background-size: cover;
+          background-position-x: center;
+          background-position-y: top;
+          background-repeat: no-repeat;
+          animation: fadein 0.5s;
+        }
+
+        #settings:target {
+          display: block;
+          /*background-image: url('rescue.jpg');*/
           background-size: cover;
           background-position-x: center;
           background-position-y: top;
@@ -259,9 +273,9 @@
       <div class="modal menu">
         <div class="start">
 
-        <p class="head">Christoph Mandl</p>
-        <br>
-        <a href="https://www.christophmandl.at">DE</a>
+        <p class="head">
+          Christoph Mandl
+        </p>
         <br>       
         <a href="#bio">Bio</a>
         <br>
@@ -275,7 +289,11 @@
         <br>
         <a href="https://www.linkedin.com/in/christoph-mandl-70764912/" target="_blank">LinkedIn</a>
         <br>
-        <a href="#impressum">Imprint</a>    
+        <a href="#impressum">Imprint</a>   
+        <br>
+        <a href="#settings">Settings</a>   
+        <br>
+        
         
         </div>
         
@@ -540,7 +558,7 @@
       </div> 
    <!-- modal misc end -->
 
-      <!-- modal start -->
+      <!-- modal imprint start -->
           <div id="impressum" class="modal text">
             <div>
               <p class="close">
@@ -553,6 +571,27 @@
           </div>
           </div>
      <!-- modal end -->
+
+     <!-- modal settings start-->
+     <div id="settings" class="modal text">
+      <div>
+        <p class="close">
+          <a href="#">X</a>
+        </p>
+        <h1>
+         Settings
+        </h1>
+        <h2>Sprache</h2>
+        <p>
+         <a href="https://www.christophmandl.at/en.html" class="head">English</a>
+        </p>
+        <p>
+          <a href="https://www.christophmandl.at/" class="head">Deutsch</a>
+         </p>
+         
+      </div>
+    </div> 
+    <!-- modal settings end-->
   
    <!-- modal nft -->
           <div id="nft" class="modal text">
