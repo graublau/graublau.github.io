@@ -22,19 +22,7 @@
           text-shadow: none;
         }
 
-        .menu {
-          font-size: 54px;
-          font-style: normal;
-          color: #333;
-          animation: fadein 0.5s;
-          background-image: url('sky.jpg');
-          background-size: cover;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-          text-shadow: none;
-        }
+       
 
         .menu a {
           text-decoration: none;
