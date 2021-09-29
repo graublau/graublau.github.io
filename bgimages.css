@@ -1,0 +1,120 @@
+   #impressum:target {
+          display: block;
+          background-image: url('rescue.jpg');
+          background-size: cover;
+          background-position-x: center;
+          background-position-y: top;
+          background-repeat: no-repeat;
+          animation: fadein 0.5s;
+        }
+
+        #settings:target {
+          display: block;
+          /*background-image: url('rescue.jpg');*/
+          background-size: cover;
+          background-position-x: center;
+          background-position-y: top;
+          background-repeat: no-repeat;
+          animation: fadein 0.5s;
+        }
+       
+        #bio:target {
+          display: block;
+          background-image: url('me_now.jpg');
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          animation: fadein 0.5s;
+        }
+        
+        #likes:target {
+          display: block;
+          background-image: url('nebelwald.jpg');
+          background-repeat: no-repeat;
+          background-size: cover;
+          animation: fadein 0.5s;
+        }
+
+        #skills:target {
+          display: block;
+          background-image: url('buskers.jpg');
+          background-repeat: no-repeat;
+          background-size: cover;
+          animation: fadein 0.5s;
+        }
+        
+        #speaker:target {
+          display: block;
+        }
+
+        #textarbeit:target {
+          display: block;
+        }
+        
+        #nft:target {
+          display: block;
+          background-color: #000;
+          color: #fff;
+        }
+
+        #nft:target a {
+          color: #fff;
+        }
+        
+        #relax:target {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-image: url('sky.jpg');
+          background-repeat: no-repeat;
+          background-size: cover;
+          font-size: 4em;
+        }
+        
+        #relax p {
+          opacity: 0%;
+          height: 0px;
+          animation: fadeinandout 4s;
+        }
+        
+        #relax p:nth-child(1) {
+          animation-delay: 0s;
+          }
+
+        #relax p:nth-child(2) {
+            animation-delay: 4s;
+        }
+        
+        #relax p:nth-child(3) {
+            animation-delay: 8s;
+        }
+        
+        @keyframes fadeinandout {
+          from {
+            opacity: 0;
+               }
+               
+          50% {
+            opacity: 100%;
+          }
+
+          to {
+            opacity: 0%;
+          }
+        }
+
+        @keyframes fadein {
+          from {
+            opacity: 0;
+               }
+               
+          to {
+            opacity: 100%;
+          }
+
+        }
+
+        .head {
+          color: #333;
+          font-size: 18px;      
+        }

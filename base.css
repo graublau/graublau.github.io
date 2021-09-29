@@ -1,0 +1,141 @@
+  
+        body {      
+          font-family: acumin-pro, sans-serif;
+          text-align: left;
+          text-shadow: 1px 1px 1px #333;
+          margin: 0;
+          padding: 0;
+          background-color: #000;
+        }
+        
+        h1 {
+          font-size: 54px;
+          font-style: normal;
+          color: #333;
+          font-weight:400;
+          text-shadow: none;
+        }
+        
+        h2 {
+          font-size: 36px;
+          font-weight: 400;
+          text-shadow: none;
+        }
+
+        .menu {
+          font-size: 54px;
+          font-style: normal;
+          color: #333;
+          animation: fadein 0.5s;
+          background-image: url('sky.jpg');
+          background-size: cover;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          text-shadow: none;
+        }
+
+        .menu a {
+          text-decoration: none;
+          border-bottom: none;
+          font-style: normal;
+        } 
+        
+        .topmenu {
+          font-size: 18px;
+          position: absolute;
+          margin: 0 auto;
+          top: 25px;
+        }
+
+        .text {
+          font-weight: 400;
+          font-size: 18px;
+          color: white;
+        }
+
+        .gray {
+          color: gray;
+        }
+
+        a, .topmenu a {
+          color: white;
+          text-decoration: underline;
+        }
+
+        .modal {
+          position: fixed;
+          background-color: #000;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          padding: 0 25px;
+          z-index: 999;
+          transition: all 0.3s;     
+          overflow: auto;  
+        }
+
+        .modal > div {
+        max-width: 460px;
+        margin: 0 auto;
+        }
+
+        .close {
+          text-align: right;      
+        }
+
+        .close a {
+          text-decoration: none;
+          border-bottom: none;
+          text-shadow: none;
+        }
+
+        .portrait {
+          width: 100%;
+          max-width: 460px;
+        }
+
+        .mediabox {
+          margin-bottom: 18px;
+        }
+
+        #impressum {
+          display: none;
+        }
+
+        #bio{
+          display: none;
+        }
+        
+        #likes {
+          display: none;
+        }
+
+        #speaker {
+          display: none;
+        }
+
+        #skills {
+          display: none;
+        }
+
+        #settings {
+          display: none;
+        }
+
+        #textarbeit {
+          display: none;
+        }
+        
+        #nft {
+          display: none;
+        }
+        
+        #relax {
+          display: none;
+        }
+
+     
+      
