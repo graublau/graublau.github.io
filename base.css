@@ -45,8 +45,6 @@
         }
         
         .head {
-          position: absolute;
-          top: 50px;
           color: #333;
           font-size: 18px;      
         }
