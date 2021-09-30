@@ -39,7 +39,7 @@
         
         #likes:target {
           display: block;
-          background-image: url('nebelwald.jpg') linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5));
+          background-image: url('buskers.jpg') linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5));
           filter: grayscale(100%);
           background-repeat: no-repeat;
           background-size: cover;
@@ -48,7 +48,7 @@
 
         #skills:target {
           display: block;
-          background-image: url('buskers.jpg') linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5));
+          background-image: url('nebelwald.jpg') linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5));
           filter: grayscale(100%);
           background-repeat: no-repeat;
           background-size: cover;
