@@ -78,7 +78,7 @@
           font-size: 4em;
         }
         
-        #relax p {
+        #relax span {
           opacity: 0%;
           height: 0px;
           animation: fadeinandout 4s;
