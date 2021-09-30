@@ -1,12 +1,4 @@
-     .menu {
-          font-size: 54px;
-          font-style: normal;
-          color: #333;
-          animation: fadein 0.5s;
-          text-align: center;
-          text-shadow: none;
-        }
-        
+   
       .menubg {
           background-image: url('sky.jpg');
           background-size: cover;
