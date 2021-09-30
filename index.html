@@ -11,10 +11,12 @@
       <link rel="stylesheet" href="base.css">
       <link id="pagestyle" rel="stylesheet" type="text/css" href="bgimages.css">
       <!-- script -->
-      <script type="text/javascript" src="switchcss.js"></script>
-      
-   
-
+         <script> 
+          function swapStyleSheet(sheet){ 
+          document.getElementById('pagestyle').setAttribute('href', sheet);
+          }
+        </script>
+        
       <title>Christoph Mandl</title>
   </head>
   <body>
@@ -26,7 +28,7 @@
             <a href="#" onclick="swapStyleSheet('nobgimages.css')">Bilder ausblenden</a>
           </div>
         <div>
-            <p class="head">
+          <p class="head">
             Christoph Mandl
           </p>
         <br>
