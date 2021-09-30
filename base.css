@@ -45,6 +45,11 @@
           color: #ccc;
           font-size: 18px;      
         }
+        
+        .head a {
+          color: #fff;
+          text-decoration: none;
+        }
 
         .text {
           font-weight: 400;
