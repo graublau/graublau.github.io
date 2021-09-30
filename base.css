@@ -2,7 +2,7 @@
         body {      
           font-family: acumin-pro, sans-serif;
           text-align: left;
-          text-shadow: 1px 1px 1px #333;
+         /* text-shadow: 1px 1px 1px #333;*/
           margin: 0;
           padding: 0;
           background-color: #000;
@@ -11,7 +11,7 @@
         h1 {
           font-size: 54px;
           font-style: normal;
-          color: #333;
+          color: #ccc;
           font-weight:400;
           text-shadow: none;
         }
@@ -54,7 +54,7 @@
 
         .text {
           font-weight: 400;
-          font-size: 18px;
+          font-size: 24px;
           color: white;
         }
 
