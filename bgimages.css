@@ -84,15 +84,15 @@
           animation: fadeinandout 4s;
         }
         
-        #relax p:nth-child(1) {
+        #relax span:nth-child(1) {
           animation-delay: 0s;
           }
 
-        #relax p:nth-child(2) {
+        #relax span:nth-child(2) {
             animation-delay: 4s;
         }
         
-        #relax p:nth-child(3) {
+        #relax span:nth-child(3) {
             animation-delay: 8s;
         }
         
