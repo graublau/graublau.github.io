@@ -3,14 +3,17 @@
           font-style: normal;
           color: #333;
           animation: fadein 0.5s;
+          text-align: center;
+          text-shadow: none;
+        }
+        
+      .menubg {
           background-image: url('sky.jpg');
           background-size: cover;
           display: flex;
           justify-content: center;
           align-items: center;
-          text-align: center;
-          text-shadow: none;
-        }
+      }  
       
       
       #impressum:target {
