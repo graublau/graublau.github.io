@@ -43,6 +43,11 @@
           margin: 0 auto;
           top: 25px;
         }
+        
+        .head {
+          color: #333;
+          font-size: 18px;      
+        }
 
         .text {
           font-weight: 400;
