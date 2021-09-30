@@ -2,6 +2,12 @@
           font-size: 54px;
           font-style: normal;
           color: #333;
+          background-size: cover;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          text-shadow: none;
           animation: fadein 0.5s;
           text-align: center;
           text-shadow: none;
