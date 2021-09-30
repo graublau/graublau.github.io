@@ -43,7 +43,8 @@
         
         .head {
           color: #ccc;
-          font-size: 18px;      
+          font-size: 18px;  
+          margin: 36px 0;
         }
         
         .head a {
