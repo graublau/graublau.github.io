@@ -8,7 +8,7 @@
       
       #impressum:target {
           display: block;
-          background-image: linear-gradient(rgba(0, 0, 0, 0.25),rgba(0, 0, 0, 0.2)) , url('rescue.jpg');
+          background-image: linear-gradient(rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0.1)) , url('rescue.jpg');
           filter: grayscale(100%);
           background-size: cover;
           background-position-x: center;
@@ -48,7 +48,7 @@
 
         #skills:target {
           display: block;
-          background-image: linear-gradient(rgba(0, 0, 0, 0.25),rgba(0, 0, 0, 0.2)) , url('nebelwald.jpg');
+          background-image: linear-gradient(rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0.1)) , url('nebelwald.jpg');
           filter: grayscale(100%);
           background-repeat: no-repeat;
           background-size: cover;
