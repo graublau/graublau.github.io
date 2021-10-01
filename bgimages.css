@@ -73,14 +73,6 @@
           color: #fff;
         }
         
-        #relax:target {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-image: url('sky.jpg');
-          background-repeat: no-repeat;
-          background-size: cover;
-          font-size: 4em;
-        }
+        
         
  
