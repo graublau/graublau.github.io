@@ -21,79 +21,98 @@
       #relax:target {
           text-align: center;
           text-shadow: none;
-          display: flex;
-          justify-content: center;
-          align-items: center;
           background-image: url('sky.jpg');
           filter: grayscale(100%);
           background-repeat: no-repeat;
           background-size: cover;
           font-size: 4em;
         }
+        
+      #relaxtext {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
       
-        #relax p {
+      #relaxlink {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+        
+        #relaxlink p {
           opacity: 0%;
-          height: 0px;
+          animation: fadein 4s;
+        }
+        
+        #relaxlink p:nth-child(1) {
+            animation-delay: 4s;
+            position: relative;
+            top: -640px;
+        }  
+      
+        #relaxtext p {
+          opacity: 0%;
           animation: fadeinandout 4s;
         }
         
-        #relax p:nth-child(1) {
+        #relaxtext p:nth-child(1) {
           animation-delay: 0s;
           }
 
-        #relax p:nth-child(2) {
+        #relaxtext p:nth-child(2) {
             animation-delay: 4s;
             position: relative;
             top: -64px;
         }
         
-        #relax p:nth-child(3) {
+        #relaxtext p:nth-child(3) {
             animation-delay: 8s;
             position: relative;
             top: -128px;
         }
         
-          #relax p:nth-child(4) {
+          #relaxtext p:nth-child(4) {
             animation-delay: 12s;
             position: relative;
             top: -192px;
         }
         
-          #relax p:nth-child(5) {
+          #relaxtext p:nth-child(5) {
             animation-delay: 16s;
             position: relative;
             top: -256px;
         }
         
-        #relax p:nth-child(6) {
+        #relaxtext p:nth-child(6) {
             animation-delay: 20s;
             position: relative;
             top: -320px;
         }
         
-        #relax p:nth-child(7) {
+        #relaxtext p:nth-child(7) {
             animation-delay: 24s;
             position: relative;
             top: -384px;
         }
         
-        #relax p:nth-child(8) {
+        #relaxtext p:nth-child(8) {
             animation-delay: 28s;
             position: relative;
             top: -448px;
         }
         
-        #relax p:nth-child(9) {
+        #relaxtext p:nth-child(9) {
             animation-delay: 32s;
             position: relative;
             top: -512px;
         }
         
-       /* #relax p:nth-child(10) {
+       #relaxtext p:nth-child(10) {
             animation-delay: 36s;
             position: relative;
-            top: -676px;
-        } */
+            top: -576px;
+        } 
         
         @keyframes fadeinandout {
           from {
@@ -494,7 +513,7 @@
      
     <!-- modal relax -->     
             <div id="relax" class="modal text">
-              <div>
+              <div id="relaxtext">
                 <p>Relax</p>
                 <p>Exhale</p>
                 <p>Detox</p>
@@ -505,6 +524,11 @@
                 <p>Exhale</p>
                 <p>Here</p>
                 <p>Now</p>
+              </div>
+              <div id="relaxlink">
+                <p>
+                  <a href="#">Enter</a>
+                </p>
               </div>
             </div>
     <!-- modal end -->          
