@@ -18,6 +18,19 @@
         </script>
         
       <style>
+      #relax:target {
+          text-align: center;
+          text-shadow: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-image: url('sky.jpg');
+          filter: grayscale(100%);
+          background-repeat: no-repeat;
+          background-size: cover;
+          font-size: 4em;
+        }
+      
         #relax p {
           opacity: 0%;
           height: 0px;
@@ -76,17 +89,11 @@
             top: -512px;
         }
         
-        #relax p:nth-child(10) {
+       /* #relax p:nth-child(10) {
             animation-delay: 36s;
             position: relative;
             top: -676px;
-        }
-        
-        #relax p:nth-child(11) {
-            animation-delay: 36s;
-            position: relative;
-            top: -676px;
-        }
+        } */
         
         @keyframes fadeinandout {
           from {
