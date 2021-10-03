@@ -7,251 +7,109 @@
 
       <!-- fonts -->
       <link rel="stylesheet" href="https://use.typekit.net/aby2ymf.css">
-
-      <title>Christoph Mandl</title>
-
+      <!-- styles -->
+      <link rel="stylesheet" href="base.css">
+      <link id="pagestyle" rel="stylesheet" type="text/css" href="bgimages.css">
+      <!-- script -->
+         <script> 
+          function swapStyleSheet(sheet){ 
+          document.getElementById('pagestyle').setAttribute('href', sheet);
+          }
+        </script>
+        
       <style>
-
-        body {      
-          font-family: acumin-pro, sans-serif;
-          text-align: left;
-          text-shadow: 1px 1px 1px #333;
-          margin: 0;
-          padding: 0;
-          background-color: #000;
-        }
-        
-        h1 {
-          font-size: 54px;
-          font-style: normal;
-          color: #333;
-          font-weight:400;
-          text-shadow: none;
-        }
-        
-        h2 {
-          font-size: 36px;
-          font-weight: 400;
-          text-shadow: none;
-        }
-
-        .menu {
-          font-size: 54px;
-          font-style: normal;
-          color: #333;
-          animation: fadein 0.5s;
-          background-image: url('sky.jpg');
-          background-size: cover;
-          display: flex;
-          justify-content: center;
-          align-items: center;
+      
+      #relax:target {
           text-align: center;
           text-shadow: none;
-        }
-
-        .menu a {
-          text-decoration: none;
-          border-bottom: none;
-          font-style: normal;
-        } 
-
-        .text {
-          font-weight: 400;
-          font-size: 18px;
-          color: white;
-        }
-
-        .gray {
-          color: gray;
-        }
-
-        a {
-          color: white;
-          text-decoration: underline;
-        }
-
-        .modal {
-          position: fixed;
-          background-color: #000;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          padding: 0 25px;
-          z-index: 999;
-          transition: all 0.3s;     
-          overflow: auto;  
-        }
-
-        .modal > div {
-        max-width: 460px;
-        margin: 0 auto;
-        }
-
-        .close {
-          text-align: right;      
-        }
-
-        .close a {
-          text-decoration: none;
-          border-bottom: none;
-          text-shadow: none;
-        }
-
-        .portrait {
-          width: 100%;
-          max-width: 460px;
-        }
-
-        .mediabox {
-          margin-bottom: 18px;
-        }
-
-        #impressum {
-          display: none;
-        }
-
-        #bio{
-          display: none;
-        }
-        
-        #likes {
-          display: none;
-        }
-
-        #speaker {
-          display: none;
-        }
-
-        #skills {
-          display: none;
-        }
-
-        #settings {
-          display: none;
-        }
-
-        #textarbeit {
-          display: none;
-        }
-        
-        #nft {
-          display: none;
-        }
-        
-        #relax {
-          display: none;
-        }
-
-        #impressum:target {
-          display: block;
-          background-image: url('rescue.jpg');
-          background-size: cover;
-          background-position-x: center;
-          background-position-y: top;
-          background-repeat: no-repeat;
-          animation: fadein 0.5s;
-        }
-
-        #settings:target {
-          display: block;
-          /*background-image: url('rescue.jpg');*/
-          background-size: cover;
-          background-position-x: center;
-          background-position-y: top;
-          background-repeat: no-repeat;
-          animation: fadein 0.5s;
-        }
-       
-        #bio:target {
-          display: block;
-          background-image: url('me_now.jpg');
-          background-repeat: no-repeat;
-          background-size: cover;
-          background-position: center;
-          animation: fadein 0.5s;
-        }
-        
-        #likes:target {
-          display: block;
-          background-image: url('nebelwald.jpg');
-          background-repeat: no-repeat;
-          background-size: cover;
-          animation: fadein 0.5s;
-        }
-
-        #speaker:target {
-          display: block;
-        }
-
-        #skills:target {
-          display: block;
-          background-image: url('buskers.jpg');
-          background-repeat: no-repeat;
-          background-size: cover;
-          animation: fadein 0.5s;
-        }
-
-        #textarbeit:target {
-          display: block;
-        }
-        
-        #nft:target {
-          display: block;
-          background-color: #000;
-          color: #fff;
-        }
-
-        #nft:target a {
-          color: #fff;
-        }
-        
-        #relax:target {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-      
           background-image: url('sky.jpg');
+          filter: grayscale(100%);
           background-repeat: no-repeat;
           background-size: cover;
           font-size: 4em;
+          display: flex;
+          
         }
         
-        #relax p {
-          opacity: 0%;
-          height: 0px;
-          animation: fadeinandout 4s;
+      #relaxtext {
+        
+      }
+      
+      #relaxlink {
+        
+      }
+        
+        #relaxlink p {
+          opacity: 100%;
+          /*animation: fadein 4s;*/
         }
         
-        #relax p:nth-child(1) {
+        #relaxlink p:nth-child(1) {
+            animation-delay: 40s;
+        }  
+      
+        #relaxtext p {
+          opacity: 100%;
+         /* animation: fadeinandout 4s;*/
+        }
+        
+        #relaxtext p:nth-child(1) {
           animation-delay: 0s;
           }
 
-        #relax p:nth-child(2) {
+        #relaxtext p:nth-child(2) {
             animation-delay: 4s;
         }
         
-        #relax p:nth-child(3) {
+        #relaxtext p:nth-child(3) {
             animation-delay: 8s;
         }
         
+          #relaxtext p:nth-child(4) {
+            animation-delay: 12s;
+        }
+        
+          #relaxtext p:nth-child(5) {
+            animation-delay: 16s;
+        }
+        
+        #relaxtext p:nth-child(6) {
+            animation-delay: 20s;
+        }
+        
+        #relaxtext p:nth-child(7) {
+            animation-delay: 24s;
+        }
+        
+        #relaxtext p:nth-child(8) {
+            animation-delay: 28s;
+        }
+        
+        #relaxtext p:nth-child(9) {
+            animation-delay: 32s;
+        }
+        
+       #relaxtext p:nth-child(10) {
+            animation-delay: 36s;
+        } 
+        
         @keyframes fadeinandout {
           from {
-            opacity: 0;
+            opacity: 100%;
                }
                
           50% {
             opacity: 100%;
-          }
+              }
 
           to {
-            opacity: 0%;
+            opacity: 100%;
           }
         }
-
+        
         @keyframes fadein {
           from {
-            opacity: 0;
+            opacity: 100%;
                }
                
           to {
@@ -260,26 +118,23 @@
 
         }
 
-        .head {
-          font-size: 18px;      
-        }
-
       </style>
-
+      <title>Christoph Mandl</title>
   </head>
   <body>
 
 
-      <div class="modal menu">
-        <div class="start">
-
-          <p class="head">
-            Christoph Mandl
-          </p>
+      <div class="modal menu menubg">
+        <div>
+          <div>
+            <p class="head">
+              Christoph Mandl
+            </p>
+          </div>
         <br>
         <a href="#bio">Bio</a>
         <br>
-        <a href="#skills">Kann ich</a>
+        <a href="#skills">Mache ich</a>
         <br>
         <a href="#likes">Gefällt mir</a>
         <br>
@@ -291,7 +146,11 @@
         <br>
         <a href="#impressum">Impressum</a>   
         <br>
-        <a href="#settings">Einstellungen</a>   
+         <div>
+          <p class="head">
+            <a href="#settings">Einstellungen</a>
+          </p>
+        </div>
         
         </div>
         
@@ -307,13 +166,15 @@
                 Bio
             </h1>
             <table> 
+<<<<<<< HEAD
               <!-- <p> Christoph Mandl ist</p> -->
                 <tr><td><a href="https://europa.eu/europass/eportfolio/api/eprofile/shared-profile/9c9c2ebf-6bf3-4a82-9f17-ec5ac776a5bd?view=html">Europass CV</a></td></tr>
+=======
+                <tr><td><a href="https://europa.eu/europass/eportfolio/api/eprofile/shared-profile/afe34283-08a8-4ca3-8cd1-65ca5de797d3?view=html">Europass CV</a></td></tr>
+>>>>>>> 0a6b4176ef63c630e6191e5b0c9c4b5b70cb6bbd
                 <tr><td>&nbsp;</td></tr>
                 <tr><td>seit September 2016</td></tr>   
                 <tr><td>Vorstand Kommunikation und Dokumentation Österreichisches Patentamt</td></tr>
-                <!-- <tr><td>&nbsp;</td></tr>
-                <tr><td>und war davor:</td></tr> -->
                 <tr><td>&nbsp;</td></tr>
                 <tr><td>Dezember 2015 - Dezember 2018</td></tr>
                 <tr><td>Gründer cashQ [Nebenbeschäftigung eingestellt]</td></tr>
@@ -324,7 +185,7 @@
                 <tr><td>Mai 2011 - Dezember 2011</td></tr>
                 <tr><td>Consultant Media Consult</td></tr>
                 <tr><td>&nbsp;</td></tr>
-                <tr><td>März 2009 - Mai 2011</td>
+                <tr><td>März 2009 - Mai 2011</td></tr>
                 <tr><td>Vorstandsassistent ÖBB Personenverkehr AG</td></tr>
                 <tr><td>&nbsp;</td></tr>
                 <tr><td>Dezember 2008 - Dezember 2019</td></tr>          
@@ -417,7 +278,7 @@
             </div>            
            </div>
           </div>
-      <!-- modal clippings end -->
+      <!-- modal speaker end -->
 
       <!-- modal skills start -->
           <div id="skills" class="modal text">
@@ -426,7 +287,7 @@
                 <a href="#">X</a>
               </p>
               <h1>
-                Kann ich
+                Mache ich
               </h1>
               <h2>Kommunikation</h2>
               <p>Strategische Kommunikation, Kampagnen, Presse- und Medienarbeit, Krisenkommunikation;</p>
@@ -550,7 +411,7 @@
           </p>
        </div>
       </div> 
-   <!-- modal misc end -->
+       <!-- modal textarbeit end -->
 
       <!-- modal imprint -->
           <div id="impressum" class="modal text">
@@ -573,14 +434,22 @@
           <a href="#">X</a>
         </p>
         <h1>
-         Settings
+         Einstellungen 
         </h1>
         <h2>Sprache</h2>
         <p>
-         <a href="https://www.christophmandl.at/en.html" class="head">English</a>
+           <a href="https://www.christophmandl.at/en.html">English</a>
         </p>
         <p>
-          <a href="https://www.christophmandl.at/" class="head">Deutsch</a>
+          <a href="https://www.christophmandl.at/">Deutsch</a>
+         </p>
+         <h2>Stil</h2>
+         <p>
+            <a href="#" onclick="swapStyleSheet('nobgimages.css')">Hintergrundbilder ausblenden
+            </a> 
+         </p>
+         <p>
+            <a href="#" onclick="swapStyleSheet('bgimages.css')">Hintergrundbilder einblenden</a> 
          </p>
          
       </div>
@@ -588,7 +457,7 @@
     <!-- modal settings end-->
 
 
-   <!-- modal nft -->
+     <!-- modal nft -->
           <div id="nft" class="modal text">
             <div>
               <p class="close">
@@ -628,11 +497,23 @@
      
     <!-- modal relax -->     
             <div id="relax" class="modal text">
-              <div>
-                <p class="relaxx">Relax</p>
-                <p class="exhale">Exhale</p>
-                <p class="inhale">Inhale</p>
-              </div>  
+              <div id="relaxtext">
+                <p>Relax</p>
+                <p>Exhale</p>
+                <p>Detox</p>
+                <p>Inhale</p>
+                <p>Hold your Breath</p>
+                <p>1</p>
+                <p>2</p>
+                <p>Exhale</p>
+                <p>Here</p>
+                <p>Now</p>
+              </div>
+              <div id="relaxlink">
+                <p>
+                  <a href="#">Enter</a>
+                </p>
+              </div>
             </div>
     <!-- modal end -->          
 

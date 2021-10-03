@@ -1,0 +1,78 @@
+   
+      .menubg {
+          background-image: url('sky.jpg');
+          filter: grayscale(100%);
+          background-size: cover;
+      }  
+      
+      
+      #impressum:target {
+          display: block;
+          background-image: linear-gradient(rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0.1)) , url('rescue.jpg');
+          filter: grayscale(100%);
+          background-size: cover;
+          background-position-x: center;
+          background-position-y: top;
+          background-repeat: no-repeat;
+          animation: fadein 0.5s;
+        }
+
+        #settings:target {
+          display: block;
+          /*background-image: url('rescue.jpg');*/
+          background-size: cover;
+          background-position-x: center;
+          background-position-y: top;
+          background-repeat: no-repeat;
+          animation: fadein 0.5s;
+        }
+       
+        #bio:target {
+          display: block;
+          background-image: url('me_now.jpg');
+          filter: grayscale(100%);
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          animation: fadein 0.5s;
+        }
+        
+        #likes:target {
+          display: block;
+          background-image: url('buskers.jpg');
+          filter: grayscale(100%);
+          background-repeat: no-repeat;
+          background-size: cover;
+          animation: fadein 0.5s;
+        }
+
+        #skills:target {
+          display: block;
+          background-image: linear-gradient(rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0.1)) , url('nebelwald.jpg');
+          filter: grayscale(100%);
+          background-repeat: no-repeat;
+          background-size: cover;
+          animation: fadein 0.5s;
+        }
+        
+        #speaker:target {
+          display: block;
+        }
+
+        #textarbeit:target {
+          display: block;
+        }
+        
+        #nft:target {
+          display: block;
+          background-color: #000;
+          color: #fff;
+        }
+
+        #nft:target a {
+          color: #fff;
+        }
+        
+        
+        
+ 
