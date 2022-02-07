@@ -39,7 +39,7 @@
         
         #likes:target {
           display: block;
-          background-image: url('i_like.jpg');
+          background-image: url('live.jpg');
           filter: grayscale(100%);
           background-repeat: no-repeat;
           background-size: cover;
