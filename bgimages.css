@@ -39,7 +39,7 @@
         
         #likes:target {
           display: block;
-          background-image: url('buskers.jpg');
+          background-image: url('i_like.jpg');
           filter: grayscale(100%);
           background-repeat: no-repeat;
           background-size: cover;
