@@ -39,7 +39,7 @@
         
         #likes:target {
           display: block;
-          background-image: url('buskers.jpg');
+          background-image: url('live.jpg');
           filter: grayscale(100%);
           background-repeat: no-repeat;
           background-size: cover;
@@ -63,16 +63,10 @@
           display: block;
         }
         
-        #nft:target {
+        #albert1:target {
           display: block;
-          background-color: #000;
-          color: #fff;
         }
 
-        #nft:target a {
-          color: #fff;
-        }
-        
         
         
  
