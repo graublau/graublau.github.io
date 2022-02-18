@@ -1,31 +1,43 @@
   
-        body {      
-          font-family: acumin-pro, sans-serif;
+        @font-face {
+          font-family: "iA";
+          src: url("iAWriterQuattroS-Regular.woff2") format("woff2"),
+               url("iAWriterQuattroS-Regular.woff") format("woff");
+        } 
+       
+       body {             
+          font-family: 'iA', sans-serif;
           text-align: left;
-         /* text-shadow: 1px 1px 1px #333;*/
           margin: 0;
           padding: 0;
           background-color: #000;
         }
         
         h1 {
-          font-size: 54px;
-          font-style: normal;
-          color: #ccc;
-          font-weight:400;
+
+          font-weight: 300;
+          font-style: italic;
+          font-size: 24px;
+          color: #fff;
           text-shadow: none;
+          margin-top: 3em;
+          margin-bottom: -0.25em;
         }
         
         h2 {
           font-size: 36px;
-          font-weight: 400;
+          text-transform: uppercase;
+          font-style: italic;
+          font-weight: 600;
           text-shadow: none;
+          margin-top: 1em;
+          margin-bottom: -0.25em;
         }
-
+     
         .menu {
-          font-size: 54px;
-          font-style: normal;
-          color: #333;
+          font-size: 36px;
+          font-style: italic;
+          color: #fff;
           animation: fadein 0.5s;
           text-align: center;
           text-shadow: none;
@@ -37,28 +49,30 @@
         .menu a {
           text-decoration: none;
           border-bottom: none;
-          font-style: normal;
+          font-style: italic;
+          text-transform: none;
         } 
         
         .head {
-          color: #ccc;
-          font-size: 24px;  
+          color: #fff;
+          font-size: 18px;  
           margin: 36px 0;
         }
         
         .head a {
           color: #fff;
+          font-size: 18px;
           text-decoration: none;
         }
 
         .text {
-          font-weight: 400;
-          font-size: 24px;
-          color: white;
+          font-weight: 100;
+          font-size: 18px;
+          color: #fff;
         }
 
         a, .topmenu a {
-          color: white;
+          color: #fff;
           text-decoration: underline;
         }
 
@@ -76,8 +90,15 @@
         }
 
         .modal > div {
-        max-width: 460px;
+        max-width: 768px;
         margin: 0 auto;
+        }
+
+        @media screen and (max-width: 992px) {
+          .modal > div {
+            max-width: 460px;
+            margin: 0 auto;
+            }
         }
 
         .close {
