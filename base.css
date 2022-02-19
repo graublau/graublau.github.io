@@ -86,39 +86,38 @@
           right: 0;
           bottom: 0;
           left: 0;
-          padding: 0 25px;
+          /*padding: 0 25px;*/
           z-index: 999;
           transition: all 0.3s;     
           overflow: auto;  
+          padding-bottom: 4em;
         }
 
         .modal > div {
-        max-width: 768px;
-        margin: 0 auto;
+          max-width: 768px;
+          margin: 0 auto;
+          padding: 0 25px;
         }
 
-       .modal > .main {
-          width: 66%;
-          max-width: 506px;
-          text-align: left;
-          }
-          
-        .modal > .sidebar {
-          width: 30%;
-          max-width: 230px;      
-          padding-left: 15px;
-          padding-top: 39px;
-          text-align: left;
-          }
-          
-          .sidebar img {
-          margin-top: 4em;
-          }
-          
+        .modal > .close {
+           padding: 0 25px;
+        }
 
-        @media screen and (max-width: 992px) {
+        .modal img {
+          margin-top: 2em;
+          width: 100%;
+        }  
+        
+        img + p {
+          margin-top: -4em;
+          margin-bottom: 4em;
+          padding-left: 10px;
+          text-shadow: #000 1px 1px;
+        }
+
+        @media screen and (max-width: 926px) {
           .modal > div {
-            max-width: 460px;
+            max-width: 428px;
             margin: 0 auto;
             }
         }

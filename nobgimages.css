@@ -1,5 +1,11 @@
    
 
+        .menubg {
+          background-image: url('sky.jpg');
+          filter: grayscale(100%);
+          background-size: cover;
+         }  
+       
        #impressum:target {
           display: block;
           animation: fadein 0.5s;
