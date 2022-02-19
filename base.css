@@ -103,6 +103,12 @@
            padding: 0 25px;
         }
 
+        imagebox {
+          display: block;
+          margin: 0 auto;
+          max-width: 1080px;
+        }
+
         .modal img {
           margin-top: 2em;
           width: 100%;
