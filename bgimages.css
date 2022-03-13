@@ -62,6 +62,10 @@
         #textarbeit:target {
           display: block;
         }
+
+        #cases:target {
+          display: block;
+        }
         
         #albert1:target {
           display: block;
