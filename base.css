@@ -121,6 +121,10 @@
           text-shadow: #000 1px 1px;
         }
 
+        .mediabox p {
+          font-size: 0.8em;
+        }
+
         @media screen and (max-width: 926px) {
           .modal > div {
             max-width: 428px;
