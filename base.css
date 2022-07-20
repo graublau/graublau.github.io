@@ -16,7 +16,6 @@
         h1 {
 
           font-weight: 300;
-          font-style: italic;
           font-size: 24px;
           color: #fff;
           text-shadow: none;
@@ -27,7 +26,6 @@
         h2 {
           font-size: 36px;
           text-transform: uppercase;
-          font-style: italic;
           font-weight: 600;
           text-shadow: none;
           margin-top: 1em;
