@@ -107,6 +107,10 @@
           max-width: 1080px;
         }
 
+        .teaserimage {
+          filter: grayscale(100%);
+        }
+
         .modal img {
           margin-top: 2em;
           width: 100%;
