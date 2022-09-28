@@ -1,0 +1,17 @@
+body {
+    background-color: #000;
+    }
+    
+    #sb_main, .container-fluid, .title-small, .tab-pd, .read-more, .read-more:before, #sb-main-container, iframe, #sb_dataview_container, .section-pd {
+    background-color: #000000 !important;
+    background: #000000 !important;
+    color: #ffffff;
+    }
+    
+    .tab {
+        border: 1px solid #333;
+    }
+    
+    #sb-timeline #steps-nav #sb_booking_info .booking-info ul {
+        border-bottom: 1px solid #333;
+    }
