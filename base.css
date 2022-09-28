@@ -108,7 +108,7 @@
         }
 
         .teaserimage {
-          filter: grayscale(100%);
+          filter: grayscale(100%) !important;
         }
 
         .modal img {
