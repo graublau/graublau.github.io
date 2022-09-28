@@ -109,6 +109,7 @@
 
         .teaserimage {
           filter: grayscale(100%) !important;
+          animation: fadein 0.5s;
         }
 
         .modal img {
