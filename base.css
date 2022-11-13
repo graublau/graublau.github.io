@@ -107,6 +107,10 @@
           max-width: 1080px;
         }
 
+        #cases imagebox {
+          margin-bottom: 4em;
+        }
+
         .teaserimage {
           filter: grayscale(100%) !important;
           animation: fadein 0.5s;
