@@ -51,4 +51,8 @@
           display: block;
         }
 
+        #downloads:target {
+          display: block;
+        }
+
       
