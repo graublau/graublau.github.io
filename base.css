@@ -33,6 +33,9 @@
         }
      
         .menu {
+          background-image: url('sky.jpg');
+          background-size: cover;
+          filter: grayscale(100%);
           font-size: 36px;
           font-style: italic;
           color: #fff;
@@ -55,8 +58,8 @@
         .head {
           color: #fff;
           font-size: 18px;  
-          margin: 36px 0;
-          margin-bottom: 1em;
+          margin: 3em 0 1em 0;
+          /* margin-bottom: 1em; */
         }
         
         .head a {
@@ -88,7 +91,7 @@
           z-index: 999;
           transition: all 0.3s;     
           overflow: auto;  
-          padding-bottom: 4em;
+          padding-bottom: 2em;
         }
 
         .modal > div {
@@ -137,6 +140,10 @@
             max-width: 428px;
             margin: 0 auto;
             }
+
+          .menu {
+            align-items: flex-start;
+          }
         }
 
         .close {

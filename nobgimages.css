@@ -1,9 +1,9 @@
    
 
         .menubg {
-          background-image: url('sky.jpg');
+          /* background-image: url('sky.jpg');
           filter: grayscale(100%);
-          background-size: cover;
+          background-size: cover; */
          }  
        
        #impressum:target {
