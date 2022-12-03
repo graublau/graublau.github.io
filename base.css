@@ -65,7 +65,7 @@
         .head a {
           color: #fff;
           font-size: 18px;
-          text-decoration: none;
+          text-decoration: underline;
           font-weight: 200;
         }
 
