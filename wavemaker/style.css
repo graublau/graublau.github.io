@@ -1,0 +1,360 @@
+body {
+    font-family: "ff-nexus-typewriter", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: black;
+    color: whitesmoke;
+    /* max-width: 1280px; */
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+.italic {
+    font-style: none;
+}
+
+h1 {
+    font-size: 1.6em;
+    font-weight: 400;
+    margin-bottom: 1em;
+}
+
+.copy {
+  margin-bottom: 2em;
+  font-size: 1.1em;
+}
+
+input[type=button], .button {
+  border: 1px solid whitesmoke;
+  background-color: transparent;
+  color: whitesmoke;
+  padding: 15px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+input:disabled[type=button] {
+  border: 1px solid grey;
+  background-color: transparent;
+  color: grey;
+  padding: 15px;
+  cursor: pointer;
+}
+
+input[type=buttonxs], .buttonxs {
+  border: 1px solid whitesmoke;
+  background-color: transparent;
+  color: whitesmoke;
+  padding: 2px 15px;
+  font-size: .8em;
+  text-align: center;
+  cursor: pointer;
+}
+
+input:disabled[type=buttonxs] {
+  border: 1px solid whitesmoke;
+  background-color: transparent;
+  color: grey;
+  padding: 2px 15px;
+  font-size: .8em;
+  text-align: center;
+  cursor: pointer;
+}
+
+input[type=link] {
+  text-decoration: underline;
+  border: none;
+  background-color: transparent;
+  color: whitesmoke;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+input:disabled[type=link] {
+  text-decoration: underline;
+  border: none;
+  background-color: transparent;
+  color: grey;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+input[type=linkxs] {
+  text-decoration: underline;
+  border: none;
+  background-color: transparent;
+  color: whitesmoke;
+  font-size: .8em;
+  cursor: pointer;
+}
+
+input:disabled[type=linkxs] {
+  text-decoration: underline;
+  border: none;
+  background-color: transparent;
+  color: grey;
+  font-size: .8em;
+  cursor: pointer;
+}
+
+.button, .buttonxs {
+  text-decoration: none;
+}
+
+
+.cta {
+    font-family: "ff-nexus-typewriter", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    border-color: whitesmoke;
+}
+
+.descr, label {
+    font-family: "courier",  serif;
+    font-weight: 400;
+    font-style: normal;
+    color: whitesmoke;
+    margin-top: 0.9em;
+    font-size: 0.9em;
+}
+
+ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+li {
+    list-style-type: none;
+    margin: 1em 0;
+}
+
+input {
+    border: 1px solid;
+    /* border-radius: 5px; */
+}
+
+a {
+    color: whitesmoke;
+    cursor: pointer;
+    /* text-decoration: underline; */
+}
+
+a:visited {
+    color: whitesmoke;
+}
+
+
+.hidden {
+    display: none;
+}
+
+#channelForm {
+    display: none;
+}
+
+#epicForm {
+    display: none;
+}
+
+#dropForm {
+    display: none;
+}
+
+  #channelForm:target {
+    display: block;
+    animation: fadein 0.5s;
+  }
+
+  #epicForm:target {
+    display: block;
+    animation: fadein 0.5s;
+  }
+
+  #dropForm:target {
+    display: block;
+    animation: fadein 0.5s;
+  }
+  
+  #epic_detail {
+    display: none;
+  }
+
+  .logo {
+    font-family: "ff-nexus-typewriter", sans-serif;
+    margin-bottom: 2em;
+    font-size: 1.5em;
+    float: left;
+}
+
+  .icon {
+      background-color: none;
+      color: whitesmoke;
+    /* border: 1px solid whitesmoke; */
+      padding: 0 4px;
+  }
+
+  .menu {
+    float: right;
+    margin-top: 0.3em;
+    margin-bottom: 2em;
+  }
+
+  .menuitem {
+    float: right;
+    margin-left: 1.5em;
+  }
+
+  #settings {
+    display: none;
+  }
+
+  #settings:target {
+    display: block;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  #contentDateTime, #channelTitle, #channelTitleHead, #epictitlehead, #epictitle, #epicownerhead, #epicowner {
+    width: 40%;
+  }
+  #tableAction, #contentTitle, #contentChannelTitle, #channelMediatype, #channelMediatypeHead, #channelOwner, #channelOwnerHead {
+    width: 20%;
+  }
+
+  #calendar {
+    clear: both;
+  }
+  
+  .modal {
+    position: fixed;
+    /*background-color: #000;*/
+    background-color: rgba(0,0,0,.75);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /*padding: 0 25px;*/
+    z-index: 999;
+    transition: all 0.3s;     
+    overflow: auto;  
+    padding-bottom: 2em;
+  }
+
+  .modal, .modal > ul {
+    margin: 0 auto;
+    padding: 0 25px;
+    background-color: black;
+  }
+
+  .contentcontainer {
+    margin-top: 2em;
+    clear: both;
+  }
+
+  .editcontainer {
+    margin-top: 2em;
+  }
+
+  .modal > .contentcontainer, .modal > ul, .modal > table {
+    clear: both;
+    /* max-width: 768px;
+    margin: 0 auto; */
+    padding: 0 25px 25px 25px;
+    /* background-color: black; */
+  }
+
+  .modal > .close {
+     padding: 0 25px;
+  }
+
+  .menu_column {
+    margin-bottom: 4em;
+  }
+
+  i {
+    float: left;
+    /* margin-right: 5px; */
+  }
+
+  a > i[class^="gg-close"] {
+    --ggs:1.5;
+    margin: 0;
+  }
+  
+  a > i[class^="gg-menu-hotdog"] {
+    --ggs:1.1;
+   margin: 11px 8px 0 0;
+  }
+  
+  a > i[class^="gg-add"] {
+    --ggs:1.1;
+   margin: 5px 8px 0 0;
+  }
+
+  a > i[class^="gg-link"] {
+    /* --ggs:0.7; */
+    margin: 10px 16px 0px 7px;
+  }
+
+  .close {
+    float: right;
+    margin-bottom: 1em;
+    padding: 10px !important;
+  }
+
+  .close a {
+    color: whitesmoke;
+    text-decoration: none;
+  }
+
+  .nodeco a {
+    color: whitesmoke;
+    text-decoration: none;
+  }
+
+  /* fullcalendar*/
+
+  .fc .fc-toolbar-title {
+    font-family: "ff-nexus-typewriter", sans-serif;
+    font-size: 1em !important;
+  }
+
+  .fc-event-time {
+    display: none !important;
+  }
+
+  .fc-timeline-event {
+    height: 45px;
+  }
+  
+  :root {
+    --fc-small-font-size: .85em;
+    --fc-page-bg-color: #fff !important;
+    --fc-neutral-bg-color: grey !important;
+    --fc-neutral-text-color: grey !important;
+    --fc-border-color: #ddd;
+    --fc-button-text-color: #fff;
+    --fc-button-bg-color: none !important;
+    --fc-button-border-color: black !important;
+    --fc-button-hover-bg-color: black !important;
+    --fc-button-hover-border-color: black !important;
+    --fc-button-active-bg-color: black !important;
+    --fc-button-active-border-color: black !important;
+    --fc-event-bg-color: white !important;
+   /* --fc-event-border-color: none !important; */
+    --fc-event-text-color: black !important;
+    --fc-event-selected-overlay-color: rgba(0,0,0,.25);
+    --fc-more-link-bg-color: #d0d0d0;
+    --fc-more-link-text-color: inherit;
+    --fc-event-resizer-thickness: 8px;
+    --fc-event-resizer-dot-total-width: 8px;
+    --fc-event-resizer-dot-border-width: 1px;
+    --fc-non-business-color: grey !important;
+    --fc-bg-event-color: #8fdf82;
+    --fc-bg-event-opacity: 0.3;
+    --fc-highlight-color: grey !important;
+    --fc-today-bg-color: rgba(256, 256, 256, .2) !important;
+    --fc-now-indicator-color: red;
+}
