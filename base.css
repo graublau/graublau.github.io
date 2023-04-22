@@ -223,7 +223,7 @@
         .aoff img {
           max-width: 100%; /* Optional: Set max width for the image */
           max-height: 100%; /* Optional: Set max height for the image */
-          margin-top: -120px;
+          /* margin-top: -120px; */
         }
 
         .close-ad {
