@@ -39,6 +39,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="modal menu menubg">
         <div>
           <div>
+            <div class="aoff">
+              <p class="close-ad">
+                <a class="close-btn" href="#">X</a>
+              </p>
+              <a href="https://callmechristoph.myportfolio.com/" target="_blank"><img src="Halfpage Ad-1.png"></a>
+            </div>
             <p class="head">
               Christoph Mandl      
             </p>
@@ -448,3 +454,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   </body>
 </html>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var closeBtn = document.querySelector('.close-btn');
+    closeBtn.addEventListener('click', function() {
+      var aoffDiv = this.closest('.aoff');
+      aoffDiv.style.display = 'none';
+    });
+  });
+</script>
