@@ -186,6 +186,11 @@ a:visited {
     float: left;
 }
 
+.logo > img {
+  width: 96px;
+  vertical-align: middle;
+}
+
   .icon {
       background-color: none;
       color: whitesmoke;
