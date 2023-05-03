@@ -138,6 +138,8 @@ input {
 
   .menu_column {
     margin-bottom: 4em;
+    float: left;
+    min-width: 33%;
   }
 
   i {
