@@ -1,13 +1,4 @@
-body {
-    font-family: "ff-nexus-typewriter", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    background-color: black;
-    color: whitesmoke;
-    /* max-width: 1280px; */
-    margin: 0 auto;
-    padding: 0 25px;
-}
+
 
 .italic {
     font-style: none;
@@ -24,99 +15,7 @@ h1 {
   font-size: 1.1em;
 }
 
-input[type=button], .button {
-  border: 1px solid whitesmoke;
-  background-color: transparent;
-  color: whitesmoke;
-  padding: 15px;
-  font-size: 1em;
-  cursor: pointer;
-}
 
-input:disabled[type=button] {
-  border: 1px solid grey;
-  background-color: transparent;
-  color: grey;
-  padding: 15px;
-  cursor: pointer;
-}
-
-input[type=buttonxs], .buttonxs {
-  border: 1px solid whitesmoke;
-  background-color: transparent;
-  color: whitesmoke;
-  padding: 2px 15px;
-  font-size: .8em;
-  text-align: center;
-  cursor: pointer;
-}
-
-input:disabled[type=buttonxs] {
-  border: 1px solid whitesmoke;
-  background-color: transparent;
-  color: grey;
-  padding: 2px 15px;
-  font-size: .8em;
-  text-align: center;
-  cursor: pointer;
-}
-
-input[type=link] {
-  text-decoration: underline;
-  border: none;
-  background-color: transparent;
-  color: whitesmoke;
-  font-size: 1em;
-  cursor: pointer;
-}
-
-input:disabled[type=link] {
-  text-decoration: underline;
-  border: none;
-  background-color: transparent;
-  color: grey;
-  font-size: 1em;
-  cursor: pointer;
-}
-
-input[type=linkxs] {
-  text-decoration: underline;
-  border: none;
-  background-color: transparent;
-  color: whitesmoke;
-  font-size: .8em;
-  cursor: pointer;
-}
-
-input:disabled[type=linkxs] {
-  text-decoration: underline;
-  border: none;
-  background-color: transparent;
-  color: grey;
-  font-size: .8em;
-  cursor: pointer;
-}
-
-.button, .buttonxs {
-  text-decoration: none;
-}
-
-
-.cta {
-    font-family: "ff-nexus-typewriter", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    border-color: whitesmoke;
-}
-
-.descr, label {
-    font-family: "courier",  serif;
-    font-weight: 400;
-    font-style: normal;
-    color: whitesmoke;
-    margin-top: 0.9em;
-    font-size: 0.9em;
-}
 
 ul {
     padding: 0px;
@@ -131,16 +30,6 @@ li {
 input {
     border: 1px solid;
     /* border-radius: 5px; */
-}
-
-a {
-    color: whitesmoke;
-    cursor: pointer;
-    /* text-decoration: underline; */
-}
-
-a:visited {
-    color: whitesmoke;
 }
 
 
@@ -191,13 +80,6 @@ a:visited {
   vertical-align: middle;
 }
 
-  .icon {
-      background-color: none;
-      color: whitesmoke;
-    /* border: 1px solid whitesmoke; */
-      padding: 0 4px;
-  }
-
   .menu {
     float: right;
     margin-top: 0.3em;
@@ -231,27 +113,7 @@ a:visited {
   #calendar {
     clear: both;
   }
-  
-  .modal {
-    position: fixed;
-    /*background-color: #000;*/
-    background-color: rgba(0,0,0,.75);
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    /*padding: 0 25px;*/
-    z-index: 999;
-    transition: all 0.3s;     
-    overflow: auto;  
-    padding-bottom: 2em;
-  }
 
-  .modal, .modal > ul {
-    margin: 0 auto;
-    padding: 0 25px;
-    background-color: black;
-  }
 
   .contentcontainer {
     margin-top: 2em;
@@ -266,7 +128,7 @@ a:visited {
     clear: both;
     /* max-width: 768px;
     margin: 0 auto; */
-    padding: 0 25px 25px 25px;
+    /* padding: 0 25px 25px 25px; */
     /* background-color: black; */
   }
 
@@ -309,16 +171,6 @@ a:visited {
     padding: 10px !important;
   }
 
-  .close a {
-    color: whitesmoke;
-    text-decoration: none;
-  }
-
-  .nodeco a {
-    color: whitesmoke;
-    text-decoration: none;
-  }
-
   /* fullcalendar*/
 
   .fc .fc-toolbar-title {
@@ -334,32 +186,4 @@ a:visited {
     height: 45px;
   }
   
-  :root {
-    --fc-small-font-size: .85em;
-    --fc-page-bg-color: #fff !important;
-    --fc-neutral-bg-color: grey !important;
-    --fc-neutral-text-color: grey !important;
-    --fc-border-color: #ddd;
-    --fc-button-text-color: #fff;
-    --fc-button-bg-color: none !important;
-    --fc-button-border-color: black !important;
-    --fc-button-hover-bg-color: black !important;
-    --fc-button-hover-border-color: black !important;
-    --fc-button-active-bg-color: black !important;
-    --fc-button-active-border-color: black !important;
-    --fc-event-bg-color: white !important;
-   /* --fc-event-border-color: none !important; */
-    --fc-event-text-color: black !important;
-    --fc-event-selected-overlay-color: rgba(0,0,0,.25);
-    --fc-more-link-bg-color: #d0d0d0;
-    --fc-more-link-text-color: inherit;
-    --fc-event-resizer-thickness: 8px;
-    --fc-event-resizer-dot-total-width: 8px;
-    --fc-event-resizer-dot-border-width: 1px;
-    --fc-non-business-color: grey !important;
-    --fc-bg-event-color: #8fdf82;
-    --fc-bg-event-opacity: 0.3;
-    --fc-highlight-color: grey !important;
-    --fc-today-bg-color: rgba(256, 256, 256, .2) !important;
-    --fc-now-indicator-color: red;
-}
+  
