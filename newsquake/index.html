@@ -104,11 +104,11 @@
                 </li>
                 <li>
                     <label>Topic:*</label><br>
-                    <select name="epic" id="epic" class="cta" required></select> <a href="#epicForm" class="descr">Manage Topics </a>
+                    <select name="epic" id="epic" class="cta" required></select> <span class="descr">or</span> <a href="#epicForm" class="descr">Manage Topics </a>
                 </li>
                 <li>
                     <label>Channel:*</label><br>
-                    <select name="channel" id="channel" class="cta" required></select> <a href="#channelForm" class="descr">Manage Channels</a>
+                    <select name="channel" id="channel" class="cta" required></select> <span class="descr">or</span> <a href="#channelForm" class="descr">Manage Channels</a>
                 </li>
                 <li>
                     <label>Publication Start Date and Time:*</label><br>
@@ -177,7 +177,8 @@
                 </ul>
                 <ul class="menu_column">
                     <h1>Report</h1>
-                    <li>
+                    <li>Coming sooner or later</li>
+                    <!-- <li>
                         <a href="#">
                             Link 1
                         </a>
@@ -191,24 +192,23 @@
                         <a href="#">
                             Link 3
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
                 <ul class="menu_column">
                     <h1>Ideate</h1>
+                    <li>Coming sooner or later</li>
+                </ul>
+                <ul class="menu_column">
+                    <h1>Login</h1>
                     <li>
-                        <a href="#">
-                            Link 1
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                           Link 2
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Link 3
-                        </a>
+
+                        <form id="magicLinkForm">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                            <button type="submit">Send Magic Link</button>
+                          </form>
+
+                          
                     </li>
                 </ul>
             </div>

@@ -2,8 +2,52 @@ const supabase = createClient(
    'https://ykleeiyhqivgutfkhyoi.supabase.co',
    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlrbGVlaXlocWl2Z3V0ZmtoeW9pIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzQxOTU3MjcsImV4cCI6MTk4OTc3MTcyN30.5P_T7dzuiVwAxCaNvD9llz5g9_Xp3AU9iJsJi-kNzH8'
  )
-
   
+// auth
+
+// async function signInWithEmail(email, password) {
+//   const { user, error } = await supabase.auth.signIn({ email, password });
+//   if (error) {
+//     throw new Error(error.message);
+//   }
+//   return user;
+// }
+
+// async function signUpWithEmail(email, password) {
+//   const { user, error } = await supabase.auth.signUp({ email, password });
+//   if (error) {
+//     throw new Error(error.message);
+//   }
+//   return user;
+// }
+
+// async function signOut() {
+//   await supabase.auth.signOut();
+// }
+
+ // Handle form submission
+ document.getElementById('magicLinkForm').addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const formData = new FormData(event.target);
+  const email = formData.get('email');
+
+  try {
+    // Send the magic link to the user's email
+    const { error } = await supabase.auth.signIn({ email });
+
+    if (error) {
+      throw new Error(error.message);
+    }
+
+    // Magic link sent successfully
+    alert('A magic link has been sent to your email. Click the link to sign in.');
+  } catch (error) {
+    console.error('Magic link login failed:', error.message);
+    // Handle error (e.g., show an error message)
+    alert('Magic link login failed. Please try again later.');
+  }
+});
+
    //get drops start 
 
 async function getDrops() {
@@ -13,6 +57,30 @@ async function getDrops() {
   .order('pub_date_time_start', { ascending: false })
   return data
 }
+
+// async function getDrops() {
+//   // Check if the user is authenticated
+//   const user = supabase.auth.user();
+
+//   if (!user) {
+//     // User is not authenticated, handle as per your requirements (e.g., show login screen)
+//     throw new Error('User is not authenticated');
+//   }
+
+//   // If the user is authenticated, proceed with the database query
+//   let { data, error } = await supabase
+//     .from('drops')
+//     .select('*')
+//     .order('pub_date_time_start', { ascending: false });
+
+//   if (error) {
+//     throw new Error(error.message);
+//   }
+
+//   return data;
+// }
+
+
 
 var r = 55;
 var g = 155;
