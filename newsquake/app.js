@@ -5,26 +5,6 @@ const supabase = createClient(
   
 // auth
 
-// async function signInWithEmail(email, password) {
-//   const { user, error } = await supabase.auth.signIn({ email, password });
-//   if (error) {
-//     throw new Error(error.message);
-//   }
-//   return user;
-// }
-
-// async function signUpWithEmail(email, password) {
-//   const { user, error } = await supabase.auth.signUp({ email, password });
-//   if (error) {
-//     throw new Error(error.message);
-//   }
-//   return user;
-// }
-
-// async function signOut() {
-//   await supabase.auth.signOut();
-// }
-
  // Handle form submission
  document.getElementById('magicLinkForm').addEventListener('submit', async (event) => {
   event.preventDefault();
@@ -32,19 +12,16 @@ const supabase = createClient(
   const email = formData.get('email');
 
   try {
-    // Send the magic link to the user's email
-    const { error } = await supabase.auth.signIn({ email });
+    const { error } = await supabase.auth.signInWithOtp({ email });
 
     if (error) {
       throw new Error(error.message);
     }
 
-    // Magic link sent successfully
     alert('A magic link has been sent to your email. Click the link to sign in.');
   } catch (error) {
     console.error('Magic link login failed:', error.message);
-    // Handle error (e.g., show an error message)
-    alert('Magic link login failed. Please try again later.');
+    alert('Magic link login failed :-/');
   }
 });
 
