@@ -84,6 +84,9 @@ document.getElementById('logoutButton').addEventListener('click', async () => {
       throw new Error(error.message);
     }
 
+    // Redirect to the base URL after logout
+    window.location.href = '#';
+
     // Clear the user information from the username div
     const usernameDiv = document.getElementById('username');
     usernameDiv.innerHTML = '';
