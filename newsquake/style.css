@@ -1,0 +1,191 @@
+
+
+.italic {
+    font-style: none;
+}
+
+h1 {
+    font-size: 1.6em;
+    font-weight: 400;
+    margin-bottom: 1em;
+}
+
+.copy {
+  margin-bottom: 2em;
+  font-size: 1.1em;
+}
+
+
+
+ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+li {
+    list-style-type: none;
+    margin: 1em 0;
+}
+
+input {
+    border: 1px solid;
+    /* border-radius: 5px; */
+}
+
+
+.hidden {
+    display: none;
+}
+
+#channelForm {
+    display: none;
+}
+
+#epicForm {
+    display: none;
+}
+
+#dropForm {
+    display: none;
+}
+
+  #channelForm:target {
+    display: block;
+    animation: fadein 0.5s;
+  }
+
+  #epicForm:target {
+    display: block;
+    animation: fadein 0.5s;
+  }
+
+  #dropForm:target {
+    display: block;
+    animation: fadein 0.5s;
+  }
+  
+  #epic_detail {
+    display: none;
+  }
+
+  .logo {
+    font-family: "ff-nexus-typewriter", sans-serif;
+    margin-bottom: 2em;
+    font-size: 1.5em;
+    float: left;
+}
+
+.logo > img {
+  width: 96px;
+  vertical-align: middle;
+}
+
+  .menu {
+    float: right;
+    margin-top: 0.3em;
+    margin-bottom: 2em;
+  }
+
+  .menuitem {
+    float: right;
+    margin-left: 1.5em;
+  }
+
+  #settings {
+    display: none;
+  }
+
+  #settings:target {
+    display: block;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  #contentDateTime, #channelTitle, #channelTitleHead, #epictitlehead, #epictitle, #epicownerhead, #epicowner {
+    width: 40%;
+  }
+  #tableAction, #contentTitle, #contentChannelTitle, #channelMediatype, #channelMediatypeHead, #channelOwner, #channelOwnerHead {
+    width: 20%;
+  }
+
+  #calendar {
+    clear: both;
+  }
+
+
+  .contentcontainer {
+    margin-top: 2em;
+    clear: both;
+  }
+
+  .editcontainer {
+    margin-top: 2em;
+  }
+
+  .modal > .contentcontainer, .modal > ul, .modal > table {
+    clear: both;
+    /* max-width: 768px;
+    margin: 0 auto; */
+    /* padding: 0 25px 25px 25px; */
+    /* background-color: black; */
+  }
+
+  .modal > .close {
+     padding: 0 25px;
+  }
+
+  .menu_column {
+    margin-bottom: 4em;
+    float: left;
+    min-width: 33%;
+  }
+
+  i {
+    float: left;
+    /* margin-right: 5px; */
+  }
+
+  a > i[class^="gg-close"] {
+    --ggs:1.5;
+    margin: 0;
+  }
+  
+  a > i[class^="gg-menu-hotdog"] {
+    --ggs:1.1;
+   margin: 11px 8px 0 0;
+  }
+  
+  a > i[class^="gg-add"] {
+    --ggs:1.1;
+   margin: 5px 8px 0 0;
+  }
+
+  a > i[class^="gg-link"] {
+    /* --ggs:0.7; */
+    margin: 10px 16px 0px 7px;
+  }
+
+  .close {
+    float: right;
+    margin-bottom: 1em;
+    padding: 10px !important;
+  }
+
+  /* fullcalendar*/
+
+  .fc .fc-toolbar-title {
+    font-family: "ff-nexus-typewriter", sans-serif;
+    font-size: 1em !important;
+  }
+
+  .fc-event-time {
+    display: none !important;
+  }
+
+  .fc-timeline-event {
+    height: 45px;
+  }
+  
+  

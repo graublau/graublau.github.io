@@ -1,0 +1,155 @@
+   
+      // var element = document.querySelectorAll('a');
+            
+            // element.forEach(function(element) {
+
+            //     element.addEventListener('click', function() {
+            //     var thisvalue = this.innerHTML;
+            //     console.log(thisvalue);
+
+                // PUT
+                // async function setDrop() {
+                //   let { data, error } = await supabase
+                //     .from('drops')
+                //     .update({ title: 'anything here' })
+                //     .match({ id: thisvalue })
+                //   return data
+                // }
+                
+                // setDrop().then((data) => {
+                //   console.log('updated', data)
+                // })
+              
+              
+            //     });
+
+            // });
+            
+            // Selecting data based on criteria
+
+  // async function getSomeDrops() {
+  //   let { data, error } = await supabase
+  //     .from('drops')
+  //     .select('title')
+  //     .eq('pub_date_time', 'today or so')
+  //   return data
+  // }
+  
+  // getSomeDrops().then((data) => {
+  //   // console.log(data)
+  // })
+
+
+
+// data.sort((a, b) => {
+  //   if (a.pub_date_time < b.pub_date_time) {
+  //     return -1;
+  //   } else if (a.pub_date_time > b.pub_date_time) {
+  //     return 1;
+  //   } else {
+  //     return 0;
+  //   }
+  // });
+
+   // data.forEach(item => {     
+
+    //   async function getEpics() {
+    //     let { data, error } = await supabase
+    //     .from('epics')
+    //     .select('*')
+    //     .eq('id', item.epic)
+    //     return data
+    //   }
+     
+    //   let epictitle = '';
+    //   let epicowner = '';
+
+    //   let getEpicsPromise = new Promise((resolve, reject) => {
+    //     getEpics().then((data) => {
+    //       data.forEach(item => { 
+    //         epictitle = item.title;
+    //         epicowner = item.owner;
+    //       });
+    //       resolve();
+    //     });
+    //   });
+      
+    //     async function getChannel() {
+    //       let { data, error } = await supabase
+    //       .from('channels')
+    //       .select('*')
+    //       .eq('id', item.channel)
+    //       return data
+    //     }
+        
+    //     let channeltitle = '';
+    //     let channelowner = '';
+  
+    //     let getChannelsPromise = new Promise((resolve, reject) => {
+    //       getChannel().then((data) => {
+    //         data.forEach(item => { 
+    //           channeltitle = item.title;
+    //           channelowner = item.owner;
+    //         });
+    //         resolve();
+    //       });
+    //     });
+
+    //     const options = {
+    //       year: 'numeric',
+    //       month: 'long',
+    //       day: 'numeric',
+    //       hour: 'numeric',
+    //       minute: 'numeric'
+    //     };
+        
+    //     let date = new Date(item.pub_date_time);
+    //     let locale_pub_date_time = date.toLocaleDateString('en-GB', options);
+        
+    //   getEpicsPromise.then(() => {
+    //     getChannelsPromise.then(() => {
+    //      listElement.innerHTML += '<li id="content' + item.id + '" class="modal"><div class="close"><a href="#"><i class="gg-close"></i></a></div><div class="contentcontainer"><div class="epicheader descr">' + epictitle + '</div><div style="border-top: 30px solid rgba(' + item.epic * r + ',' + item.epic * g + ',' + item.epic * b + ',100); margin-bottom: 4em;"></div>' + '<div class="descr">' + channeltitle + '&nbsp;-&nbsp;' + locale_pub_date_time + '&nbsp;' + '(' + item.timezone + ')</div><h1>' + item.title + '</h1>' + '<div class="copy">' + item.text + '</div><div class="descr">Images, Videos, Assets</div>' + item.assets + '<div class="descr">Channel Owner:&nbsp;' + channelowner + '</div><div class="descr">Topic Owner:&nbsp;' + epicowner + '</div></div></li>';
+    //     });
+    //   });
+
+    // });
+
+     // data.forEach(item => { 
+    //   epictitle = item.title;
+    //   epicowner = item.owner;
+    // });
+    // resolve();
+    
+   
+       
+       
+       
+       
+               //eventMouseEnter: function(info) {
+         // info.el.setAttribute('data-tooltip', info.event.title);
+        //},
+        
+        //eventMouseLeave: function(info) {
+       //   info.el.removeAttribute('data-tooltip');
+      //  }   
+      
+      
+        .fc-event-title-container {
+    position: relative;
+  }
+  
+  .fc-event-title-container:hover:after {
+    /* content: attr(data-tooltip); */
+    content: "TEST";
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translate(5px, -50%);
+    padding: 5px;
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 3px;
+    white-space: nowrap;
+    z-index: 9999;
+  }
+  
