@@ -6,6 +6,24 @@ const supabase = createClient(
 // auth
 
  // Handle form submission
+//  document.getElementById('magicLinkForm').addEventListener('submit', async (event) => {
+//   event.preventDefault();
+//   const formData = new FormData(event.target);
+//   const email = formData.get('email');
+
+//   try {
+//     const { error } = await supabase.auth.signInWithOtp({ email });
+
+//     if (error) {
+//       throw new Error(error.message);
+//     }
+
+//     alert('A magic link has been sent to your email. Click the link to sign in.');
+//   } catch (error) {
+//     console.error('Magic link login failed:', error.message);
+//     alert('Magic link login failed :-/');
+//   }
+// });
 
 document.getElementById('magicLinkForm').addEventListener('submit', async (event) => {
   event.preventDefault();
@@ -23,10 +41,6 @@ document.getElementById('magicLinkForm').addEventListener('submit', async (event
         throw new Error(error.message);
       }
 
-       // Display the logout button after successful login
-      //  const logoutButton = document.getElementById('logoutButton');
-      //  logoutButton.style.display = 'block';
-
       alert('A magic link has been sent to your email. Click the link to sign in.');
     } catch (error) {
       console.error('Magic link login failed:', error.message);
@@ -38,55 +52,28 @@ document.getElementById('magicLinkForm').addEventListener('submit', async (event
 });
 
  // Get user's information and populate the username div
-//  const getUserInfo = async () => {
-//   try {
-//     const { data: { user } } = await supabase.auth.getUser();
+ const getUserInfo = async () => {
+  try {
+    const { data: { user } } = await supabase.auth.getUser();
 
-//     if (user) {
-//       const magicLinkFormDiv = document.getElementById('magicLinkForm');
-//       const usernameDiv = document.getElementById('username');
-//       magicLinkFormDiv.style.display = 'none';
-//       usernameDiv.style.display = 'block';
-//       usernameDiv.innerHTML = `
-//         <p>Email: ${user.email}</p>
-//         <p>UUID: ${user.id}</p>
-//         <p>You are logged in.</p>
-//       `;
-
-//        // Show the logout button when user is authenticated
-//        const logoutButton = document.getElementById('logoutButton');
-//        logoutButton.style.display = 'block';
-//     }
-//   } catch (error) {
-//     console.error('Error getting user information:', error.message);
-//   }
-// };
+    if (user) {
+      const magicLinkFormDiv = document.getElementById('magicLinkForm');
+      const usernameDiv = document.getElementById('username');
+      magicLinkFormDiv.style.display = 'none';
+      usernameDiv.style.display = 'block';
+      usernameDiv.innerHTML = `
+        <p>Email: ${user.email}</p>
+        <p>UUID: ${user.id}</p>
+        <p>You are logged in.</p>
+      `;
+    }
+  } catch (error) {
+    console.error('Error getting user information:', error.message);
+  }
+};
 
 // Call the function to get user info
-// getUserInfo();
-
-// Logout user
-// document.getElementById('logoutButton').addEventListener('click', async () => {
-//   try {
-//     const { error } = await supabase.auth.signOut();
-
-//     if (error) {
-//       throw new Error(error.message);
-//     }
-
-//     // Hide the logout button after logout
-//     const logoutButton = document.getElementById('logoutButton');
-//     logoutButton.style.display = 'none';
-
-//     // Clear the user information from the username div
-//     const usernameDiv = document.getElementById('username');
-//     usernameDiv.innerHTML = '';
-
-//     alert('Logged out successfully.');
-//   } catch (error) {
-//     console.error('Logout failed:', error.message);
-//   }
-// });
+getUserInfo();
 
    //get drops start 
 
