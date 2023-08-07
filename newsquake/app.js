@@ -75,6 +75,25 @@ const supabase = createClient(
 // Call the function to get user info
 getUserInfo();
 
+// Logout user
+document.getElementById('logoutButton').addEventListener('click', async () => {
+  try {
+    const { error } = await supabase.auth.signOut();
+
+    if (error) {
+      throw new Error(error.message);
+    }
+
+    // Clear the user information from the username div
+    const usernameDiv = document.getElementById('username');
+    usernameDiv.innerHTML = '';
+
+    alert('Logged out successfully.');
+  } catch (error) {
+    console.error('Logout failed:', error.message);
+  }
+});
+
    //get drops start 
 
 async function getDrops() {

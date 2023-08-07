@@ -114,6 +114,17 @@ input[type=button], .button {
   }
 
   input[type=submit], .submit {
+    border: 1px solid #000fff;
+    background-color: transparent;
+    text-decoration: none;
+    color: #000fff;
+    padding: 15px;
+    font-size: 1em;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  input[type=logout], .logout {
     /* border: 1px solid #000fff;
     background-color: transparent;
     color: #000fff;
@@ -128,6 +139,7 @@ input[type=button], .button {
     padding: 15px;
     font-size: 1em;
     cursor: pointer;
+    text-align: center;
   }
   
   input:disabled[type=buttonxs] {
