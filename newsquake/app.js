@@ -41,6 +41,10 @@ document.getElementById('magicLinkForm').addEventListener('submit', async (event
         throw new Error(error.message);
       }
 
+       // Display the logout button after successful login
+       const logoutButton = document.getElementById('logoutButton');
+       logoutButton.style.display = 'block';
+
       alert('A magic link has been sent to your email. Click the link to sign in.');
     } catch (error) {
       console.error('Magic link login failed:', error.message);
@@ -66,6 +70,10 @@ document.getElementById('magicLinkForm').addEventListener('submit', async (event
         <p>UUID: ${user.id}</p>
         <p>You are logged in.</p>
       `;
+
+       // Show the logout button when user is authenticated
+       const logoutButton = document.getElementById('logoutButton');
+       logoutButton.style.display = 'block';
     }
   } catch (error) {
     console.error('Error getting user information:', error.message);
@@ -74,6 +82,29 @@ document.getElementById('magicLinkForm').addEventListener('submit', async (event
 
 // Call the function to get user info
 getUserInfo();
+
+// Logout user
+document.getElementById('logoutButton').addEventListener('click', async () => {
+  try {
+    const { error } = await supabase.auth.signOut();
+
+    if (error) {
+      throw new Error(error.message);
+    }
+
+    // Hide the logout button after logout
+    const logoutButton = document.getElementById('logoutButton');
+    logoutButton.style.display = 'none';
+
+    // Clear the user information from the username div
+    const usernameDiv = document.getElementById('username');
+    usernameDiv.innerHTML = '';
+
+    alert('Logged out successfully.');
+  } catch (error) {
+    console.error('Logout failed:', error.message);
+  }
+});
 
    //get drops start 
 
