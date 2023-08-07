@@ -9,7 +9,8 @@ body {
   }
   
   .button,
-  .buttonxs {
+  .buttonxs
+   {
     border: 1px solid #000fff;
     background-color: #000fff;
     color: white;
@@ -33,6 +34,13 @@ body {
     color: blue;
     margin-top: 2em;
     font-size: 0.9em;
+  }
+
+  .ribbon {
+    margin: 0 auto;
+    width: 100%;
+    height: 125px;
+    position: fixed;
   }
 
   .modal, .modal > ul {
@@ -102,6 +110,23 @@ input[type=button], .button {
     padding: 2px 15px;
     font-size: .8em;
     text-align: center;
+    cursor: pointer;
+  }
+
+  input[type=submit], .submit {
+    /* border: 1px solid #000fff;
+    background-color: transparent;
+    color: #000fff;
+    padding: 2px 15px;
+    font-size: .8em;
+    text-align: center;
+    cursor: pointer; */
+    border: 1px solid #000fff;
+    background-color: transparent;
+    text-decoration: none;
+    color: #000fff;
+    padding: 15px;
+    font-size: 1em;
     cursor: pointer;
   }
   
