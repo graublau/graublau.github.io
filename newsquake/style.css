@@ -73,12 +73,21 @@ input {
     margin-bottom: 2em;
     font-size: 1.5em;
     float: left;
-}
+  }
 
-.logo > img {
-  width: 96px;
-  vertical-align: middle;
-}
+  .logo > img {
+    width: 96px;
+    vertical-align: middle;
+  }
+
+  .centerlogo {
+    float: none;
+    font-size: 2.5em;
+  }
+
+  .centerlogo > img {
+    width: 192px;
+  }
 
   .menu {
     float: right;
@@ -97,6 +106,11 @@ input {
 
   #settings:target {
     display: block;
+  }
+
+  .centercontainer {
+    margin: 100px auto;
+    text-align: center;
   }
 
   table {

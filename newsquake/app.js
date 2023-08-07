@@ -57,9 +57,9 @@ const supabase = createClient(
     const { data: { user } } = await supabase.auth.getUser();
 
     if (user) {
-      const magicLinkFormDiv = document.getElementById('magicLinkForm');
+      const magicLinkFormModal = document.getElementById('login');
       const usernameDiv = document.getElementById('username');
-      magicLinkFormDiv.style.display = 'none';
+      magicLinkFormModal.style.display = 'none';
       usernameDiv.style.display = 'block';
       usernameDiv.innerHTML = `
         <p>Email: ${user.email}</p>
