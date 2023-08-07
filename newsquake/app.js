@@ -529,13 +529,13 @@ if (hashValue.startsWith('editepic')) {
         buttonText: 'monthly'
       }
     },
-    resourceAreaWidth: '35%',
+    resourceAreaWidth: '20%',
     resourceAreaColumns: [
-      {
-        group: true,
-        field: 'mediatype',
-        headerContent: 'Mediatype'
-      },
+      // {
+      //   group: true,
+      //   field: 'mediatype',
+      //   headerContent: 'Mediatype'
+      // },
       {
         field: 'title',
         headerContent: 'Channels'
