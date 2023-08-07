@@ -6,24 +6,6 @@ const supabase = createClient(
 // auth
 
  // Handle form submission
-//  document.getElementById('magicLinkForm').addEventListener('submit', async (event) => {
-//   event.preventDefault();
-//   const formData = new FormData(event.target);
-//   const email = formData.get('email');
-
-//   try {
-//     const { error } = await supabase.auth.signInWithOtp({ email });
-
-//     if (error) {
-//       throw new Error(error.message);
-//     }
-
-//     alert('A magic link has been sent to your email. Click the link to sign in.');
-//   } catch (error) {
-//     console.error('Magic link login failed:', error.message);
-//     alert('Magic link login failed :-/');
-//   }
-// });
 
 document.getElementById('magicLinkForm').addEventListener('submit', async (event) => {
   event.preventDefault();
