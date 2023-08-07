@@ -25,6 +25,17 @@ const supabase = createClient(
   }
 });
 
+const session = supabase.auth.session();
+const usernameDiv = document.getElementById('username');
+
+if (session) {
+  const user = session.user;
+  usernameDiv.innerHTML = `
+    <p>Email: ${user.email}</p>
+    <p>UUID: ${user.id}</p>
+  `;
+}
+
    //get drops start 
 
 async function getDrops() {
