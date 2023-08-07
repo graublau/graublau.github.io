@@ -6,50 +6,50 @@ const supabase = createClient(
 // auth
 
  // Handle form submission
- document.getElementById('magicLinkForm').addEventListener('submit', async (event) => {
-  event.preventDefault();
-  const formData = new FormData(event.target);
-  const email = formData.get('email');
-
-  try {
-    const { error } = await supabase.auth.signInWithOtp({ email });
-
-    if (error) {
-      throw new Error(error.message);
-    }
-
-    alert('A magic link has been sent to your email. Click the link to sign in.');
-  } catch (error) {
-    console.error('Magic link login failed:', error.message);
-    alert('Magic link login failed :-/');
-  }
-});
-
-// document.getElementById('magicLinkForm').addEventListener('submit', async (event) => {
+//  document.getElementById('magicLinkForm').addEventListener('submit', async (event) => {
 //   event.preventDefault();
 //   const formData = new FormData(event.target);
 //   const email = formData.get('email');
 
-//   // List of whitelisted emails
-//   const allowedEmails = ['callmechristoph@gmail.com', 'christoph.mandl@ffg.at', 'mag.christoph.mandl@gmail.com'];
+//   try {
+//     const { error } = await supabase.auth.signInWithOtp({ email });
 
-//   if (allowedEmails.includes(email)) {
-//     try {
-//       const { error } = await supabase.auth.signInWithMagicLink({ email });
-
-//       if (error) {
-//         throw new Error(error.message);
-//       }
-
-//       alert('A magic link has been sent to your email. Click the link to sign in.');
-//     } catch (error) {
-//       console.error('Magic link login failed:', error.message);
-//       alert('Magic link login failed :-/');
+//     if (error) {
+//       throw new Error(error.message);
 //     }
-//   } else {
-//     alert('This email is not whitelisted for magic link login.');
+
+//     alert('A magic link has been sent to your email. Click the link to sign in.');
+//   } catch (error) {
+//     console.error('Magic link login failed:', error.message);
+//     alert('Magic link login failed :-/');
 //   }
 // });
+
+document.getElementById('magicLinkForm').addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const formData = new FormData(event.target);
+  const email = formData.get('email');
+
+  // List of whitelisted emails
+  const allowedEmails = ['callmechristoph@gmail.com', 'christoph.mandl@ffg.at', 'mag.christoph.mandl@gmail.com'];
+
+  if (allowedEmails.includes(email)) {
+    try {
+      const { error } = await supabase.auth.signInWithMagicLink({ email });
+
+      if (error) {
+        throw new Error(error.message);
+      }
+
+      alert('A magic link has been sent to your email. Click the link to sign in.');
+    } catch (error) {
+      console.error('Magic link login failed:', error.message);
+      alert('Magic link login failed :-/');
+    }
+  } else {
+    alert('This email is not whitelisted :-/');
+  }
+});
 
  // Get user's information and populate the username div
  const getUserInfo = async () => {
