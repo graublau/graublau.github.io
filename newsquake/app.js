@@ -31,10 +31,14 @@ const supabase = createClient(
     const { data: { user } } = await supabase.auth.getUser();
 
     if (user) {
+      const magicLinkFormDiv = document.getElementById('magicLinkForm');
       const usernameDiv = document.getElementById('username');
+      magicLinkFormDiv.style.display = 'none';
+      usernameDiv.style.display = 'block';
       usernameDiv.innerHTML = `
         <p>Email: ${user.email}</p>
         <p>UUID: ${user.id}</p>
+        <p>You are logged in.</p>
       `;
     }
   } catch (error) {
