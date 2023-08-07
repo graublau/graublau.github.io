@@ -25,6 +25,26 @@ const supabase = createClient(
   }
 });
 
+ // Get user's information and populate the username div
+ const getUserInfo = async () => {
+  try {
+    const { data: { user } } = await supabase.auth.getUser();
+
+    if (user) {
+      const usernameDiv = document.getElementById('username');
+      usernameDiv.innerHTML = `
+        <p>Email: ${user.email}</p>
+        <p>UUID: ${user.id}</p>
+      `;
+    }
+  } catch (error) {
+    console.error('Error getting user information:', error.message);
+  }
+};
+
+// Call the function to get user info
+getUserInfo();
+
    //get drops start 
 
 async function getDrops() {
