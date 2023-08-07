@@ -24,8 +24,8 @@ document.getElementById('magicLinkForm').addEventListener('submit', async (event
       }
 
        // Display the logout button after successful login
-       const logoutButton = document.getElementById('logoutButton');
-       logoutButton.style.display = 'block';
+      //  const logoutButton = document.getElementById('logoutButton');
+      //  logoutButton.style.display = 'block';
 
       alert('A magic link has been sent to your email. Click the link to sign in.');
     } catch (error) {
