@@ -531,11 +531,11 @@ if (hashValue.startsWith('editepic')) {
   var calendar = new FullCalendar.Calendar(calendarEl, {
     schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
     headerToolbar: {
-      left: 'today prev,next ',
+      left: window.innerWidth < 768 ? 'prev,next' : 'today prev,next ',
       center: 'title',
-      right: 'resourceTimelineToday,resourceTimelineSevenDay,resourceTimelineMonth'
+      right: window.innerWidth < 768 ? 'resourceTimelineToday,resourceTimelineMonth' : 'resourceTimelineToday,resourceTimelineSevenDay,resourceTimelineMonth'
     },
-    initialView: 'resourceTimelineSevenDay',
+    initialView: window.innerWidth < 768 ? 'resourceTimelineToday' : 'resourceTimelineSevenDay',
     firstDay: 1, // Monday
     views: {
       resourceTimelineSevenDay: {
@@ -546,13 +546,13 @@ if (hashValue.startsWith('editepic')) {
       resourceTimelineToday: {
         type: 'resourceTimeline',
         duration: { days: 1 },
-        buttonText: 'daily'
+        buttonText: 'Day'
       },
       resourceTimelineMonth: {
-        buttonText: 'monthly'
+        buttonText: 'Month'
       }
     },
-    resourceAreaWidth: '20%',
+    resourceAreaWidth: window.innerWidth < 768 ? '40%' : '20%',
     resourceAreaColumns: [
       // {
       //   group: true,
@@ -564,7 +564,7 @@ if (hashValue.startsWith('editepic')) {
         headerContent: 'Channels'
       }
     ],
-    aspectRatio: 3,
+    aspectRatio: window.innerWidth < 768 ? 0.66 : 3,
     navLinks: false,
     /*hour12: false,*/
     locale: 'en-GB',

@@ -203,3 +203,14 @@ input {
   }
   
   
+  /* Default styles */
+
+/* For screens smaller than 768px */
+@media (max-width: 767px) {
+  #calendar {
+    /* Adjust calendar appearance for smaller screens */
+    /* Example: */
+    /* Change resourceAreaWidth to a smaller value */
+    /* Modify font sizes, paddings, or margins */
+  }
+}
