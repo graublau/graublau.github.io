@@ -11,17 +11,22 @@ const supabase = createClient(
   const formData = new FormData(event.target);
   const email = formData.get('email');
 
-  try {
-    const { error } = await supabase.auth.signInWithOtp({ email });
+  // Check if the email domain is whitelisted
+  if (email.endsWith('@ffg.at') || email.endsWith('@gmail.com')) {
+    try {
+      const { error } = await supabase.auth.signInWithOtp({ email });
 
-    if (error) {
-      throw new Error(error.message);
+      if (error) {
+        throw new Error(error.message);
+      }
+
+      alert('A magic link has been sent to your email. Click the link to sign in.');
+    } catch (error) {
+      console.error('Magic link login failed:', error.message);
+      alert('Magic link login failed :-/');
     }
-
-    alert('A magic link has been sent to your email. Click the link to sign in.');
-  } catch (error) {
-    console.error('Magic link login failed:', error.message);
-    alert('Magic link login failed :-/');
+  } else {
+    alert('Sorry, only email addresses from @ffg.at are allowed.');
   }
 });
 
