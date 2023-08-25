@@ -541,7 +541,7 @@ if (hashValue.startsWith('editepic')) {
       resourceTimelineSevenDay: {
         type: 'resourceTimeline',
         duration: { days: 7 },
-        buttonText: 'weekly'
+        buttonText: 'Week'
       },
       resourceTimelineToday: {
         type: 'resourceTimeline',

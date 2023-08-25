@@ -91,7 +91,7 @@ input {
 
   .menu {
     float: right;
-    margin-top: 0.3em;
+    margin-top: 2em;
     margin-bottom: 2em;
   }
 
@@ -207,6 +207,7 @@ input {
 
 /* For screens smaller than 768px */
 @media (max-width: 767px) {
+
   #calendar {
     /* Adjust calendar appearance for smaller screens */
     /* Example: */
