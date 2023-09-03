@@ -30,32 +30,6 @@ const supabase = createClient(
   }
 });
 
-// document.getElementById('magicLinkForm').addEventListener('submit', async (event) => {
-//   event.preventDefault();
-//   const formData = new FormData(event.target);
-//   const email = formData.get('email');
-
-//   // List of whitelisted emails
-//   const allowedEmails = ['callmechristoph@gmail.com', 'christoph.mandl@ffg.at', 'mag.christoph.mandl@gmail.com'];
-
-//   if (allowedEmails.includes(email)) {
-//     try {
-//       const { error } = await supabase.auth.signInWithMagicLink({ email });
-
-//       if (error) {
-//         throw new Error(error.message);
-//       }
-
-//       alert('A magic link has been sent to your email. Click the link to sign in.');
-//     } catch (error) {
-//       console.error('Magic link login failed:', error.message);
-//       alert('Magic link login failed :-/');
-//     }
-//   } else {
-//     alert('This email is not whitelisted :-/');
-//   }
-// });
-
  // Get user's information and populate the username div
  const getUserInfo = async () => {
   try {
@@ -112,30 +86,6 @@ async function getDrops() {
   .order('pub_date_time_start', { ascending: false })
   return data
 }
-
-// async function getDrops() {
-//   // Check if the user is authenticated
-//   const user = supabase.auth.user();
-
-//   if (!user) {
-//     // User is not authenticated, handle as per your requirements (e.g., show login screen)
-//     throw new Error('User is not authenticated');
-//   }
-
-//   // If the user is authenticated, proceed with the database query
-//   let { data, error } = await supabase
-//     .from('drops')
-//     .select('*')
-//     .order('pub_date_time_start', { ascending: false });
-
-//   if (error) {
-//     throw new Error(error.message);
-//   }
-
-//   return data;
-// }
-
-
 
 var r = 55;
 var g = 155;
@@ -467,6 +417,7 @@ if (hashValue.startsWith('editchannel')) {
     let listElementTitle = document.getElementById('channelFormTitle'); 
     let listElementMediatype = document.getElementById('channelFormMediatype');
     let listElementOwner = document.getElementById('channelFormOwner');
+    let listElementOrder = document.getElementById('channelFormOrder');
 
     if (item) {
       listElementDrop.style.display = 'none';
@@ -481,10 +432,12 @@ if (hashValue.startsWith('editchannel')) {
       listElementTitle.style.display = 'block';
       listElementMediatype.style.display = 'block';
       listElementOwner.style.display = 'block';
+      listElementOrder.style.display = 'block';
 
       listElementTitle.value = item.title;
       listElementMediatype.value = item.mediatype;
       listElementOwner.value = item.owner;
+      listElementOrder.value = item.order;
     }
 
   })
@@ -573,14 +526,19 @@ if (hashValue.startsWith('editepic')) {
     navLinks: false,
     /*hour12: false,*/
     locale: 'en-GB',
+
+    resourceOrder: 'order',
   
     resources: function getChannelsData(info, successCallback, failureCallback) {
       getChannels().then(data => {
+
         const channelresources = data.map(item => ({
           id: item.id,
           title: item.title,
-          mediatype: item.mediatype
+          mediatype: item.mediatype,
+          order: item.order
         }));
+
         successCallback(channelresources);
       }).catch(error => {
         failureCallback(error);
@@ -663,12 +621,15 @@ function getDateRangeInView(calendar) {
     }
     getChannels().then((data) => {  
 
+        // Sort the data by the "order" property
+        data.sort((a, b) => a.order - b.order);
+
       let listElement = document.getElementById('channel');
       let listElementManageChannels = document.getElementById('channels_ul');
 
       data.forEach(item => {
         listElement.innerHTML += '<option value="' + item.id + '">' + item.title + '</div>' + '</option>';
-        listElementManageChannels.innerHTML += '<tr id="channel' + item.id + '"><td id="channelTitle">' + item.title + '</td><td id="channelMediatype">' + item.mediatype + '</td><td id="channelOwner">' + item.owner + '</td><td id="tableAction"><a href="#editchannel' + item.id + '" class="buttonxs"/>Edit</a>&nbsp;<input type="linkxs" name="delete" id="deleteChannel" value="Delete" onclick="DeleteChannel(' + item.id + ')" class="cta"/></td></tr>';
+        listElementManageChannels.innerHTML += '<tr id="channel' + item.id + '"><td id="channelTitle">' + item.title + '</td><td id="channelMediatype">' + item.mediatype + '</td><td id="channelOwner">' + item.owner + '</td><td id="channelOwner">' + item.order + '</td><td id="tableAction"><a href="#editchannel' + item.id + '" class="buttonxs"/>Edit</a>&nbsp;<input type="linkxs" name="delete" id="deleteChannel" value="Delete" onclick="DeleteChannel(' + item.id + ')" class="cta"/></td></tr>';
       });
 
     })
@@ -795,13 +756,14 @@ function getDateRangeInView(calendar) {
 
     var title = document.getElementById('channelFormTitle').value; 
     var owner = document.getElementById('channelFormOwner').value; 
+    var order = document.getElementById('channelFormOrder').value; 
     var mediatype = document.getElementById('channelFormMediatype').value; 
     
     async function insertNewChannel() {
     const { data, error } = await supabase
       .from('channels')
       .insert([
-        { title: title , owner: owner , mediatype: mediatype }
+        { title: title , owner: owner , order: order , mediatype: mediatype }
       ])
   
     return data
@@ -900,11 +862,12 @@ function UpdateChannel() {
 var newtitle = document.getElementById('channelFormTitle').value; 
 var newmediatype = document.getElementById("channelFormMediatype").value;
 var newowner = document.getElementById("channelFormOwner").value;
+var neworder = document.getElementById("channelFormOrder").value;
  
 async function setChannel() {
 let { data, error } = await supabase
     .from('channels')
-    .update({ title: newtitle, mediatype: newmediatype, owner: newowner})
+    .update({ title: newtitle, mediatype: newmediatype, owner: newowner, order: neworder})
     .match({ id: itemId })
     return data
    }
