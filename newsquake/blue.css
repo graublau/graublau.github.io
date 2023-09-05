@@ -25,6 +25,23 @@ body {
     font-style: normal;
     border-color: blue;
   }
+
+  .ql-toolbar, .ql-snow {
+    font-family: "ff-nexus-typewriter", sans-serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    border-color: blue !important;
+    max-width: 720px; /* Set the maximum width */
+  }
+
+  #text {
+    font-family: "ff-nexus-typewriter", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    border-color: blue;
+    max-width: 720px; /* Set the maximum width */
+    max-height: 360px; /* Set the maximum width */
+  }
   
   .descr,
   label {

@@ -684,6 +684,11 @@ function getDateRangeInView(calendar) {
     //required fields end
 
     //insert drops start
+
+    var quill = new Quill('#text', {
+      theme: 'snow'
+    });
+
    function SubmitDrop() {  
      
      const options = {
@@ -692,10 +697,11 @@ function getDateRangeInView(calendar) {
           day: 'numeric',
           hour: 'numeric',
           minute: 'numeric'
-        };
+        };                    
      
       var title = document.getElementById('title').value; 
-      var text = document.getElementById('text').value; 
+      // var text = document.getElementById('text').value; 
+      var text = quill.getText();
       var assets = document.getElementById('assets').value; 
       var pub_date_time_start = document.getElementById('pub_date_time_start').value;
       let date_start = new Date(pub_date_time_start);

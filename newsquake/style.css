@@ -147,6 +147,7 @@ input {
   }
 
   .modal > .close {
+    margin-top: 2em;
      padding: 0 25px;
   }
 
@@ -213,5 +214,9 @@ input {
     /* Example: */
     /* Change resourceAreaWidth to a smaller value */
     /* Modify font sizes, paddings, or margins */
+  }
+
+  .logotype {
+    display: none;
   }
 }
