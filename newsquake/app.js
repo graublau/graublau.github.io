@@ -323,7 +323,7 @@ function checkHash() {
     let itemId = hashValue.substring('editcontent'.length); // Replace with your desired item ID
     let item = data.find((drop) => drop.id === Number(itemId));
     let listElementTitle = document.getElementById('title'); 
-    let listElementText = document.getElementById('text'); 
+    // let listElementText = document.getElementById('text'); 
     let listElementAssets = document.getElementById('assets'); 
     let listElementPub_Date_Time_Start = document.getElementById('pub_date_time_start');
     let listElementPub_Date_Time_End = document.getElementById('pub_date_time_end');
@@ -338,7 +338,7 @@ function checkHash() {
       listElementSubmitButton.style.display = 'none';
 
       listElementTitle.value = item.title;
-      listElementText.value = item.text;
+      quill.root.innerHTML = item.text;
       listElementAssets.value = item.assets;
 
       
@@ -701,7 +701,7 @@ function getDateRangeInView(calendar) {
      
       var title = document.getElementById('title').value; 
       // var text = document.getElementById('text').value; 
-      var text = quill.getText();
+      var text = quill.root.innerHTML;
       var assets = document.getElementById('assets').value; 
       var pub_date_time_start = document.getElementById('pub_date_time_start').value;
       let date_start = new Date(pub_date_time_start);
@@ -790,7 +790,7 @@ function UpdateDrop() {
     let itemId = hashValue.substring('editcontent'.length); 
        
   var newtitle = document.getElementById('title').value; 
-  var newtext = document.getElementById('text').value; 
+  var newtext = quill.root.innerHTML;
   var newassets = document.getElementById('assets').value; 
   var newpub_date_time_start = document.getElementById('pub_date_time_start').value;
   let newdate_start = new Date(newpub_date_time_start);
