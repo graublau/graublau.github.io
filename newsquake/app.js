@@ -45,6 +45,10 @@ const supabase = createClient(
         <p>UUID: ${user.id}</p>
         <p>You are logged in.</p>
       `;
+
+       // Store the user's ID in the global variable
+       userId = user.id;
+
     }
   } catch (error) {
     console.error('Error getting user information:', error.message);
@@ -698,7 +702,7 @@ function getDateRangeInView(calendar) {
           hour: 'numeric',
           minute: 'numeric'
         };                    
-     
+        
       var title = document.getElementById('title').value; 
       // var text = document.getElementById('text').value; 
       var text = quill.root.innerHTML;
@@ -719,7 +723,7 @@ function getDateRangeInView(calendar) {
         const { data, error } = await supabase
           .from('drops')
           .insert([
-            { title: title , text: text , epic: epic , channel: channel , pub_date_time_start: date_start , pub_date_time_end: date_end , timezone: timezone , timezone_offset: timezone_offset , assets: assets }
+            { title: title , text: text , epic: epic , channel: channel , pub_date_time_start: date_start , pub_date_time_end: date_end , timezone: timezone , timezone_offset: timezone_offset , assets: assets , uuid: userId }
           ])
       
         return data
@@ -743,7 +747,7 @@ function getDateRangeInView(calendar) {
     const { data, error } = await supabase
       .from('epics')
       .insert([
-        { title: title , owner: owner }
+        { title: title , owner: owner , uuid: userId }
       ])
   
     return data
@@ -769,7 +773,7 @@ function getDateRangeInView(calendar) {
     const { data, error } = await supabase
       .from('channels')
       .insert([
-        { title: title , owner: owner , order: order , mediatype: mediatype }
+        { title: title , owner: owner , order: order , mediatype: mediatype, uuid: userId }
       ])
   
     return data
@@ -807,7 +811,7 @@ function UpdateDrop() {
   async function setDrop() {
   let { data, error } = await supabase
       .from('drops')
-      .update({ title: newtitle, text: newtext, epic: newepic, channel: newchannel, pub_date_time_start: newdate_start, pub_date_time_end: newdate_end, timezone_offset: newtimezone_offset, assets: newassets})
+      .update({ title: newtitle, text: newtext, epic: newepic, channel: newchannel, pub_date_time_start: newdate_start, pub_date_time_end: newdate_end, timezone_offset: newtimezone_offset, assets: newassets, uuid: userId})
       .match({ id: itemId })
       return data
      }
@@ -873,7 +877,7 @@ var neworder = document.getElementById("channelFormOrder").value;
 async function setChannel() {
 let { data, error } = await supabase
     .from('channels')
-    .update({ title: newtitle, mediatype: newmediatype, owner: newowner, order: neworder})
+    .update({ title: newtitle, mediatype: newmediatype, owner: newowner, order: neworder, uuid: userId})
     .match({ id: itemId })
     return data
    }
@@ -915,7 +919,7 @@ function UpdateEpic() {
   async function setEpic() {
   let { data, error } = await supabase
       .from('epics')
-      .update({ title: newtitle, owner: newowner})
+      .update({ title: newtitle, owner: newowner, uuid: userId})
       .match({ id: itemId })
       return data
     }
