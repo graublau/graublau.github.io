@@ -807,11 +807,12 @@ function UpdateDrop() {
   var newepic = newepicid.value;
   var newchannelid = document.getElementById("channel");
   var newchannel = newchannelid.value;
+  var newuuid = userId;
    
   async function setDrop() {
   let { data, error } = await supabase
       .from('drops')
-      .update({ title: newtitle, text: newtext, epic: newepic, channel: newchannel, pub_date_time_start: newdate_start, pub_date_time_end: newdate_end, timezone_offset: newtimezone_offset, assets: newassets, uuid: userId})
+      .update({ title: newtitle, text: newtext, epic: newepic, channel: newchannel, pub_date_time_start: newdate_start, pub_date_time_end: newdate_end, timezone_offset: newtimezone_offset, assets: newassets, uuid: newuuid})
       .match({ id: itemId })
       return data
      }
@@ -873,11 +874,12 @@ var newtitle = document.getElementById('channelFormTitle').value;
 var newmediatype = document.getElementById("channelFormMediatype").value;
 var newowner = document.getElementById("channelFormOwner").value;
 var neworder = document.getElementById("channelFormOrder").value;
+var newuuid = userId;
  
 async function setChannel() {
 let { data, error } = await supabase
     .from('channels')
-    .update({ title: newtitle, mediatype: newmediatype, owner: newowner, order: neworder, uuid: userId})
+    .update({ title: newtitle, mediatype: newmediatype, owner: newowner, order: neworder, uuid: newuuid})
     .match({ id: itemId })
     return data
    }
@@ -915,11 +917,12 @@ function UpdateEpic() {
 
   var newtitle = document.getElementById('epicFormTitle').value; 
   var newowner = document.getElementById("epicFormOwner").value;
+  var newuuid = userId;
   
   async function setEpic() {
   let { data, error } = await supabase
       .from('epics')
-      .update({ title: newtitle, owner: newowner, uuid: userId})
+      .update({ title: newtitle, owner: newowner, uuid: newuuid})
       .match({ id: itemId })
       return data
     }
