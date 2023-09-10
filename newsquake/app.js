@@ -595,6 +595,60 @@ function getDateRangeInView(calendar) {
 }
 
   calendar.render();
+
+  
+  function searchEvents(searchTerm) {
+    calendar.getEvents().forEach(function(event) {
+      var eventTitle = event.title.toLowerCase();
+      if (eventTitle.includes(searchTerm)) {
+        event.setProp('display', '');
+      } else {
+        event.setProp('display', 'none');
+      }
+    });
+  }
+
+//   // Function to remove HTML tags from a string
+// function stripHtmlTags(html) {
+//   var temp = document.createElement('div');
+//   temp.innerHTML = html;
+//   return temp.textContent || temp.innerText || '';
+// }
+
+// // Function to search events based on the input field
+// function searchEvents(searchTerm) {
+//   calendar.getEvents().forEach(function(event) {
+//     var eventTitle = event.title.toLowerCase();
+//     var eventText = event.extendedProps.text ? stripHtmlTags(event.extendedProps.text).toLowerCase() : ''; // Remove HTML tags and convert to lowercase
+//     if (eventTitle.includes(searchTerm) || eventText.includes(searchTerm)) {
+//       event.setProp('display', '');
+//     } else {
+//       event.setProp('display', 'none');
+//     }
+//   });
+// }
+
+    // Add input event listener to perform real-time search
+  document.getElementById('eventSearch').addEventListener('input', function() {
+    var searchTerm = this.value.toLowerCase();
+    searchEvents(searchTerm);
+  });
+
+  // Add click event listener to the clear button
+  document.getElementById('clearSearch').addEventListener('click', function() {
+    document.getElementById('eventSearch').value = ''; // Clear the input field
+
+    // Clear the search results by resetting the FullCalendar view
+  calendar.getEvents().forEach(function(event) {
+    event.setProp('display', ''); // Show all events
+  });
+
+  // Re-render the calendar
+  calendar.render();
+  
+  });
+
+  
   // fullcalendar end
 
   // Inserting start
