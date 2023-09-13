@@ -107,7 +107,7 @@ input {
   }
 
   .searchbar {
-    margin: 20px 0;
+    margin: 20px;
     height: 2.5em;
     display: flex;
     justify-content: center;
@@ -115,13 +115,15 @@ input {
 
   .clear-search {
     cursor: pointer;
-    margin-left: -30px; 
+    /* display: none;  */
+    margin-left: -90px; 
     margin-top: 7px;
     color: #000fff; 
   }
 
   #eventSearch {
-    border-radius: 5px; 
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
     max-width: 350px;
     width: 100%;
   }
@@ -133,9 +135,9 @@ input {
   }
   
 
-  /* #eventSearch:valid + .clear-search {
-    display: inline-block !important;
-  } */
+  .descr > img {
+    max-width: 360px;
+  }
 
   #settings {
     display: none;
@@ -155,7 +157,7 @@ input {
   }
 
   #contentDateTime, #channelTitle, #channelTitleHead, #epictitlehead, #epictitle, #epicownerhead, #epicowner {
-    width: 40%;
+    width: 20%;
   }
   #tableAction, #contentTitle, #contentChannelTitle, #channelMediatype, #channelMediatypeHead, #channelOwner, #channelOwnerHead, #channelOrderHead {
     width: 10%;
