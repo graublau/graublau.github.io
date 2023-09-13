@@ -3,7 +3,7 @@ const supabase = createClient(
    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlrbGVlaXlocWl2Z3V0ZmtoeW9pIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzQxOTU3MjcsImV4cCI6MTk4OTc3MTcyN30.5P_T7dzuiVwAxCaNvD9llz5g9_Xp3AU9iJsJi-kNzH8'
  )
   
-// auth
+// auth 
 
  // Handle form submission
  document.getElementById('magicLinkForm').addEventListener('submit', async (event) => {
