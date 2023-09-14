@@ -70,7 +70,7 @@ input {
 
   .logo {
     font-family: "ff-nexus-typewriter", sans-serif;
-    margin-bottom: 2em;
+    /* margin-bottom: 2em; */
     font-size: 1.5em;
     float: left;
   }
@@ -107,7 +107,7 @@ input {
   }
 
   .searchbar {
-    margin: 20px;
+    margin: -60px 20px 60px 20px;
     height: 2.5em;
     display: flex;
     justify-content: center;
@@ -124,8 +124,6 @@ input {
   #eventSearch {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    max-width: 350px;
-    width: 100%;
   }
 
   #searchButton {
@@ -258,4 +256,10 @@ input {
   .logotype {
     display: none;
   }
+
+  .searchbar  {
+    margin: 20px 20px 20px -30px;
+    width: 100%;
+  }
+
 }
