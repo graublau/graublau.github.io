@@ -305,7 +305,7 @@ function checkHash() {
         let date_end = new Date(item.pub_date_time_end);
         let locale_pub_date_time_end = date_end.toLocaleDateString('en-GB', options);
         let imageUrlPath = item.image_url ? JSON.parse(item.image_url).path : '';
-        let imageUrlPrefix = 'https://ykleeiyhqivgutfkhyoi.supabase.co/storage/v1/object/public/images';
+        imageUrlPrefix = 'https://ykleeiyhqivgutfkhyoi.supabase.co/storage/v1/object/public/images';
         let imageUrl = imageUrlPath ? imageUrlPrefix + '/' + imageUrlPath : '';
         
         if (item.assets == '') {
@@ -314,7 +314,7 @@ function checkHash() {
         
       getEpicsPromise.then(() => {
         getChannelsPromise.then(() => {
-         listElementDrop.innerHTML = '<li id="content' + item.id + '" class="modal"><div class="close"><a href="#"><i class="gg-close"></i></a></div><div class="contentcontainer">' + locale_pub_date_time_start + '&nbsp;-&nbsp;' + locale_pub_date_time_end + '&nbsp;(' + item.timezone + ')</div><h1>' + item.title + '</h1>' + '<div class="copy">' + item.text + '</div><div class="descr"><img src="' + imageUrl + '" /></div><div class="descr">Channel:</div>' + channeltitle + '</div><div class="descr">Images, Videos, Assets:</div>' + item.assets + '<div class="descr">Topic:</div><a href="#topic' + item.epic + '">' + epictitle + '</a><div class="descr">Channel Owner:</div>' + channelowner + '<div class="descr">Topic Owner:</div>' + epicowner + '<div class="editcontainer"><a href="#editcontent' + item.id + '" class="button">Edit</a>&nbsp;<a href="#duplicatecontent' + item.id + '" class="button">Duplicate</a>&nbsp;<input type="button" name="delete" id="deleteDrop" value="Delete" onclick="DeleteDrop()" class="cta"/></div></div></li>';
+         listElementDrop.innerHTML = '<li id="content' + item.id + '" class="modal"><div class="close"><a href="#"><i class="gg-close"></i></a></div><div class="contentcontainer">' + locale_pub_date_time_start + '&nbsp;-&nbsp;' + locale_pub_date_time_end + '&nbsp;(' + item.timezone + ')</div><h1>' + item.title + '</h1>' + '<div class="copy">' + item.text + '</div><div class="descr"><img id="mainImage" src="' + imageUrl + '" /></div><div class="descr">Channel:</div>' + channeltitle + '</div><div class="descr">Images, Videos, Assets:</div>' + item.assets + '<div class="descr">Topic:</div><a href="#topic' + item.epic + '">' + epictitle + '</a><div class="descr">Channel Owner:</div>' + channelowner + '<div class="descr">Topic Owner:</div>' + epicowner + '<div class="editcontainer"><a href="#editcontent' + item.id + '" class="button">Edit</a>&nbsp;<a href="#duplicatecontent' + item.id + '" class="button">Duplicate</a>&nbsp;<input type="button" name="delete" id="deleteDrop" value="Delete" onclick="DeleteDrop()" class="cta"/></div></div></li>';
         });
       });
 
@@ -336,6 +336,11 @@ function checkHash() {
     let listElementPub_Date_Time_End = document.getElementById('pub_date_time_end');
     let listElementEpicid = document.getElementById("epic");
     let listElementChannelid = document.getElementById("channel");
+    let imagePreview = document.getElementById("imagePreview");
+    let imageUrlPath = item.image_url ? JSON.parse(item.image_url).path : '';
+    let imagePreviewUrl = imageUrlPath ? imageUrlPrefix + '/' + imageUrlPath : '';
+    let imagePreviewJson = document.getElementById('imagePreviewData');
+    let listElementImageUpload = document.getElementById('imageUpload');
 
     if (item) {
       listElementDrop.style.display = 'none';
@@ -343,11 +348,20 @@ function checkHash() {
       listElementDuplicateButton.style.display = 'none';
       listElementUpdateButton.style.display = 'block';
       listElementSubmitButton.style.display = 'none';
+      imagePreviewJson.style.display = "none";
 
       listElementTitle.value = item.title;
       quill.root.innerHTML = item.text;
       listElementAssets.value = item.assets;
 
+      if (imagePreviewUrl) {
+        listElementImageUpload.style.display = "none";
+        imagePreview.src = imagePreviewUrl; 
+        imagePreviewJson.value = item.image_url;   
+        imagePreviewPass = imagePreviewJson.value;
+      } else {
+        imagePreview.style.display = "none";
+      }
       
       let date_start = new Date(item.pub_date_time_start);
       let timezoneOffset = date_start.getTimezoneOffset();
@@ -375,12 +389,16 @@ if (hashValue.startsWith('duplicatecontent')) {
     let itemId = hashValue.substring('duplicatecontent'.length); // Replace with your desired item ID
     let item = data.find((drop) => drop.id === Number(itemId));
     let listElementTitle = document.getElementById('title'); 
-    let listElementText = document.getElementById('text'); 
     let listElementAssets = document.getElementById('assets'); 
     let listElementPub_Date_Time_Start = document.getElementById('pub_date_time_start');
     let listElementPub_Date_Time_End = document.getElementById('pub_date_time_end');
     let listElementEpicid = document.getElementById("epic");
     let listElementChannelid = document.getElementById("channel");
+    let imagePreview = document.getElementById("imagePreview");
+    let imageUrlPath = item.image_url ? JSON.parse(item.image_url).path : '';
+    let imagePreviewUrl = imageUrlPath ? imageUrlPrefix + '/' + imageUrlPath : '';
+    let imagePreviewJson = document.getElementById('imagePreviewData');
+    let listElementImageUpload = document.getElementById('imageUpload');
 
     if (item) {
 
@@ -389,10 +407,20 @@ if (hashValue.startsWith('duplicatecontent')) {
       listElementDuplicateButton.style.display = 'block';
       listElementUpdateButton.style.display = 'none';
       listElementSubmitButton.style.display = 'none';
+      imagePreviewJson.style.display = "none";
 
       listElementTitle.value = item.title;
-      listElementText.value = item.text;
-      listElementAssets.value = item.assets;
+      quill.root.innerHTML = item.text;
+      listElementAssets.value = item.assets;    
+
+      if (imagePreviewUrl) {
+        listElementImageUpload.style.display = "none";
+        imagePreview.src = imagePreviewUrl; 
+        imagePreviewJson.value = item.image_url;   
+        imagePreviewPass = imagePreviewJson.value;
+      } else {
+        imagePreview.style.display = "none";
+      }
 
         let date_start = new Date(item.pub_date_time_start);
         let timezoneOffset = date_start.getTimezoneOffset();
@@ -791,7 +819,7 @@ function getDateRangeInView(calendar) {
 
     async function insertNewDrop() {
       // Upload the image and get its URL
-      const imageUrl = imageFile ? await uploadImage(imageFile) : null;
+      const imageUrl = imageFile ? await uploadImage(imageFile) : (imagePreviewPass || null);
 
       const { data, error } = await supabase
         .from('drops')
@@ -807,7 +835,7 @@ function getDateRangeInView(calendar) {
             timezone_offset: timezone_offset,
             assets: assets,
             uuid: userId,
-            image_url: imageUrl, // Store the image URL in the database
+            image_url: imageUrl          
           },
         ]);
 
@@ -895,7 +923,7 @@ function UpdateDrop() {
     var newchannel = newchannelid.value;
     var newuuid = userId;
 
-  // Handle image upload BUG HERE
+  // Handle image upload
   const imageInput = document.getElementById('imageUpload');
   const imageFile = imageInput.files[0];
 
@@ -914,7 +942,7 @@ function UpdateDrop() {
 
    
   async function setDrop() {
-    // Upload the image and get its URL BUG HERE
+    // Upload the image and get its URL
     const newimageUrl = imageFile ? await uploadImage(imageFile) : null;
 
   let { data, error } = await supabase

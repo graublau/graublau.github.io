@@ -221,6 +221,11 @@ input[type=button], .button {
     background-color: #000fff !important;
   }
 
+    .highlight-today {
+        background-color: #000fff; 
+        font-weight: bold; /* Bold text for today */
+    }
+
   :root {
     --fc-small-font-size: .85em;
     --fc-page-bg-color: #fff !important;

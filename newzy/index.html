@@ -37,7 +37,7 @@
          
                 <input type="text" id="eventSearch" placeholder="Search for events" class="cta">
                 <button id="searchButton" class="buttonxs">Search</button>
-                <span id="clearSearch" class="clear-search">x</span>
+                <span id="clearSearch" class="clear-search"><i class="gg-close"></i></span>
         </div>
         
         <form name="channelForm" id="channelForm" method="post">
@@ -133,13 +133,17 @@
                     <input type="datetime-local" id="pub_date_time_end" name="pub_date_time_end" class="cta" timezone={getTimezoneOffsetString()} required/>
                 </li>
                     <label>Text:</label><br>
-                    <!-- <textarea name="text" id="text" cols="30" rows="10" class="cta"></textarea> -->
                     <div name="text" id="text" class="cta"></div>            
                       
                 </li>
                 <li>
+                    <div id="current_image"></div>
                     <label>Image:</label><br>
                     <input type="file" id="imageUpload" accept="image/*">
+                    <div>
+                        <img id="imagePreview" src="" alt="Image Preview">
+                        <input type="text" id="imagePreviewData"/>
+                    </div>                    
                 </li>
                 <li>
                     <label>Assets:</label><br>

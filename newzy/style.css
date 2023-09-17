@@ -107,7 +107,7 @@ input {
   }
 
   .searchbar {
-    margin: -60px 20px 60px 20px;
+    margin: -70px 20px 60px 20px;
     height: 2.5em;
     display: flex;
     justify-content: center;
@@ -116,8 +116,8 @@ input {
   .clear-search {
     cursor: pointer;
     /* display: none;  */
-    margin-left: -90px; 
-    margin-top: 7px;
+    margin-left: -95px; 
+    margin-top: 9px;
     color: #000fff; 
   }
 
@@ -133,8 +133,9 @@ input {
   }
   
 
-  .descr > img {
+  .descr > img, #imagePreview {
     max-width: 360px;
+    margin: 5px 0;
   }
 
   #settings {
