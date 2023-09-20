@@ -341,6 +341,7 @@ function checkHash() {
     let imagePreviewUrl = imageUrlPath ? imageUrlPrefix + '/' + imageUrlPath : '';
     let imagePreviewJson = document.getElementById('imagePreviewData');
     let listElementImageUpload = document.getElementById('imageUpload');
+    // let listElementDeleteImagePreviewButton = document.getElementById('deleteImagePreviewButton');
 
     if (item) {
       listElementDrop.style.display = 'none';
@@ -361,6 +362,7 @@ function checkHash() {
         imagePreviewPass = imagePreviewJson.value;
       } else {
         imagePreview.style.display = "none";
+        // listElementDeleteImagePreviewButton.style.display = "none";
       }
       
       let date_start = new Date(item.pub_date_time_start);
@@ -775,7 +777,23 @@ function getDateRangeInView(calendar) {
       theme: 'snow'
     });
 
+    // Function to delete imagePreviewUrl
+    // function deleteImagePreview() {
+    //   imagePreviewUrl = null;
+    //   imagePreviewPass = null;
+    // }
+    // const deleteImageButton = document.getElementById('deleteImagePreviewButton');
+    // deleteImageButton.addEventListener('click', deleteImagePreview);
+
    function SubmitDrop() {  
+
+    let imagePreviewUrl = null;
+    let imagePreviewPass = null;
+
+    // if (imagePreviewUrl) {
+    //   imagePreviewUrl = data.imagePreviewUrl || null;
+    //   imagePreviewPass = data.imagePreviewPass || null;
+    // }
      
      const options = {
           year: 'numeric',
@@ -799,6 +817,16 @@ function getDateRangeInView(calendar) {
       var epic = epicid.value;
       var channelid = document.getElementById("channel");
       var channel = channelid.value;
+      // let imagePreview = document.getElementById("imagePreview");
+
+      if (imagePreviewUrl) {
+        listElementImageUpload.style.display = "none";
+        imagePreview.src = imagePreviewUrl; 
+        imagePreviewJson.value = item.image_url;   
+        imagePreviewPass = imagePreviewJson.value;
+      } else {
+        imagePreview.style.display = "none";
+      }
 
        // Handle image upload
       const imageInput = document.getElementById('imageUpload');
