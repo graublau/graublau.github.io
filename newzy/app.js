@@ -121,6 +121,8 @@ function checkHash() {
  let listElementSubmitChannelButton = document.getElementById('channelSubmitButton');
  let listElementUpdateEpicButton = document.getElementById('epicUpdateButton');
  let listElementSubmitEpicButton = document.getElementById('epicSubmitButton');
+ let listElementImagePreview = document.getElementById('imagePreview');
+ let listElementImagePreviewJson = document.getElementById('imagePreviewData');
 
  if (hashValue === '') {
   listElementDrop.style.display = "none";
@@ -209,6 +211,8 @@ function checkHash() {
     listElementDuplicateButton.style.display = 'none';
     listElementUpdateButton.style.display = 'none';
     listElementSubmitButton.style.display = 'block';
+    listElementImagePreview.style.display = 'none';
+    listElementImagePreviewJson.style.display = 'none';
   }
 
   if (hashValue === 'epicForm') {
@@ -330,7 +334,6 @@ function checkHash() {
     let itemId = hashValue.substring('editcontent'.length); // Replace with your desired item ID
     let item = data.find((drop) => drop.id === Number(itemId));
     let listElementTitle = document.getElementById('title'); 
-    // let listElementText = document.getElementById('text'); 
     let listElementAssets = document.getElementById('assets'); 
     let listElementPub_Date_Time_Start = document.getElementById('pub_date_time_start');
     let listElementPub_Date_Time_End = document.getElementById('pub_date_time_end');
@@ -360,6 +363,7 @@ function checkHash() {
         imagePreview.src = imagePreviewUrl; 
         imagePreviewJson.value = item.image_url;   
         imagePreviewPass = imagePreviewJson.value;
+        console.log(imagePreviewPass);
       } else {
         imagePreview.style.display = "none";
         // listElementDeleteImagePreviewButton.style.display = "none";
@@ -402,6 +406,8 @@ if (hashValue.startsWith('duplicatecontent')) {
     let imagePreviewJson = document.getElementById('imagePreviewData');
     let listElementImageUpload = document.getElementById('imageUpload');
 
+    console.log(imagePreviewUrl);
+   
     if (item) {
 
       listElementDrop.style.display = 'none';
@@ -641,12 +647,6 @@ function getDateRangeInView(calendar) {
     });
   }
 
-    // Add input event listener to perform real-time search
-  // document.getElementById('eventSearch').addEventListener('input', function() {
-  //   var searchTerm = this.value.toLowerCase();
-  //   searchEvents(searchTerm);
-  // });
-
   document.getElementById('searchButton').addEventListener('click', function() {
     var searchTerm = document.getElementById('eventSearch').value.toLowerCase();
     searchEvents(searchTerm);
@@ -777,24 +777,8 @@ function getDateRangeInView(calendar) {
       theme: 'snow'
     });
 
-    // Function to delete imagePreviewUrl
-    // function deleteImagePreview() {
-    //   imagePreviewUrl = null;
-    //   imagePreviewPass = null;
-    // }
-    // const deleteImageButton = document.getElementById('deleteImagePreviewButton');
-    // deleteImageButton.addEventListener('click', deleteImagePreview);
-
    function SubmitDrop() {  
-
-    let imagePreviewUrl = null;
-    let imagePreviewPass = null;
-
-    // if (imagePreviewUrl) {
-    //   imagePreviewUrl = data.imagePreviewUrl || null;
-    //   imagePreviewPass = data.imagePreviewPass || null;
-    // }
-     
+   
      const options = {
           year: 'numeric',
           month: 'long',
@@ -817,16 +801,6 @@ function getDateRangeInView(calendar) {
       var epic = epicid.value;
       var channelid = document.getElementById("channel");
       var channel = channelid.value;
-      // let imagePreview = document.getElementById("imagePreview");
-
-      if (imagePreviewUrl) {
-        listElementImageUpload.style.display = "none";
-        imagePreview.src = imagePreviewUrl; 
-        imagePreviewJson.value = item.image_url;   
-        imagePreviewPass = imagePreviewJson.value;
-      } else {
-        imagePreview.style.display = "none";
-      }
 
        // Handle image upload
       const imageInput = document.getElementById('imageUpload');
@@ -879,6 +853,89 @@ function getDateRangeInView(calendar) {
   }
   //insert drops end
 
+  // duplicat drop start
+
+  function DuplicateDrop() {  
+   
+    const options = {
+         year: 'numeric',
+         month: 'long',
+         day: 'numeric',
+         hour: 'numeric',
+         minute: 'numeric'
+       };                    
+       
+     var title = document.getElementById('title').value; 
+     var text = quill.root.innerHTML;
+     var assets = document.getElementById('assets').value; 
+     var pub_date_time_start = document.getElementById('pub_date_time_start').value;
+     let date_start = new Date(pub_date_time_start);
+     var pub_date_time_end = document.getElementById('pub_date_time_end').value;
+     let date_end = new Date(pub_date_time_end);
+     const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+     var d = new Date(); 
+     var timezone_offset = -d.getTimezoneOffset()/60; 
+     var epicid = document.getElementById("epic");
+     var epic = epicid.value;
+     var channelid = document.getElementById("channel");
+     var channel = channelid.value;
+
+      // Handle image upload
+     const imageInput = document.getElementById('imageUpload');
+     const imageFile = imageInput.files[0];
+
+     async function uploadImage(file) {
+       const { data, error } = await supabase.storage.from('images').upload(`images/${file.name}`, file, {
+         cacheControl: '3600', // Adjust cache control as needed
+       });
+
+       if (error) {
+         console.error('Error uploading image:', error.message);
+         return null;
+       }
+
+       return data;
+     }
+
+   async function insertNewDrop() {
+     // Upload the image and get its URL
+     const imageUrl = imageFile ? await uploadImage(imageFile) : null;
+
+     var imagePreviewPass = document.getElementById('imagePreviewData').value;
+     console.log("imagePreviewPass:", imagePreviewPass);
+     
+  
+     const { data, error } = await supabase
+       .from('drops')
+       .insert([
+         {
+           title: title,
+           text: text,
+           epic: epic,
+           channel: channel,
+           pub_date_time_start: date_start,
+           pub_date_time_end: date_end,
+           timezone: timezone,
+           timezone_offset: timezone_offset,
+           assets: assets,
+           uuid: userId,
+           image_url: imagePreviewPass !== null ? imagePreviewPass : imageUrl,          
+         },
+       ]);
+
+     return data;
+   }
+
+   
+     insertNewDrop().then((data) => {
+       window.location.replace("#");
+       setTimeout(function() { window.location.reload(); }, 5);
+     })
+ 
+ }
+
+ // duplicate drop end
+
   //insert epics start
   function SubmitEpic() {  
 
@@ -928,6 +985,47 @@ function getDateRangeInView(calendar) {
 }
 //insert channels end
 
+
+
+//delete Drop start
+function DeleteDrop() {
+
+  let hashValue = window.location.hash; // get the hash value from the URL
+  hashValue = hashValue.substring(1); // remove the "#" character from the hash value
+  let itemId = hashValue.substring('content'.length); 
+
+async function setDrop() {
+let { data, error } = await supabase
+    .from('drops')
+    .delete()
+    .match({ id: itemId })
+    return data
+   }
+
+setDrop().then((data) => {
+ window.location.replace("#");
+ setTimeout(function() { window.location.reload(); }, 5);
+ })
+};
+//delete Drop end
+
+//delete Channel start
+function DeleteChannel(id) {
+  async function setChannel() {
+    let { data, error } = await supabase
+      .from('channels')
+      .delete()
+      .match({ id: id })
+    return data
+  }
+
+  setChannel().then((data) => {
+    window.location.replace("#channelForm");
+    setTimeout(function() { window.location.reload(); }, 5);
+  })
+};
+//delete Channel end
+
 //update Drop start
 function UpdateDrop() {
 
@@ -973,12 +1071,32 @@ function UpdateDrop() {
     // Upload the image and get its URL
     const newimageUrl = imageFile ? await uploadImage(imageFile) : null;
 
-  let { data, error } = await supabase
+    let updateData = {
+      title: newtitle,
+      text: newtext,
+      epic: newepic,
+      channel: newchannel,
+      pub_date_time_start: newdate_start,
+      pub_date_time_end: newdate_end,
+      timezone_offset: newtimezone_offset,
+      assets: newassets,
+      uuid: newuuid,
+    };
+
+    // Only update image_url based on the condition
+    if (imagePreviewPass !== null) {
+      updateData.image_url = imagePreviewPass;
+    } else if (newimageUrl !== null) {
+      updateData.image_url = newimageUrl;
+    }
+
+    let { data, error } = await supabase
       .from('drops')
-      .update({ title: newtitle, text: newtext, epic: newepic, channel: newchannel, pub_date_time_start: newdate_start, pub_date_time_end: newdate_end, timezone_offset: newtimezone_offset, assets: newassets, uuid: newuuid, image_url: newimageUrl})
-      .match({ id: itemId })
-      return data
-     }
+      .update(updateData)
+      .match({ id: itemId });
+
+    return data;
+  }
   
   setDrop().then((data) => {
    window.location.replace("#");
@@ -986,45 +1104,6 @@ function UpdateDrop() {
    })
   };
 //update Drop end
-
-//delete Drop start
-function DeleteDrop() {
-
-  let hashValue = window.location.hash; // get the hash value from the URL
-  hashValue = hashValue.substring(1); // remove the "#" character from the hash value
-  let itemId = hashValue.substring('content'.length); 
-
-async function setDrop() {
-let { data, error } = await supabase
-    .from('drops')
-    .delete()
-    .match({ id: itemId })
-    return data
-   }
-
-setDrop().then((data) => {
- window.location.replace("#");
- setTimeout(function() { window.location.reload(); }, 5);
- })
-};
-//delete Drop end
-
-//delete Channel start
-function DeleteChannel(id) {
-  async function setChannel() {
-    let { data, error } = await supabase
-      .from('channels')
-      .delete()
-      .match({ id: id })
-    return data
-  }
-
-  setChannel().then((data) => {
-    window.location.replace("#channelForm");
-    setTimeout(function() { window.location.reload(); }, 5);
-  })
-};
-//delete Channel end
 
 //update Channel start
 function UpdateChannel() {
