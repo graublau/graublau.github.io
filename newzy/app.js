@@ -363,7 +363,6 @@ function checkHash() {
         imagePreview.src = imagePreviewUrl; 
         imagePreviewJson.value = item.image_url;   
         imagePreviewPass = imagePreviewJson.value;
-        console.log(imagePreviewPass);
       } else {
         imagePreview.style.display = "none";
         // listElementDeleteImagePreviewButton.style.display = "none";
@@ -405,8 +404,6 @@ if (hashValue.startsWith('duplicatecontent')) {
     let imagePreviewUrl = imageUrlPath ? imageUrlPrefix + '/' + imageUrlPath : '';
     let imagePreviewJson = document.getElementById('imagePreviewData');
     let listElementImageUpload = document.getElementById('imageUpload');
-
-    console.log(imagePreviewUrl);
    
     if (item) {
 
@@ -821,7 +818,7 @@ function getDateRangeInView(calendar) {
 
     async function insertNewDrop() {
       // Upload the image and get its URL
-      const imageUrl = imageFile ? await uploadImage(imageFile) : (imagePreviewPass || null);
+      const imageUrl = imageFile ? await uploadImage(imageFile) : null;
 
       const { data, error } = await supabase
         .from('drops')
@@ -902,8 +899,6 @@ function getDateRangeInView(calendar) {
      const imageUrl = imageFile ? await uploadImage(imageFile) : null;
 
      var imagePreviewPass = document.getElementById('imagePreviewData').value;
-     console.log("imagePreviewPass:", imagePreviewPass);
-     
   
      const { data, error } = await supabase
        .from('drops')
