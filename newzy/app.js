@@ -344,7 +344,6 @@ function checkHash() {
     let imagePreviewUrl = imageUrlPath ? imageUrlPrefix + '/' + imageUrlPath : '';
     let imagePreviewJson = document.getElementById('imagePreviewData');
     let listElementImageUpload = document.getElementById('imageUpload');
-    // let listElementDeleteImagePreviewButton = document.getElementById('deleteImagePreviewButton');
 
     if (item) {
       listElementDrop.style.display = 'none';
@@ -363,6 +362,26 @@ function checkHash() {
         imagePreview.src = imagePreviewUrl; 
         imagePreviewJson.value = item.image_url;   
         imagePreviewPass = imagePreviewJson.value;
+
+        let resetImageLink = document.getElementById('resetImageLink');
+
+        resetImageLink.addEventListener('click', function (event) {
+          event.preventDefault(); // Prevent the default action (e.g., following a link)
+      
+          // Reset imagePreviewUrl to null
+          imagePreviewUrl = null;
+      
+          // Clear the image preview
+          imagePreview.src = '';
+      
+          // Optionally, clear any associated input or data fields
+          imagePreviewJson.value = ''; // Clear the image URL data
+      
+          // Add any other reset actions you need here
+      
+          // You can add more code to perform additional actions on the click event
+        });
+        
       } else {
         imagePreview.style.display = "none";
         // listElementDeleteImagePreviewButton.style.display = "none";
@@ -1022,6 +1041,7 @@ function DeleteChannel(id) {
 //delete Channel end
 
 //update Drop start
+
 function UpdateDrop() {
 
     let hashValue = window.location.hash; // get the hash value from the URL
@@ -1043,6 +1063,9 @@ function UpdateDrop() {
     var newchannelid = document.getElementById("channel");
     var newchannel = newchannelid.value;
     var newuuid = userId;
+
+    // Define imagePreviewPass and set it to null if not defined
+    var imagePreviewPass = null;
 
   // Handle image upload
   const imageInput = document.getElementById('imageUpload');
@@ -1126,6 +1149,8 @@ setChannel().then((data) => {
  setTimeout(function() { window.location.reload(); }, 5);
  })
 };
+
+
 //update Channel end
 
 //delete Epic start
