@@ -370,21 +370,41 @@ function checkHash() {
       
           // Reset imagePreviewUrl to null
           imagePreviewUrl = null;
-      
-          // Clear the image preview
           imagePreview.src = '';
+          imagePreviewJson.value = ''; 
+          imagePreviewPass = null;
       
-          // Optionally, clear any associated input or data fields
-          imagePreviewJson.value = ''; // Clear the image URL data
-      
-          // Add any other reset actions you need here
+          // Add any other reset actions you need here   
+          imagePreview.style.display = "none";
+          listElementImageUpload.style.display = "block";
+    
+
+          async function deleteImageUrl(itemId) {
+            let { data, error } = await supabase
+              .from('drops')
+              .update({ image_url: null }) // Set image_url to null to delete it
+              .match({ id: itemId });
+          
+            if (error) {
+              // alert('Error deleting image_url:', error.message);
+              window.location.replace("#");
+              setTimeout(function() { window.location.reload(); }, 5);
+            } else {
+              // alert('Image_url deleted successfully.');
+              window.location.replace("#editcontent" + itemId);
+              setTimeout(function() { window.location.reload(); }, 5);
+            }
+          }
+
+          const itemIdToDelete = itemId; 
+          deleteImageUrl(itemIdToDelete);
       
           // You can add more code to perform additional actions on the click event
         });
         
       } else {
         imagePreview.style.display = "none";
-        // listElementDeleteImagePreviewButton.style.display = "none";
+        resetImageLink.style.display = "none";
       }
       
       let date_start = new Date(item.pub_date_time_start);
