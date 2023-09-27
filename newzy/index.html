@@ -143,7 +143,7 @@
                     <div>
                         <img id="imagePreview" src="" alt="Image Preview">
                         <input type="text" id="imagePreviewData"/>
-                        <!-- <button id="deleteImage" class="cta">Delete Image</button> -->
+                        <a href id="resetImageLink" class="cta">Delete Image</a>
                     </div>                    
                 </li>
                 <li>
@@ -177,6 +177,22 @@
             </table>
         </div>
 
+        <div id="drops_list" class="modal">
+            <div class="close"><a href="#"><i class="gg-close"></i></a></div>
+            <h1>Manage Contents</h1>
+                    <table>
+                        <!-- <thead>
+                            <tr>
+                                <td id="dropsTitleHead">Title*</td>
+                                <td id="dropsChannelHead">Channel</td>
+                                <td id="dropsTopicHead">Channel</td>
+                                <td id="dropsDateTime">Date / Time</td>
+                            </tr>
+                        </thead> -->
+                        <tbody id="drops_ul"></tbody>
+                    </table>
+        </div>
+
         <div id="login" class="modal" style="display: block;">
             <div class="centercontainer">
                 <!-- newzy -->
@@ -201,7 +217,7 @@
                 <ul class="menu_column">
                     <h1>Plan</h1>
                     <li>
-                        <a href="#">
+                        <a href="#drops">
                             Manage Contents
                         </a>
                     </li>                    

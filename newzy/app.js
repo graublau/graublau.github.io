@@ -106,6 +106,8 @@ function checkHash() {
  hashValue = hashValue.substring(1); // remove the "#" character from the hash value
 
  let listElementDrop = document.getElementById('drop_ul');
+ let listElementDropsList = document.getElementById('drops_list');
+ let listElementDrops = document.getElementById('drops_ul');
  let listElementEpic = document.getElementById('epic_ul');
  let listElementEpicDetail = document.getElementById('epic_detail');
  let listElementManageEpics = document.getElementById('epics_ul');
@@ -126,6 +128,9 @@ function checkHash() {
 
  if (hashValue === '') {
   listElementDrop.style.display = "none";
+  listElementDropsList.style.display = "none";
+  listElementDrops.style.display = "none";
+  listElementEpicDetail.style.display = "none";
   listElementEpicDetail.style.display = "none";
   listElementManageEpics.style.display = "none";
   listElementEpicDrops.style.display = "none";
@@ -133,6 +138,61 @@ function checkHash() {
   listElementEpicForm.style.display = "none";
   listElementChannelForm.style.display = "none";
   listElementManageChannels.style.display = "none";
+ }
+
+ if (hashValue.startsWith('drops')) {
+
+  listElementDropsList.style.display = "block";
+  listElementDrops.style.display = "block";
+
+
+  getDrops().then((data) => {
+    // get Drops with item.channel === itemId here
+     listElementDrops.innerHTML = null;
+    // let items = data.filter((item) => item.epic === itemId);
+    let items = data;
+      
+    // Do something with the filtered drops
+    items.forEach((item) => {
+
+      const options = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric'
+      };
+     
+      let date = new Date(item.pub_date_time_start);
+      let locale_pub_date_time_start = date.toLocaleDateString('en-GB', options);
+
+      let channeltitle = '';
+
+      let getChannelsPromise = new Promise((resolve, reject) => {
+        getChannel().then((data) => {
+          data.forEach(item => { 
+            channeltitle = item.title;
+          });
+          resolve();
+        });
+      });
+
+      async function getChannel() {
+        let { data, error } = await supabase
+        .from('channels')
+        .select('*')
+        .eq('id', item.channel)
+        return data
+      }
+
+      getChannelsPromise.then(() => {
+      listElementDrops.style.display = "block";
+      listElementDrops.innerHTML += '<tr id="content' + item.id + '"><td id="contentTitle"><a href="#content' + item.id + '">' + item.title + '</a></td><td id="contentChannelTitle">' + channeltitle + '</td><td id="contentDateTime">' + locale_pub_date_time_start + item.timezone + '</td></tr>';
+      });
+
+    });
+
+   });
  }
 
  if (hashValue.startsWith('topic')) {
@@ -187,8 +247,8 @@ function checkHash() {
           }
 
           getChannelsPromise.then(() => {
-          listElementEpicDrops.style.display = "block";
-          listElementEpicDrops.innerHTML += '<tr id="content' + item.id + '"><td id="contentTitle"><a href="#content' + item.id + '">' + item.title + '</a></td><td id="contentChannelTitle">' + channeltitle + '</td><td id="contentDateTime">' + locale_pub_date_time_start + item.timezone + '</td></tr>';
+          listElementDrops.style.display = "block";
+          listElementDrops.innerHTML += '<tr id="content' + item.id + '"><td id="contentTitle"><a href="#content' + item.id + '">' + item.title + '</a></td><td id="contentChannelTitle">' + channeltitle + '</td><td id="contentDateTime">' + locale_pub_date_time_start + item.timezone + '</td></tr>';
           });
 
         });
@@ -243,6 +303,10 @@ function checkHash() {
   }
 
  if (hashValue.startsWith('content')) {
+
+  listElementDropsList.style.display = "none";
+  listElementDrops.style.display = "none";
+
   getDrops().then((data) => { 
     // Find item by ID
     let itemId = hashValue.substring('content'.length); // Replace with your desired item ID
@@ -328,6 +392,10 @@ function checkHash() {
  }
 
  if (hashValue.startsWith('editcontent')) {
+
+  listElementDropsList.style.display = "none";
+  listElementDrops.style.display = "none";
+  
   getDrops().then((data) => { 
   
     // Find item by ID
