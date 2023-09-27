@@ -140,7 +140,7 @@ function checkHash() {
   listElementManageChannels.style.display = "none";
  }
 
- if (hashValue.startsWith('drops')) {
+ if (hashValue === 'drops') {
 
   listElementDropsList.style.display = "block";
   listElementDrops.style.display = "block";
@@ -187,7 +187,7 @@ function checkHash() {
 
       getChannelsPromise.then(() => {
       listElementDrops.style.display = "block";
-      listElementDrops.innerHTML += '<tr id="content' + item.id + '"><td id="contentTitle"><a href="#content' + item.id + '">' + item.title + '</a></td><td id="contentChannelTitle">' + channeltitle + '</td><td id="contentDateTime">' + locale_pub_date_time_start + item.timezone + '</td></tr>';
+      listElementDrops.innerHTML += '<tr id="content' + item.id + '"><td id="contentTitle"><a href="#content' + item.id + '">' + item.title + '</a></td><td id="contentChannelTitle">' + channeltitle + '</td><td id="contentDateTime">' + locale_pub_date_time_start + '&nbsp;' + item.timezone + '</td></tr>';
       });
 
     });
@@ -196,6 +196,10 @@ function checkHash() {
  }
 
  if (hashValue.startsWith('topic')) {
+
+  listElementDropsList.style.display = "none";
+  listElementDrops.style.display = "none";
+
   getEpics().then((data) => {
 
      // Find item by ID
@@ -206,7 +210,7 @@ function checkHash() {
      if (item) {
       listElementEpicDetail.style.display = "block";
       listElementEpic.style.display = "block";
-      listElementEpic.innerHTML = '<li id="topic' + item.id + '"><div class="contentcontainer"><h1>' + item.title + '</h1><div class="descr">Topic Owner:</div>' + item.owner + '</div></li>'
+      listElementEpic.innerHTML = '<li id="topic' + item.id + '"><div><h1>' + item.title + '</h1><div class="descr">Topic Owner:</div>' + item.owner + '</div></li>'
 
       getDrops().then((data) => {
         // get Drops with item.channel === itemId here
@@ -247,8 +251,8 @@ function checkHash() {
           }
 
           getChannelsPromise.then(() => {
-          listElementDrops.style.display = "block";
-          listElementDrops.innerHTML += '<tr id="content' + item.id + '"><td id="contentTitle"><a href="#content' + item.id + '">' + item.title + '</a></td><td id="contentChannelTitle">' + channeltitle + '</td><td id="contentDateTime">' + locale_pub_date_time_start + item.timezone + '</td></tr>';
+            listElementEpicDrops.style.display = "block";
+            listElementEpicDrops.innerHTML += '<tr id="content' + item.id + '"><td id="contentTitle"><a href="#content' + item.id + '">' + item.title + '</a></td><td id="contentChannelTitle">' + channeltitle + '</td><td id="contentDateTime">' + locale_pub_date_time_start + '&nbsp;' + item.timezone + '</td></tr>';
           });
 
         });
@@ -285,6 +289,7 @@ function checkHash() {
     listElementChannelForm.style.display = "none";
     listElementUpdateEpicButton.style.display = 'none';
     listElementSubmitEpicButton.style.display = "block";
+    
     // epicform Elements here
   }
 
@@ -299,6 +304,8 @@ function checkHash() {
     listElementManageChannels.style.display = "contents";
     listElementUpdateChannelButton.style.display = "none";
     listElementSubmitChannelButton.style.display = "block";
+    listElementDropsList.style.display = "none";
+    listElementDrops.style.display = "none";
     // epicform Elements here
   }
 
@@ -495,6 +502,10 @@ function checkHash() {
 }
 
 if (hashValue.startsWith('duplicatecontent')) {
+
+  listElementDropsList.style.display = "none";
+  listElementDrops.style.display = "none";
+
   getDrops().then((data) => { 
   
     // Find item by ID
@@ -555,6 +566,10 @@ if (hashValue.startsWith('duplicatecontent')) {
 
 //hashlocation and get channels start
 if (hashValue.startsWith('editchannel')) {
+
+  listElementDropsList.style.display = "none";
+  listElementDrops.style.display = "none";
+
   getChannels().then((data) => { 
   
     // Find item by ID
@@ -593,6 +608,10 @@ if (hashValue.startsWith('editchannel')) {
 
 //hashlocation and get epics start
 if (hashValue.startsWith('editepic')) {
+
+  listElementDropsList.style.display = "none";
+  listElementDrops.style.display = "none";
+
   getEpics().then((data) => { 
   
     // Find item by ID

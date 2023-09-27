@@ -176,11 +176,11 @@ input {
     margin-top: 2em;
   }
 
-  .modal > .contentcontainer, .modal > ul, .modal > table {
+  .modal > ul, .modal > table {
     clear: both;
     /* max-width: 768px;
     margin: 0 auto; */
-    /* padding: 0 25px 25px 25px; */
+    padding: 0 25px 25px 25px;
     /* background-color: black; */
   }
 
