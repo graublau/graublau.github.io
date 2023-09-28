@@ -648,10 +648,156 @@ if (hashValue.startsWith('editepic')) {
 
 };
   //hashlocation end
-  
 
-  // fullcalendar start 
-  var calendarEl = document.getElementById('calendar');
+  // fullcalendar start
+  
+// // Define a function to map the `item.epic` value to a color
+// function getColorForEpic(epic) {
+//   // Define the color range for low and high epic values
+//   const lowColor = [255, 0, 0]; // Red
+//   const highColor = [0, 0, 255]; // Blue
+
+//   // Map `epic` to a value between 0 and 1
+//   const normalizedEpic = Math.min(Math.max(epic, 0), 1);
+
+//   // Interpolate between lowColor and highColor based on `epic` value
+//   const r = Math.round(lowColor[0] + (highColor[0] - lowColor[0]) * normalizedEpic);
+//   const g = Math.round(lowColor[1] + (highColor[1] - lowColor[1]) * normalizedEpic);
+//   const b = Math.round(lowColor[2] + (highColor[2] - lowColor[2]) * normalizedEpic);
+
+//   // Return the color as an RGBA string
+//   return `rgba(${r}, ${g}, ${b}, 0.5)`; // Adjust the alpha (last value) as needed
+// }
+
+// FullCalendar initialization and configuration
+// var calendarEl = document.getElementById('calendar');
+// var calendar = new FullCalendar.Calendar(calendarEl, {
+//   schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
+//   headerToolbar: {
+//     left: window.innerWidth < 768 ? 'prev,next' : 'today prev,next',
+//     center: 'title',
+//     right: window.innerWidth < 768 ? 'resourceTimelineToday,resourceTimelineMonth' : 'resourceTimelineToday,resourceTimelineSevenDay,resourceTimelineMonth'
+//   },
+//   initialView: window.innerWidth < 768 ? 'resourceTimelineToday' : 'resourceTimelineSevenDay',
+//   firstDay: 1, // Monday
+//   views: {
+//     resourceTimelineSevenDay: {
+//       type: 'resourceTimeline',
+//       duration: { days: 7 },
+//       buttonText: 'Week'
+//     },
+//     resourceTimelineToday: {
+//       type: 'resourceTimeline',
+//       duration: { days: 1 },
+//       buttonText: 'Day'
+//     },
+//     resourceTimelineMonth: {
+//       buttonText: 'Month'
+//     }
+//   },
+//   resourceAreaWidth: window.innerWidth < 768 ? '40%' : '20%',
+//   resourceAreaColumns: [
+//     {
+//       field: 'title',
+//       headerContent: 'Channels'
+//     }
+//   ],
+//   aspectRatio: window.innerWidth < 768 ? 0.66 : 3,
+//   navLinks: false,
+//   locale: 'en-GB',
+//   resourceOrder: 'order',
+//   resources: function getChannelsData(info, successCallback, failureCallback) {
+//     getChannels().then(data => {
+//       const channelresources = data.map(item => ({
+//         id: item.id,
+//         title: item.title,
+//         mediatype: item.mediatype,
+//         order: item.order
+//       }));
+//       successCallback(channelresources);
+//     }).catch(error => {
+//       failureCallback(error);
+//     });
+//   },
+//   eventSources: [
+//     {
+//       events: function(info, successCallback, failureCallback) {
+//         getDrops().then(data => {
+//           const events = data.map(item => ({
+//             title: item.title,
+//             start: item.pub_date_time_start,
+//             end: item.pub_date_time_end,
+//             url: '#content' + item.id,
+//             resourceId: item.channel,
+//             item: item,
+//             editable: false,
+//             startEditable: false,
+//             resourceEditable: false
+//           }));
+//           successCallback(events);
+//         }).catch(error => {
+//           failureCallback(error);
+//         });
+//       }
+//     }
+//   ],
+  
+//   // eventContent: function(arg) {
+//   //   console.log(item.epic);
+//   //   var item = arg.event.extendedProps.item;
+//   //   var backgroundColor = getColorForEpic(item.epic);
+
+//   //   // Create a custom event element with the desired background color
+//   //   var eventElement = document.createElement('div');
+//   //   eventElement.style.backgroundColor = backgroundColor;
+
+//   //   // Add the event title or other content as needed
+//   //   eventElement.innerText = arg.event.title;
+
+//   //   return { domNodes: [eventElement] };
+//   // }
+  
+// });
+
+// // Function to get the current view date range
+// function getDateRangeInView(calendar) {
+//   var view = calendar.view;
+//   var start = view.currentStart;
+//   var end = view.currentEnd;
+//   var dateRange = {
+//     start: start,
+//     end: end
+//   };
+//   return dateRange;
+// }
+
+// calendar.render();
+
+// function searchEvents(searchTerm) {
+//   calendar.getEvents().forEach(function(event) {
+//     var eventTitle = event.title.toLowerCase();
+//     if (eventTitle.includes(searchTerm)) {
+//       event.setProp('display', '');
+//     } else {
+//       event.setProp('display', 'none');
+//     }
+//   });
+// }
+
+// document.getElementById('searchButton').addEventListener('click', function() {
+//   var searchTerm = document.getElementById('eventSearch').value.toLowerCase();
+//   searchEvents(searchTerm);
+// });
+
+// document.getElementById('clearSearch').addEventListener('click', function() {
+//   document.getElementById('eventSearch').value = '';
+//   calendar.getEvents().forEach(function(event) {
+//     event.setProp('display', '');
+//   });
+//   calendar.render();
+// });
+
+var calendarEl = document.getElementById('calendar');
   var calendar = new FullCalendar.Calendar(calendarEl, {
     schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
     headerToolbar: {
@@ -722,7 +868,7 @@ if (hashValue.startsWith('editepic')) {
               end: item.pub_date_time_end,
               url: '#content' + item.id,
               resourceId: item.channel,
-              color: 'rgba(' + item.epic * r + ',' + item.epic * g + ',' + item.epic * b + ',100)', // You can customize the color of the event here
+              color: 'rgba(' + item.epic*10 + ', 0, 0, 0.7)', // You can customize the color of the event here
               // allDay: false,
               editable: false,
               startEditable: false,
@@ -800,7 +946,6 @@ function getDateRangeInView(calendar) {
   calendar.render();
   
   });
-
   
   // fullcalendar end
 

@@ -1,0 +1,17 @@
+/* Increase specificity to override :root values */
+#calendar .fc-event {
+    background-color: transparent !important;
+    background-image: none !important;
+    color: #fff !important;
+    border: none !important;
+  }
+  
+  /* Example of setting the background color based on item.epic */
+  #calendar .fc-event.epic-low {
+    background-color: rgba(255, 0, 0, 0.5) !important;
+  }
+  
+  #calendar .fc-event.epic-high {
+    background-color: rgba(0, 0, 255, 0.5) !important;
+  }
+  
