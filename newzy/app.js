@@ -81,6 +81,7 @@ document.getElementById('logoutButton').addEventListener('click', async () => {
   }
 });
 
+
    //get drops start 
 
 async function getDrops() {
@@ -125,6 +126,8 @@ function checkHash() {
  let listElementSubmitEpicButton = document.getElementById('epicSubmitButton');
  let listElementImagePreview = document.getElementById('imagePreview');
  let listElementImagePreviewJson = document.getElementById('imagePreviewData');
+ let resetImageLink = document.getElementById('resetImageLink');
+
 
  if (hashValue === '') {
   listElementDrop.style.display = "none";
@@ -277,6 +280,33 @@ function checkHash() {
     listElementSubmitButton.style.display = 'block';
     listElementImagePreview.style.display = 'none';
     listElementImagePreviewJson.style.display = 'none';
+    listElementDropsList.style.display = "none";
+    listElementDrops.style.display = "none";
+
+    resetImageLink.style.display = "none";
+
+    // Get references to the start and end input fields
+    const pubStartTimeInput = document.getElementById('pub_date_time_start');
+    const pubEndTimeInput = document.getElementById('pub_date_time_end');
+
+    // Add an event listener to the start input field
+    pubStartTimeInput.addEventListener('change', function() {
+    const date_start = new Date(this.value);
+    
+    // Check if date_start is a valid date
+    if (!isNaN(date_start)) {
+        // Calculate date_end by adding 4 hours to date_start
+        const date_end = new Date(date_start);
+        date_end.setHours(date_end.getHours() + 6);
+        
+        // Format date_end in YYYY-MM-DDTHH:MM format for datetime-local input
+        const formatted_date_end = date_end.toISOString().slice(0, 16);
+        
+        // Set the value of the end input field to the calculated date_end
+        pubEndTimeInput.value = formatted_date_end;
+    }
+});
+
   }
 
   if (hashValue === 'epicForm') {
@@ -403,6 +433,43 @@ function checkHash() {
   listElementDropsList.style.display = "none";
   listElementDrops.style.display = "none";
   
+  resetImageLink.style.display = "block";
+
+// Get references to the start and end input fields
+const pubStartTimeInput = document.getElementById('pub_date_time_start');
+const pubEndTimeInput = document.getElementById('pub_date_time_end');
+
+// Function to calculate and update end time
+function updateEndTime() {
+    const date_start = new Date(pubStartTimeInput.value);
+
+    // Check if date_start is a valid date
+    if (!isNaN(date_start)) {
+        // Calculate date_end by adding 4 hours to date_start
+        const date_end = new Date(date_start);
+        date_end.setHours(date_end.getHours() + 6);
+
+        // Format date_end in YYYY-MM-DDTHH:MM format for datetime-local input
+        const formatted_date_end = date_end.toISOString().slice(0, 16);
+
+        // Set the value of the end input field to the calculated date_end
+        pubEndTimeInput.value = formatted_date_end;
+    }
+}
+
+// Add an event listener for changes in the start input field
+pubStartTimeInput.addEventListener('change', updateEndTime);
+
+// Add an event listener for input changes in the start input field
+pubStartTimeInput.addEventListener('input', updateEndTime);
+
+// Trigger the update once if there is existing data in pub_date_time_start
+if (pubStartTimeInput.value) {
+    updateEndTime();
+}
+
+
+  
   getDrops().then((data) => { 
   
     // Find item by ID
@@ -419,6 +486,7 @@ function checkHash() {
     let imagePreviewUrl = imageUrlPath ? imageUrlPrefix + '/' + imageUrlPath : '';
     let imagePreviewJson = document.getElementById('imagePreviewData');
     let listElementImageUpload = document.getElementById('imageUpload');
+
 
     if (item) {
       listElementDrop.style.display = 'none';
@@ -438,7 +506,6 @@ function checkHash() {
         imagePreviewJson.value = item.image_url;   
         imagePreviewPass = imagePreviewJson.value;
 
-        let resetImageLink = document.getElementById('resetImageLink');
 
         resetImageLink.addEventListener('click', function (event) {
           event.preventDefault(); // Prevent the default action (e.g., following a link)
@@ -650,152 +717,6 @@ if (hashValue.startsWith('editepic')) {
   //hashlocation end
 
   // fullcalendar start
-  
-// // Define a function to map the `item.epic` value to a color
-// function getColorForEpic(epic) {
-//   // Define the color range for low and high epic values
-//   const lowColor = [255, 0, 0]; // Red
-//   const highColor = [0, 0, 255]; // Blue
-
-//   // Map `epic` to a value between 0 and 1
-//   const normalizedEpic = Math.min(Math.max(epic, 0), 1);
-
-//   // Interpolate between lowColor and highColor based on `epic` value
-//   const r = Math.round(lowColor[0] + (highColor[0] - lowColor[0]) * normalizedEpic);
-//   const g = Math.round(lowColor[1] + (highColor[1] - lowColor[1]) * normalizedEpic);
-//   const b = Math.round(lowColor[2] + (highColor[2] - lowColor[2]) * normalizedEpic);
-
-//   // Return the color as an RGBA string
-//   return `rgba(${r}, ${g}, ${b}, 0.5)`; // Adjust the alpha (last value) as needed
-// }
-
-// FullCalendar initialization and configuration
-// var calendarEl = document.getElementById('calendar');
-// var calendar = new FullCalendar.Calendar(calendarEl, {
-//   schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
-//   headerToolbar: {
-//     left: window.innerWidth < 768 ? 'prev,next' : 'today prev,next',
-//     center: 'title',
-//     right: window.innerWidth < 768 ? 'resourceTimelineToday,resourceTimelineMonth' : 'resourceTimelineToday,resourceTimelineSevenDay,resourceTimelineMonth'
-//   },
-//   initialView: window.innerWidth < 768 ? 'resourceTimelineToday' : 'resourceTimelineSevenDay',
-//   firstDay: 1, // Monday
-//   views: {
-//     resourceTimelineSevenDay: {
-//       type: 'resourceTimeline',
-//       duration: { days: 7 },
-//       buttonText: 'Week'
-//     },
-//     resourceTimelineToday: {
-//       type: 'resourceTimeline',
-//       duration: { days: 1 },
-//       buttonText: 'Day'
-//     },
-//     resourceTimelineMonth: {
-//       buttonText: 'Month'
-//     }
-//   },
-//   resourceAreaWidth: window.innerWidth < 768 ? '40%' : '20%',
-//   resourceAreaColumns: [
-//     {
-//       field: 'title',
-//       headerContent: 'Channels'
-//     }
-//   ],
-//   aspectRatio: window.innerWidth < 768 ? 0.66 : 3,
-//   navLinks: false,
-//   locale: 'en-GB',
-//   resourceOrder: 'order',
-//   resources: function getChannelsData(info, successCallback, failureCallback) {
-//     getChannels().then(data => {
-//       const channelresources = data.map(item => ({
-//         id: item.id,
-//         title: item.title,
-//         mediatype: item.mediatype,
-//         order: item.order
-//       }));
-//       successCallback(channelresources);
-//     }).catch(error => {
-//       failureCallback(error);
-//     });
-//   },
-//   eventSources: [
-//     {
-//       events: function(info, successCallback, failureCallback) {
-//         getDrops().then(data => {
-//           const events = data.map(item => ({
-//             title: item.title,
-//             start: item.pub_date_time_start,
-//             end: item.pub_date_time_end,
-//             url: '#content' + item.id,
-//             resourceId: item.channel,
-//             item: item,
-//             editable: false,
-//             startEditable: false,
-//             resourceEditable: false
-//           }));
-//           successCallback(events);
-//         }).catch(error => {
-//           failureCallback(error);
-//         });
-//       }
-//     }
-//   ],
-  
-//   // eventContent: function(arg) {
-//   //   console.log(item.epic);
-//   //   var item = arg.event.extendedProps.item;
-//   //   var backgroundColor = getColorForEpic(item.epic);
-
-//   //   // Create a custom event element with the desired background color
-//   //   var eventElement = document.createElement('div');
-//   //   eventElement.style.backgroundColor = backgroundColor;
-
-//   //   // Add the event title or other content as needed
-//   //   eventElement.innerText = arg.event.title;
-
-//   //   return { domNodes: [eventElement] };
-//   // }
-  
-// });
-
-// // Function to get the current view date range
-// function getDateRangeInView(calendar) {
-//   var view = calendar.view;
-//   var start = view.currentStart;
-//   var end = view.currentEnd;
-//   var dateRange = {
-//     start: start,
-//     end: end
-//   };
-//   return dateRange;
-// }
-
-// calendar.render();
-
-// function searchEvents(searchTerm) {
-//   calendar.getEvents().forEach(function(event) {
-//     var eventTitle = event.title.toLowerCase();
-//     if (eventTitle.includes(searchTerm)) {
-//       event.setProp('display', '');
-//     } else {
-//       event.setProp('display', 'none');
-//     }
-//   });
-// }
-
-// document.getElementById('searchButton').addEventListener('click', function() {
-//   var searchTerm = document.getElementById('eventSearch').value.toLowerCase();
-//   searchEvents(searchTerm);
-// });
-
-// document.getElementById('clearSearch').addEventListener('click', function() {
-//   document.getElementById('eventSearch').value = '';
-//   calendar.getEvents().forEach(function(event) {
-//     event.setProp('display', '');
-//   });
-//   calendar.render();
-// });
 
 var calendarEl = document.getElementById('calendar');
   var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -868,7 +789,7 @@ var calendarEl = document.getElementById('calendar');
               end: item.pub_date_time_end,
               url: '#content' + item.id,
               resourceId: item.channel,
-              color: 'rgba(' + item.epic*10 + ', 0, 0, 0.7)', // You can customize the color of the event here
+              color: 'rgba(' + item.epic*10 + ' 0, 0, 0.6)', // You can customize the color of the event here
               // allDay: false,
               editable: false,
               startEditable: false,
