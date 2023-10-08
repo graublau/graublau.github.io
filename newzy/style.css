@@ -154,10 +154,11 @@ input {
     width: 100%;
   }
 
-  #contentDateTime, #channelTitle, #channelTitleHead, #epictitlehead, #epictitle, #epicownerhead, #epicowner {
-    width: 20%;
+  .ten {
+    width: 30%;
   }
-  #tableAction, #contentTitle, #contentChannelTitle, #channelMediatype, #channelMediatypeHead, #channelOwner, #channelOwnerHead, #channelOrderHead {
+
+  .five {
     width: 10%;
   }
 
@@ -204,9 +205,9 @@ input {
     margin: 0;
   }
   
-  a > i[class^="gg-menu-hotdog"] {
+  a > i[class^="gg-menu"] {
     --ggs:1.1;
-   margin: 11px 8px 0 0;
+   margin: 15px 8px 0 0;
   }
   
   a > i[class^="gg-add"] {

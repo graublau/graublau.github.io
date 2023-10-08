@@ -143,6 +143,18 @@ function checkHash() {
   listElementManageChannels.style.display = "none";
  }
 
+ // Manage Drops
+const toggleTableHeader = document.getElementById('toggleTableHeader');
+const dropsHeader = document.getElementById('dropsHeader');
+
+toggleTableHeader.addEventListener('click', () => {
+  if (dropsHeader.style.display === 'none' || dropsHeader.style.display === '') {
+    dropsHeader.style.display = 'block';
+  } else {
+    dropsHeader.style.display = 'none';
+  }
+});
+
  if (hashValue === 'drops') {
 
   listElementDropsList.style.display = "block";
@@ -166,9 +178,11 @@ function checkHash() {
         minute: 'numeric'
       };
      
-      let date = new Date(item.pub_date_time_start);
-      let locale_pub_date_time_start = date.toLocaleDateString('en-GB', options);
-
+      let start = new Date(item.pub_date_time_start);
+      let locale_pub_date_time_start = start.toLocaleDateString('en-GB', options);
+      let end = new Date(item.pub_date_time_end);
+      let locale_pub_date_time_end = end.toLocaleDateString('en-GB', options);
+      
       let channeltitle = '';
 
       let getChannelsPromise = new Promise((resolve, reject) => {
@@ -188,15 +202,94 @@ function checkHash() {
         return data
       }
 
-      getChannelsPromise.then(() => {
-      listElementDrops.style.display = "block";
-      listElementDrops.innerHTML += '<tr id="content' + item.id + '"><td id="contentTitle"><a href="#content' + item.id + '">' + item.title + '</a></td><td id="contentChannelTitle">' + channeltitle + '</td><td id="contentDateTime">' + locale_pub_date_time_start + '&nbsp;' + item.timezone + '</td></tr>';
+      let epictitle = '';
+
+      let getEpicsPromise = new Promise((resolve, reject) => {
+        getEpic().then((data) => {
+          data.forEach(item => { 
+            epictitle = item.title;
+          });
+          resolve();
+        });
       });
 
-    });
+      async function getEpic() {
+        let { data, error } = await supabase
+        .from('epics')
+        .select('*')
+        .eq('id', item.epic)
+        return data
+      }
 
+      getChannelsPromise.then(() => {
+        getEpicsPromise.then(() => {
+      listElementDrops.style.display = "block";
+      listElementDrops.innerHTML += '<tr id="content' + item.id + '"><td id="contentTitle" class="ten"><a href="#content' + item.id + '">' + item.title + '</a></td><td id="contentEpicTitle" class="five">' + epictitle + '</td><td id="contentChannelTitle" class="five">' + channeltitle + '</td><td id="contentDateTime" class="ten">' + start + '</td></tr>';
+
+// Sort Drops
+let currentSortOrder = 'asc';
+
+function sortTable(columnName) {
+  const table = document.getElementById('dropsTable');
+  const tbody = document.getElementById('drops_ul');
+  const rows = Array.from(tbody.getElementsByTagName('tr'));
+
+  currentSortOrder = currentSortOrder === 'asc' ? 'desc' : 'asc';
+
+  rows.sort((a, b) => {
+    const cellA = a.querySelector(`#${columnName}`).textContent;
+    const cellB = b.querySelector(`#${columnName}`).textContent;
+
+    if (columnName === 'contentDateTime') {
+      const dateA = new Date(cellA);
+      const dateB = new Date(cellB);
+
+      console.log(dateA);
+
+      if (currentSortOrder === 'asc') {
+        return dateA - dateB;
+      } else {
+        return dateB - dateA;
+      }
+    } else {
+      if (currentSortOrder === 'asc') {
+        return cellA.localeCompare(cellB);
+      } else {
+        return cellB.localeCompare(cellA);
+      }
+    }
+  });
+
+  rows.forEach((row) => tbody.appendChild(row));
+}
+
+
+// Add click event listener to the date/time header for sorting
+document.getElementById('epicTitleHeader').addEventListener('click', () => sortTable('contentEpicTitle'));
+document.getElementById('channelTitleHeader').addEventListener('click', () => sortTable('contentChannelTitle'));
+document.getElementById('dateTimeHeader').addEventListener('click', () => sortTable('contentDateTime'));
+
+      });
+    }); 
+    });
    });
  }
+
+ // Function to copy the entire table to clipboard
+function copyTableToClipboard() {
+  const table = document.getElementById('drops_ul');
+  const range = document.createRange();
+  range.selectNode(table);
+  window.getSelection().removeAllRanges();
+  window.getSelection().addRange(range);
+  document.execCommand('copy');
+  window.getSelection().removeAllRanges();
+  alert('Data Copied!');
+}
+
+// Add a click event listener to the "Copy Table" button
+const copyTableButton = document.getElementById('copyTableButton');
+copyTableButton.addEventListener('click', copyTableToClipboard);
 
  if (hashValue.startsWith('topic')) {
 
@@ -319,6 +412,8 @@ function checkHash() {
     listElementChannelForm.style.display = "none";
     listElementUpdateEpicButton.style.display = 'none';
     listElementSubmitEpicButton.style.display = "block";
+    listElementDropsList.style.display = "none";
+    listElementDrops.style.display = "none";
     
     // epicform Elements here
   }
@@ -464,7 +559,7 @@ pubStartTimeInput.addEventListener('change', updateEndTime);
 pubStartTimeInput.addEventListener('input', updateEndTime);
 
 // Trigger the update once if there is existing data in pub_date_time_start
-if (pubStartTimeInput.value) {
+if (pubStartTimeInput.value) { 
     updateEndTime();
 }
 
@@ -789,7 +884,8 @@ var calendarEl = document.getElementById('calendar');
               end: item.pub_date_time_end,
               url: '#content' + item.id,
               resourceId: item.channel,
-              color: 'rgba(' + item.epic*10 + ' 0, 0, 0.6)', // You can customize the color of the event here
+              // color: 'rgba(' + item.epic*10 + ',' + item.epic*2 + ',' + item.epic*50 + ', 0.6)', // You can customize the color of the event here
+              color: 'rgba(' + Math.round(Math.sin(item.epic) * 1024 + 128) + ',' + Math.round(Math.sin(item.epic) * 16 + 128) + ',' + Math.round(Math.sin(item.epic) * 64 + 128) + ', 0.9)', // You can customize the color of the event here
               // allDay: false,
               editable: false,
               startEditable: false,

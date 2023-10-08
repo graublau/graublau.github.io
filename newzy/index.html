@@ -6,7 +6,6 @@
         <link href="black.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://use.typekit.net/vds5cqe.css">
         <link href='https://cdn.jsdelivr.net/npm/css.gg/icons/all.css' rel='stylesheet'>
-        <!-- <link rel="stylesheet" href="custom-calendar.css" />  -->
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -29,7 +28,7 @@
             <div class="logo"><img src="newzy_black.png"><span class="logotype"></span></div>
 
             <div class="menu">
-            <div class="nodeco menuitem"><a href="#settings"><i class="gg-menu-hotdog"></i></a></div> 
+            <div class="nodeco menuitem"><a href="#settings"><i class="gg-menu"></i></a></div> 
             <div class="nodeco menuitem"><a href="#dropForm"><i class="gg-add"></i></a></div> 
             </div>
         </div>
@@ -183,10 +182,33 @@
         <div id="drops_list" class="modal">
             <div class="close"><a href="#" id="close_refresh"><i class="gg-close"></i></a></div>
             <div class="contentcontainer">
-            <h1>Manage Contents</h1>
-                    <table>
-                        <tbody id="drops_ul"></tbody>
-                    </table>
+                <h1 style="display: inline-block; vertical-align: middle;">Manage Contents</h1>
+                <div id="toggleTableHeader" style="display: inline-block; vertical-align: middle; cursor: pointer; margin: 0 25px;"><i class="gg-more"></i></div>
+                <div id="copyTableButton" style="display: inline-block; vertical-align: middle; cursor: pointer; margin: 0 5px;"><i class="gg-copy"></i></div>
+
+                <table id="dropsTable">
+                <thead id="dropsHeader" style="display: none; margin: 25px 0; text-align: left;">                   
+                    <tr>
+                        <th>Sort By:</th>
+                      </tr>
+                      <tr>
+                        <th>
+                          <input type="radio" id="epicTitleHeader" name="sort" value="epic" /><label for="sortByEpic">Topic ▲▼</label>                          
+                        </th>
+                      </tr>
+                      <tr>
+                        <th>
+                          <input type="radio" id="channelTitleHeader" name="sort" value="channel" /><label for="sortByChannel">Channel ▲▼</label>                          
+                        </th>
+                      </tr>
+                      <tr>
+                        <th>
+                          <input type="radio" id="dateTimeHeader" name="sort" value="date" /><label for="sortByDate">Date ▲▼</label>                          
+                        </th>
+                      </tr>
+                </thead>
+                <tbody id="drops_ul"></tbody>
+                </table>
             </div>
         </div>
 
