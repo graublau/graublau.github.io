@@ -100,6 +100,26 @@ var b = 255;
 window.onload = checkHash;
 window.onhashchange = checkHash;
 
+
+document.getElementById("go_back_from_channelForm").addEventListener("click", function() {
+  window.history.back();
+});
+document.getElementById("go_back_from_epicForm").addEventListener("click", function() {
+  window.history.back();
+});
+document.getElementById("go_back_from_dropForm").addEventListener("click", function() {
+  window.history.back();
+});
+document.getElementById("go_back_from_epic_detail").addEventListener("click", function() {
+  window.history.back();
+});
+document.getElementById("go_back_from_drops_list").addEventListener("click", function() {
+  window.history.back();
+});
+document.getElementById("go_back_from_settings").addEventListener("click", function() {
+  window.history.back();
+});
+
 function checkHash() {
 
  //get location hash start
@@ -514,7 +534,12 @@ copyTableButton.addEventListener('click', copyTableToClipboard);
         
       getEpicsPromise.then(() => {
         getChannelsPromise.then(() => {
-         listElementDrop.innerHTML = '<li id="content' + item.id + '" class="modal"><div class="close"><a href="#"><i class="gg-close"></i></a></div><div class="contentcontainer">' + locale_pub_date_time_start + '&nbsp;-&nbsp;' + locale_pub_date_time_end + '&nbsp;(' + item.timezone + ')</div><h1>' + item.title + '</h1>' + '<div class="copy">' + item.text + '</div><div class="descr"><img id="mainImage" src="' + imageUrl + '" /></div><div class="descr">Channel:</div>' + channeltitle + '</div><div class="descr">Images, Videos, Assets:</div>' + item.assets + '<div class="descr">Topic:</div><a href="#topic' + item.epic + '">' + epictitle + '</a><div class="descr">Channel Owner:</div>' + channelowner + '<div class="descr">Topic Owner:</div>' + epicowner + '<div class="descr">Assigned Editor:</div>' + item.editor + '<div class="descr">Last edited by:</div>' + item.last_edited_by + '<div class="editcontainer"><a href="#editcontent' + item.id + '" class="button">Edit</a>&nbsp;<a href="#duplicatecontent' + item.id + '" class="button">Duplicate</a>&nbsp;<input type="button" name="delete" id="deleteDrop" value="Delete" onclick="DeleteDrop()" class="cta"/></div></div></li>';
+         listElementDrop.innerHTML = '<li id="content' + item.id + '" class="modal"><div class="back"><a href="javascript:void(0);" id="go_back_from_drop"><i class="gg-chevron-left"></i></a></div><div class="close"><a href="#"><i class="gg-close"></i></a></div><div class="contentcontainer">' + locale_pub_date_time_start + '&nbsp;-&nbsp;' + locale_pub_date_time_end + '&nbsp;(' + item.timezone + ')</div><h1>' + item.title + '</h1>' + '<div class="copy">' + item.text + '</div><div class="descr"><img id="mainImage" src="' + imageUrl + '" /></div><div class="descr">Channel:</div>' + channeltitle + '</div><div class="descr">Images, Videos, Assets:</div>' + item.assets + '<div class="descr">Topic:</div><a href="#topic' + item.epic + '">' + epictitle + '</a><div class="descr">Channel Owner:</div>' + channelowner + '<div class="descr">Topic Owner:</div>' + epicowner + '<div class="descr">Assigned Editor:</div>' + item.editor + '<div class="descr">Last edited by:</div>' + item.last_edited_by + '<div class="editcontainer"><a href="#editcontent' + item.id + '" class="button">Edit</a>&nbsp;<a href="#duplicatecontent' + item.id + '" class="button">Duplicate</a>&nbsp;<input type="button" name="delete" id="deleteDrop" value="Delete" onclick="DeleteDrop()" class="cta"/></div></div></li>';
+
+         document.getElementById("go_back_from_drop").addEventListener("click", function() {
+          window.history.back();
+        });
+        
         });
       });
 

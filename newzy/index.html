@@ -27,7 +27,7 @@
             <div class="logo"><img src="newzy_black.png"><span class="logotype"></span></div>
 
             <div class="menu">
-            <div class="nodeco menuitem"><a href="#settings"><i class="gg-menu"></i></a></div> 
+            <div class="nodeco menuitem"><a href="#settings"><i class="gg-menu-cheese"></i></a></div> 
             <div class="nodeco menuitem"><a href="#dropForm"><i class="gg-add"></i></a></div> 
             </div>
         </div>
@@ -41,9 +41,8 @@
         
         <form name="channelForm" id="channelForm" method="post">
             <ul class="modal">
-                <div class="close">
-                    <a href="#" id="close_refresh"><i class="gg-close" id="close_refresh"></i></a>
-                </div>
+                <div class="back"><a href="javascript:void(0);" id="go_back_from_channelForm"><i class="gg-chevron-left"></i></a></div>
+                <div class="close"><a href="#" id="close_refresh"><i class="gg-close" id="close_refresh"></i></a></div>
                 <div class="contentcontainer">
                     <h1>Manage Channels</h1>
                     <table>
@@ -78,10 +77,8 @@
          </form>  
         <form name="epicForm" id="epicForm" method="post">
             <ul class="modal">
-                    <div class="close">
-                        <a href="#" id="close_refresh"><i class="gg-close"></i></a>
-                    </div>
-          
+                <div class="back"><a href="javascript:void(0);" id="go_back_from_epicForm"><i class="gg-chevron-left"></i></a></div>
+                <div class="close"><a href="#" id="close_refresh"><i class="gg-close"></i></a></div>          
                 <div class="contentcontainer">
                     <h1>Manage Topics</h1>
                     <table>
@@ -106,11 +103,10 @@
 
         <form name="dropForm" id="dropForm" method="post">
            <ul class="modal">
-            <div class="close">
-                    <a href="#" id="close_refresh"><i class="gg-close"></i></a>
-            </div>               
+            <div class="back"><a href="javascript:void(0);" id="go_back_from_dropForm"><i class="gg-chevron-left"></i></a></div>
+            <div class="close"><a href="#" id="close_refresh"><i class="gg-close"></i></a></div>               
             <div class="contentcontainer">
-                <h1>+ Content</h1>
+                <h1>Add Content</h1>
                 <li>
                     <label>Title:*</label><br>
                     <input type="text" name="title" id="title" class="cta" placeholder="Long Story Short" required/>
@@ -173,6 +169,7 @@
         <ul id="drop_ul"></ul>
 
         <div id="epic_detail" class="modal">
+            <div class="back"><a href="javascript:void(0);" id="go_back_from_epic_detail"><i class="gg-chevron-left"></i></a></div>
             <div class="close"><a href="#" id="close_refresh"><i class="gg-close"></i></a></div>
             <div class="contentcontainer">
                 <ul id="epic_ul"></ul>
@@ -183,6 +180,7 @@
         </div>
 
         <div id="drops_list" class="modal">
+            <div class="back"><a href="javascript:void(0);" id="go_back_from_drops_list"><i class="gg-chevron-left"></i></a></div>
             <div class="close"><a href="#" id="close_refresh"><i class="gg-close"></i></a></div>
             <div class="contentcontainer">
                 <h1 style="display: inline-block; vertical-align: middle;">Manage Contents</h1>
@@ -232,9 +230,8 @@
         </div>
         
         <div id="settings" class="modal">
-            <div class="close">
-                <a href="#" id="close_refresh"><i class="gg-close"></i></a>
-            </div>
+            <div class="back"><a href="javascript:void(0);" id="go_back_from_settings"><i class="gg-chevron-left"></i></a></div>
+            <div class="close"><a href="#" id="close_refresh"><i class="gg-close"></i></a></div> 
             <div class="contentcontainer">
                 <ul class="menu_column">
                     <h1>Plan</h1>
