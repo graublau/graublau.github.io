@@ -514,7 +514,7 @@ copyTableButton.addEventListener('click', copyTableToClipboard);
         
       getEpicsPromise.then(() => {
         getChannelsPromise.then(() => {
-         listElementDrop.innerHTML = '<li id="content' + item.id + '" class="modal"><div class="close"><a href="#"><i class="gg-close"></i></a></div><div class="contentcontainer">' + locale_pub_date_time_start + '&nbsp;-&nbsp;' + locale_pub_date_time_end + '&nbsp;(' + item.timezone + ')</div><h1>' + item.title + '</h1>' + '<div class="copy">' + item.text + '</div><div class="descr"><img id="mainImage" src="' + imageUrl + '" /></div><div class="descr">Channel:</div>' + channeltitle + '</div><div class="descr">Images, Videos, Assets:</div>' + item.assets + '<div class="descr">Topic:</div><a href="#topic' + item.epic + '">' + epictitle + '</a><div class="descr">Channel Owner:</div>' + channelowner + '<div class="descr">Topic Owner:</div>' + epicowner + '<div class="editcontainer"><a href="#editcontent' + item.id + '" class="button">Edit</a>&nbsp;<a href="#duplicatecontent' + item.id + '" class="button">Duplicate</a>&nbsp;<input type="button" name="delete" id="deleteDrop" value="Delete" onclick="DeleteDrop()" class="cta"/></div></div></li>';
+         listElementDrop.innerHTML = '<li id="content' + item.id + '" class="modal"><div class="close"><a href="#"><i class="gg-close"></i></a></div><div class="contentcontainer">' + locale_pub_date_time_start + '&nbsp;-&nbsp;' + locale_pub_date_time_end + '&nbsp;(' + item.timezone + ')</div><h1>' + item.title + '</h1>' + '<div class="copy">' + item.text + '</div><div class="descr"><img id="mainImage" src="' + imageUrl + '" /></div><div class="descr">Channel:</div>' + channeltitle + '</div><div class="descr">Images, Videos, Assets:</div>' + item.assets + '<div class="descr">Topic:</div><a href="#topic' + item.epic + '">' + epictitle + '</a><div class="descr">Channel Owner:</div>' + channelowner + '<div class="descr">Topic Owner:</div>' + epicowner + '<div class="descr">Assigned Editor:</div>' + item.editor + '<div class="descr">Last edited by:</div>' + item.last_edited_by + '<div class="editcontainer"><a href="#editcontent' + item.id + '" class="button">Edit</a>&nbsp;<a href="#duplicatecontent' + item.id + '" class="button">Duplicate</a>&nbsp;<input type="button" name="delete" id="deleteDrop" value="Delete" onclick="DeleteDrop()" class="cta"/></div></div></li>';
         });
       });
 
@@ -1086,6 +1086,7 @@ function getDateRangeInView(calendar) {
       var epic = epicid.value;
       var channelid = document.getElementById("channel");
       var channel = channelid.value;
+      var editor = document.getElementById("editor").value;
 
        // Handle image upload
       const imageInput = document.getElementById('imageUpload');
@@ -1121,8 +1122,10 @@ function getDateRangeInView(calendar) {
             timezone: timezone,
             timezone_offset: timezone_offset,
             assets: assets,
-            uuid: userId,
-            image_url: imageUrl          
+            created_by: userId,
+            last_edited_by: userId,            
+            image_url: imageUrl,
+            editor: editor    
           },
         ]);
 
@@ -1164,6 +1167,7 @@ function getDateRangeInView(calendar) {
      var epic = epicid.value;
      var channelid = document.getElementById("channel");
      var channel = channelid.value;
+     var editor = document.getElementById("editor").value;
 
       // Handle image upload
      const imageInput = document.getElementById('imageUpload');
@@ -1201,8 +1205,10 @@ function getDateRangeInView(calendar) {
            timezone: timezone,
            timezone_offset: timezone_offset,
            assets: assets,
-           uuid: userId,
-           image_url: imagePreviewPass !== null ? imagePreviewPass : imageUrl,          
+           last_edited_by: userId,
+           created_by: userId,
+           image_url: imagePreviewPass !== null ? imagePreviewPass : imageUrl,
+           editor: editor          
          },
        ]);
 
@@ -1332,6 +1338,7 @@ function UpdateDrop() {
     var newchannelid = document.getElementById("channel");
     var newchannel = newchannelid.value;
     var newuuid = userId;
+    var neweditor = document.getElementById('editor').value;
 
     // Define imagePreviewPass and set it to null if not defined
     var imagePreviewPass = null;
@@ -1367,7 +1374,8 @@ function UpdateDrop() {
       pub_date_time_end: newdate_end,
       timezone_offset: newtimezone_offset,
       assets: newassets,
-      uuid: newuuid,
+      last_edited_by: newuuid,
+      editor: neweditor
     };
 
     // Only update image_url based on the condition
