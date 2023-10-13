@@ -581,6 +581,7 @@ if (pubStartTimeInput.value) {
     let imagePreviewUrl = imageUrlPath ? imageUrlPrefix + '/' + imageUrlPath : '';
     let imagePreviewJson = document.getElementById('imagePreviewData');
     let listElementImageUpload = document.getElementById('imageUpload');
+    let listElementEditor = document.getElementById('editor');
 
 
     if (item) {
@@ -594,6 +595,7 @@ if (pubStartTimeInput.value) {
       listElementTitle.value = item.title;
       quill.root.innerHTML = item.text;
       listElementAssets.value = item.assets;
+      listElementEditor.value = item.editor;
 
       if (imagePreviewUrl) {
         listElementImageUpload.style.display = "none";
@@ -885,7 +887,7 @@ var calendarEl = document.getElementById('calendar');
               url: '#content' + item.id,
               resourceId: item.channel,
               // color: 'rgba(' + item.epic*10 + ',' + item.epic*2 + ',' + item.epic*50 + ', 0.6)', // You can customize the color of the event here
-              color: 'rgba(' + Math.round(Math.sin(item.epic) * 1024 + 128) + ',' + Math.round(Math.sin(item.epic) * 16 + 128) + ',' + Math.round(Math.sin(item.epic) * 64 + 128) + ', 0.9)', // You can customize the color of the event here
+              color: 'rgba(' + Math.round(Math.sin(item.epic) * 128 + 128) + ',' + Math.round(Math.sin(item.epic) * 16 + 128) + ',' + Math.round(Math.sin(item.epic) * 64 + 128) + ', 0.5)', // You can customize the color of the event here
               // allDay: false,
               editable: false,
               startEditable: false,
@@ -1375,7 +1377,7 @@ function UpdateDrop() {
       timezone_offset: newtimezone_offset,
       assets: newassets,
       last_edited_by: newuuid,
-      editor: neweditor
+      editor: neweditor,
     };
 
     // Only update image_url based on the condition
