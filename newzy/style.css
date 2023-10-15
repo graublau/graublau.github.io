@@ -189,6 +189,11 @@ input {
      padding: 0 25px;
   }
 
+  .modal > .back {
+    margin-top: 2em;
+     padding: 0 25px;
+  }
+
   .menu_column {
     margin-bottom: 4em;
     float: left;
@@ -201,6 +206,11 @@ input {
   }
 
   a > i[class^="gg-close"] {
+    --ggs:1.5;
+    margin: 0;
+  }
+ 
+  a > i[class^="gg-chevron-left"] {
     --ggs:1.5;
     margin: 0;
   }
@@ -222,6 +232,12 @@ input {
 
   .close {
     float: right;
+    margin-bottom: 1em;
+    padding: 10px !important;
+  }
+  
+  .back {
+    float: left;
     margin-bottom: 1em;
     padding: 10px !important;
   }

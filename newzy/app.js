@@ -527,6 +527,7 @@ copyTableButton.addEventListener('click', copyTableToClipboard);
         let imageUrlPath = item.image_url ? JSON.parse(item.image_url).path : '';
         imageUrlPrefix = 'https://ykleeiyhqivgutfkhyoi.supabase.co/storage/v1/object/public/images';
         let imageUrl = imageUrlPath ? imageUrlPrefix + '/' + imageUrlPath : '';
+
         
         if (item.assets == '') {
           item.assets = '-';
@@ -534,7 +535,41 @@ copyTableButton.addEventListener('click', copyTableToClipboard);
         
       getEpicsPromise.then(() => {
         getChannelsPromise.then(() => {
-         listElementDrop.innerHTML = '<li id="content' + item.id + '" class="modal"><div class="back"><a href="javascript:void(0);" id="go_back_from_drop"><i class="gg-chevron-left"></i></a></div><div class="close"><a href="#"><i class="gg-close"></i></a></div><div class="contentcontainer">' + locale_pub_date_time_start + '&nbsp;-&nbsp;' + locale_pub_date_time_end + '&nbsp;(' + item.timezone + ')</div><h1>' + item.title + '</h1>' + '<div class="copy">' + item.text + '</div><div class="descr"><img id="mainImage" src="' + imageUrl + '" /></div><div class="descr">Channel:</div>' + channeltitle + '</div><div class="descr">Images, Videos, Assets:</div>' + item.assets + '<div class="descr">Topic:</div><a href="#topic' + item.epic + '">' + epictitle + '</a><div class="descr">Channel Owner:</div>' + channelowner + '<div class="descr">Topic Owner:</div>' + epicowner + '<div class="descr">Assigned Editor:</div>' + item.editor + '<div class="descr">Last edited by:</div>' + item.last_edited_by + '<div class="editcontainer"><a href="#editcontent' + item.id + '" class="button">Edit</a>&nbsp;<a href="#duplicatecontent' + item.id + '" class="button">Duplicate</a>&nbsp;<input type="button" name="delete" id="deleteDrop" value="Delete" onclick="DeleteDrop()" class="cta"/></div></div></li>';
+         listElementDrop.innerHTML = '<li id="content' + item.id + '" class="modal"><div class="back"><a href="javascript:void(0);" id="go_back_from_drop"><i class="gg-chevron-left"></i></a></div><div class="close"><a href="#"><i class="gg-close"></i></a></div><div class="contentcontainer">' + locale_pub_date_time_start + '&nbsp;-&nbsp;' + locale_pub_date_time_end + '&nbsp;(' + item.timezone + ')</div><h1>' + item.title + '</h1>' + '<div class="copy">' + item.text + '</div><div class="descr"><img id="mainImage" src="' + imageUrl + '" /></div><div class="descr">Channel:</div>' + channeltitle + '</div><div class="descr">Images, Videos, Assets:</div>' + item.assets + '<div class="descr">Topic:</div><a href="#topic' + item.epic + '">' + epictitle + '</a><div class="descr">Channel Owner:</div>' + channelowner + '<div class="descr">Topic Owner:</div>' + epicowner + '<div class="descr">Assigned Editor:</div>' + item.editor + '<div class="descr">Last edited by:</div>' + item.last_edited_by + '<div style="margin-top:2em;"><input type="checkbox" name="finalized" id="finalized" class="cta"> Finalized</div><div class="editcontainer"><a href="#editcontent' + item.id + '" class="button">Edit</a>&nbsp;<a href="#duplicatecontent' + item.id + '" class="button">Duplicate</a>&nbsp;<input type="button" name="delete" id="deleteDrop" value="Delete" onclick="DeleteDrop()" class="cta"/></div></div></li>';
+        
+         let itemId = hashValue.substring('content'.length);
+
+         // Now, set up the checkbox event listener
+        let finalizedCheckbox = document.getElementById('finalized');
+        
+        if (item.finalized) {
+          finalizedCheckbox.checked = true;
+        }
+
+        finalizedCheckbox.addEventListener('change', async () => {
+            if (finalizedCheckbox.checked) {
+                // When the checkbox is checked, update the 'finalized' column to 'true'
+                const { data, error } = await supabase
+                    .from('drops')
+                    .update({ finalized: true }) // Set 'finalized' to true
+                    .match({ id: itemId }); // Match the row by the appropriate identifier
+
+                if (error) {
+                    console.error('Error updating data in Supabase:', error);
+                }
+            } else {
+                // Handle unchecking the checkbox if needed
+                // For example, update 'finalized' to false when unchecked
+                const { data, error } = await supabase
+                    .from('drops')
+                    .update({ finalized: false }) // Set 'finalized' to false
+                    .match({ id: itemId }); // Match the row by the appropriate identifier
+
+                if (error) {
+                    console.error('Error updating data in Supabase:', error);
+                }
+            }
+        });
 
          document.getElementById("go_back_from_drop").addEventListener("click", function() {
           window.history.back();
@@ -903,27 +938,27 @@ var calendarEl = document.getElementById('calendar');
     // defaultTimedEventDuration: '04:00:00',
     eventSources: [
       {
-        events: function(info, successCallback, failureCallback) {
+        events: function (info, successCallback, failureCallback) {
           getDrops().then(data => {
-            const events = data.map(item => ({
-              title: item.title,
-              start: item.pub_date_time_start, // Assuming this is the property representing the start date of the event
-              end: item.pub_date_time_end,
-              url: '#content' + item.id,
-              resourceId: item.channel,
-              // color: 'rgba(' + item.epic*10 + ',' + item.epic*2 + ',' + item.epic*50 + ', 0.6)', // You can customize the color of the event here
-              color: 'rgba(' + Math.round(Math.sin(item.epic) * 128 + 128) + ',' + Math.round(Math.sin(item.epic) * 16 + 128) + ',' + Math.round(Math.sin(item.epic) * 64 + 128) + ', 0.5)', // You can customize the color of the event here
-              // allDay: false,
-              editable: false,
-              startEditable: false,
-              resourceEditable: false
-            }));
+            const events = data.map(item => {
+              const opacity = item.finalized ? 1 : 0.4; // Adjust opacity based on item.finalized
+              return {
+                title: item.title,
+                start: item.pub_date_time_start,
+                end: item.pub_date_time_end,
+                url: '#content' + item.id,
+                resourceId: item.channel,
+                color: `rgba(${Math.round(Math.sin(item.epic) * 128 + 128)}, ${Math.round(Math.sin(item.epic) * 16 + 128)}, ${Math.round(Math.sin(item.epic) * 64 + 128)}, ${opacity})`,
+                editable: false,
+                startEditable: false,
+                resourceEditable: false
+              };
+            });
             successCallback(events);
           }).catch(error => {
             failureCallback(error);
           });
         }
-        
       }
     ],
 
